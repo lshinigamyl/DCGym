@@ -4,8 +4,8 @@ package pe.com.dcgym.models;
  * Created by Fjorsvartnir on 23/02/2017.
  */
 public class TrainingCenters {
-    int idTrainingCenters;
-    String nameTrainingCenters;
+    int id;
+    String name;
     int ruc;
     String address;
     int telephone;
@@ -15,10 +15,11 @@ public class TrainingCenters {
     String creditCard;
     String user;
     String pass;
+    String state;
 
-    public TrainingCenters(int idTrainingCenters, String nameTrainingCenters, int ruc, String address, int telephone, String email, String description, String websites, String creditCard, String user, String pass) {
-        this.idTrainingCenters = idTrainingCenters;
-        this.nameTrainingCenters = nameTrainingCenters;
+    public TrainingCenters(int id, String name, int ruc, String address, int telephone, String email, String description, String websites, String creditCard, String user, String pass, String state) {
+        this.id = id;
+        this.name = name;
         this.ruc = ruc;
         this.address = address;
         this.telephone = telephone;
@@ -28,25 +29,23 @@ public class TrainingCenters {
         this.creditCard = creditCard;
         this.user = user;
         this.pass = pass;
+        this.state = state;
     }
 
-    public TrainingCenters() {
+    public int getId() {
+        return id;
     }
 
-    public int getIdTrainingCenters() {
-        return idTrainingCenters;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setIdTrainingCenters(int idTrainingCenters) {
-        this.idTrainingCenters = idTrainingCenters;
+    public String getName() {
+        return name;
     }
 
-    public String getNameTrainingCenters() {
-        return nameTrainingCenters;
-    }
-
-    public void setNameTrainingCenters(String nameTrainingCenters) {
-        this.nameTrainingCenters = nameTrainingCenters;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getRuc() {
@@ -121,6 +120,11 @@ public class TrainingCenters {
         this.pass = pass;
     }
 
+    public String getState() {
+        return state;
+    }
 
-
+    public void setState(String state) {
+        this.state = state;
+    }
 }

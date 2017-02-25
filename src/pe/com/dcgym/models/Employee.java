@@ -4,62 +4,62 @@ package pe.com.dcgym.models;
  * Created by Fjorsvartnir on 23/02/2017.
  */
 public class Employee {
-    int idEmployee;
-    int idTrainingCenters;
-    int idPeople;
-    int typeEmployee;
-    String State;
+    int id;
+    String state;
+    int trainingCentersId;
+    People people;
+    EmployeeTypes employeeTypes;
+
 
     public Employee() {
     }
 
-    public Employee(int idEmployee, int idTrainingCenters, int idPeople, int typeEmployee, String State) {
-        this.idEmployee = idEmployee;
-        this.idTrainingCenters = idTrainingCenters;
-        this.idPeople = idPeople;
-        this.typeEmployee = typeEmployee;
-        this.State = State;
+    public Employee(int id, String state, int trainingCentersId, People people, EmployeeTypes employeeTypes) {
+        this.id = id;
+        this.state = state;
+        this.trainingCentersId = trainingCentersId;
+        this.people = people;
+        this.employeeTypes = employeeTypes;
     }
 
-    public int getIdEmployee() {
-        return idEmployee;
+    public int getId() {
+        return id;
     }
 
-    public void setIdEmployee(int idEmployee) {
-        this.idEmployee = idEmployee;
-    }
-
-    public int getIdTrainingCenters() {
-        return idTrainingCenters;
-    }
-
-    public void setIdTrainingCenters(int idTrainingCenters) {
-        this.idTrainingCenters = idTrainingCenters;
-    }
-
-    public int getIdPeople() {
-        return idPeople;
-    }
-
-    public void setIdPeople(int idPeople) {
-        this.idPeople = idPeople;
-    }
-
-    public int getTypeEmployee() {
-        return typeEmployee;
-    }
-
-    public void setTypeEmployee(int typeEmployee) {
-        this.typeEmployee = typeEmployee;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getState() {
-        return State;
+        return state;
     }
 
-    public void setState(String State) {
-        this.State = State;
+    public void setState(String state) {
+        this.state = state;
     }
 
+    public int getTrainingCentersId() {
+        return trainingCentersId;
+    }
+
+    public void setTrainingCentersId(int trainingCentersId) {
+        this.trainingCentersId = trainingCentersId;
+    }
+
+    public People getPeople() {
+        return people;
+    }
+
+    public void setPeople(People people) {
+        this.people = people;
+    }
+
+    public EmployeeTypes getEmployeeTypes() {
+        return employeeTypes;
+    }
+
+    public void setEmployeeTypes(EmployeeTypes employeeTypes) {
+        this.employeeTypes = employeeTypes;
+    }
 }
 

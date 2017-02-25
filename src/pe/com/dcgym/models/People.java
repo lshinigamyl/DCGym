@@ -4,10 +4,9 @@ package pe.com.dcgym.models;
  * Created by Fjorsvartnir on 23/02/2017.
  */
 public class People {
-    int idPeople;
-    String nameClient;
-    String surName;
+    int id;
     String name;
+    String surName;
     int numDocument;
     String email;
     String dateBirth;
@@ -16,12 +15,12 @@ public class People {
     int telephone;
     String user;
     String pass;
+    String state;
 
-    public People(int idPeople, String nameClient, String surName, String name, int numDocument, String email, String dateBirth, String address, int cellphone, int telephone, String user, String pass) {
-        this.idPeople = idPeople;
-        this.nameClient = nameClient;
-        this.surName = surName;
+    public People(int id, String name, String surName, int numDocument, String email, String dateBirth, String address, int cellphone, int telephone, String user, String pass, String state) {
+        this.id = id;
         this.name = name;
+        this.surName = surName;
         this.numDocument = numDocument;
         this.email = email;
         this.dateBirth = dateBirth;
@@ -30,33 +29,15 @@ public class People {
         this.telephone = telephone;
         this.user = user;
         this.pass = pass;
+        this.state = state;
     }
 
-    public People() {
+    public int getId() {
+        return id;
     }
 
-    public int getIdPeople() {
-        return idPeople;
-    }
-
-    public void setIdPeople(int idPeople) {
-        this.idPeople = idPeople;
-    }
-
-    public String getNameClient() {
-        return nameClient;
-    }
-
-    public void setNameClient(String nameClient) {
-        this.nameClient = nameClient;
-    }
-
-    public String getSurName() {
-        return surName;
-    }
-
-    public void setSurName(String surName) {
-        this.surName = surName;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -65,6 +46,14 @@ public class People {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSurName() {
+        return surName;
+    }
+
+    public void setSurName(String surName) {
+        this.surName = surName;
     }
 
     public int getNumDocument() {
@@ -131,5 +120,11 @@ public class People {
         this.pass = pass;
     }
 
+    public String getState() {
+        return state;
+    }
 
+    public void setState(String state) {
+        this.state = state;
+    }
 }
