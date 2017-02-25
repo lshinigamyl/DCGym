@@ -1,5 +1,8 @@
 package pe.com.dcgym.models;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * Created by Fjorsvartnir on 23/02/2017.
  */
@@ -49,6 +52,19 @@ public class Customer {
 
     public void setPeople(People people) {
         this.people = people;
+    }
+
+
+    public static Customer build(ResultSet resultSet, PeopleEntity peopleEntity) {
+        try {
+            return new Customer(resultSet.getInt("id"),
+                                resultSet.getString("coment"),
+                                resultSet.getString("state"),
+                                peopleEntity.findById(resultSet.getInt("people_id")));
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
 

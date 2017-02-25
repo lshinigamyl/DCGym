@@ -3,16 +3,16 @@ package pe.com.dcgym.models;
 /**
  * Created by Fjorsvartnir on 23/02/2017.
  */
-public class Exercises {
+public class Exercise {
     int id;
     String name;
     String description;
     String state;
 
-    public Exercises() {
+    public Exercise() {
     }
 
-    public Exercises(int id, String name, String description, String state) {
+    public Exercise(int id, String name, String description, String state) {
         this.id = id;
         this.name = name;
         this.description = description;

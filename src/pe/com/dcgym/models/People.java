@@ -7,17 +7,17 @@ public class People {
     int id;
     String name;
     String surName;
-    int numDocument;
+    String numDocument;
     String email;
     String dateBirth;
     String address;
-    int cellphone;
-    int telephone;
+    String cellphone;
+    String telephone;
     String user;
     String pass;
     String state;
 
-    public People(int id, String name, String surName, int numDocument, String email, String dateBirth, String address, int cellphone, int telephone, String user, String pass, String state) {
+    public People(int id, String name, String surName, String numDocument, String email, String dateBirth, String address, String cellphone, String telephone, String user, String pass, String state) {
         this.id = id;
         this.name = name;
         this.surName = surName;
@@ -56,11 +56,11 @@ public class People {
         this.surName = surName;
     }
 
-    public int getNumDocument() {
+    public String getNumDocument() {
         return numDocument;
     }
 
-    public void setNumDocument(int numDocument) {
+    public void setNumDocument(String numDocument) {
         this.numDocument = numDocument;
     }
 
@@ -88,19 +88,19 @@ public class People {
         this.address = address;
     }
 
-    public int getCellphone() {
+    public String getCellphone() {
         return cellphone;
     }
 
-    public void setCellphone(int cellphone) {
+    public void setCellphone(String cellphone) {
         this.cellphone = cellphone;
     }
 
-    public int getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(int telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 

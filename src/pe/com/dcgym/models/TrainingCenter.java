@@ -3,12 +3,12 @@ package pe.com.dcgym.models;
 /**
  * Created by Fjorsvartnir on 23/02/2017.
  */
-public class TrainingCenters {
+public class TrainingCenter {
     int id;
     String name;
-    int ruc;
+    String ruc;
     String address;
-    int telephone;
+    String telephone;
     String email;
     String description;
     String websites;
@@ -17,7 +17,10 @@ public class TrainingCenters {
     String pass;
     String state;
 
-    public TrainingCenters(int id, String name, int ruc, String address, int telephone, String email, String description, String websites, String creditCard, String user, String pass, String state) {
+    public TrainingCenter() {
+    }
+
+    public TrainingCenter(int id, String name, String ruc, String address, String telephone, String email, String description, String websites, String creditCard, String user, String pass, String state) {
         this.id = id;
         this.name = name;
         this.ruc = ruc;
@@ -48,11 +51,11 @@ public class TrainingCenters {
         this.name = name;
     }
 
-    public int getRuc() {
+    public String getRuc() {
         return ruc;
     }
 
-    public void setRuc(int ruc) {
+    public void setRuc(String ruc) {
         this.ruc = ruc;
     }
 
@@ -64,11 +67,11 @@ public class TrainingCenters {
         this.address = address;
     }
 
-    public int getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(int telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 

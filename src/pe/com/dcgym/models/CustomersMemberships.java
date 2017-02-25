@@ -3,16 +3,16 @@ package pe.com.dcgym.models;
 /**
  * Created by Fjorsvartnir on 23/02/2017.
  */
-public class MembershipsClient {
-    int idMemberships;
-    int idPeople;
-    int idType;
-    String state;
+public class CustomersMemberships {
+    int id;
+    int state;
+    Customer customer;
+    Membership Memberships;
 
-    public MembershipsClient() {
+    public CustomersMemberships() {
     }
 
-    public MembershipsClient(int idMemberships, int idPeople, int idType, String state) {
+    public CustomersMemberships(int idMemberships, int idPeople, int idType, String state) {
         this.idMemberships = idMemberships;
         this.idPeople = idPeople;
         this.idType = idType;

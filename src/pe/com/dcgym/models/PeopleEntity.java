@@ -11,19 +11,19 @@ import java.util.List;
 
 
 public class PeopleEntity extends BaseEntity{
-    private static String DEFAULT_SQL = "SELECT * FROM People";
+    private static String DEFAULT_SQL = "SELECT * FROM people";
 
     public List<People> findAll() {
         return this.findByCriteria(DEFAULT_SQL);
     }
 
     public People findById(int id) {
-        List<People> peoples = this.findByCriteria(DEFAULT_SQL + " WHERE idPeople = " + String.valueOf(id));
+        List<People> peoples = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
         return peoples != null ? peoples.get(0) : null;
     }
 
     public People findByName(String name) {
-        List<People> peoples = this.findByCriteria(DEFAULT_SQL + " WHERE idPeople = '" + name + "'");
+        List<People> peoples = this.findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
         return peoples.isEmpty() ? null : peoples.get(0);
     }
 
@@ -33,7 +33,7 @@ public class PeopleEntity extends BaseEntity{
             try {
                 ResultSet resultSet = this.getConnection().createStatement().executeQuery(sql);
                 while (resultSet.next()) {
-                    People people = new People(resultSet.getInt("idPeople"), resultSet.getString("name_client"),resultSet.getString("surname"),resultSet.getString("name"),resultSet.getInt("num_document"),resultSet.getString("email"),resultSet.getString("date_birth"),resultSet.getString("address"),resultSet.getInt("cellphone"),resultSet.getInt("telephone"),resultSet.getString("User"),resultSet.getString("Pass"));
+                    People people = new People(resultSet.getInt("id"), resultSet.getString("name"),resultSet.getString("surname"),resultSet.getString("document_number"),resultSet.getString("email"),resultSet.getString("date_birth"),resultSet.getString("address"),resultSet.getString("cellphone"),resultSet.getString("telephone"),resultSet.getString("user"),resultSet.getString("password"),resultSet.getString("state"));
                     peoples.add(people);
                 }
                 return peoples;
@@ -45,43 +45,31 @@ public class PeopleEntity extends BaseEntity{
         return null;
     }
 
-    private int getMaxId() {
-        String sql = "SELECT MAX(idPeople) as max_id FROM People";
-        if (this.getConnection() != null) {
-            try {
-                ResultSet resultSet = this.getConnection().createStatement().executeQuery(sql);
-                return resultSet.next() ? resultSet.getInt(1) : 0;
-            }
-            catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-        return 0;
-    }
 
-    public People create( String nameClient, String surName, String name, int numDocument, String email, String dateBirth, String address, int cellphone, int telephone, String user, String pass ) {
+
+    public People create( String name, String surName,  String numDocument, String email, String dateBirth, String address, String cellphone, String telephone, String user, String password, String state ) {
         if (this.findByName(name) == null && this.getConnection() != null) {
-            String sql = "INSERT INTO People(id_People, name_client,surname,name,num_document,email,date_birth,address,cellphone,telephone,User,Pass) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO People(id, name, surname, document_number, email, date_birth, address, cellphone, telephone, user, password, state) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
             try {
                 PreparedStatement obj =  this.getConnection().prepareStatement(sql);
-                obj.setInt(1, getMaxId());
-                obj.setString(2, nameClient);
+                obj.setInt(1, getMaxId("people"));
+                obj.setString(2, name);
                 obj.setString(3, surName);
-                obj.setString(4, name);
-                obj.setInt(5, numDocument);
-                obj.setString(6, email);
-                obj.setString(7, dateBirth);
-                obj.setString(8, address);
-                obj.setInt(9, cellphone);
-                obj.setInt(10, telephone);
-                obj.setString(11, user);
-                obj.setString(12, pass);
+                obj.setString(4, numDocument);
+                obj.setString(5, email);
+                obj.setString(6, dateBirth);
+                obj.setString(7, address);
+                obj.setString(8, cellphone);
+                obj.setString(9, telephone);
+                obj.setString(10, user);
+                obj.setString(11, password);
+                obj.setString(12, state);
 
 
                 int results = obj.executeUpdate(sql);
                 if (results > 0) {
-                    People region = new People(getMaxId(), nameClient, surName, name, numDocument, email, dateBirth, address, cellphone, telephone, user, pass);
-                    return region;
+                    People people = new People(getMaxId("people"), surName, name, numDocument, email, dateBirth, address, cellphone, telephone, user, password, state);
+                    return people;
                 }
             }
             catch (SQLException e) {
@@ -104,15 +92,15 @@ public class PeopleEntity extends BaseEntity{
     }
 
     public boolean delete(int id) {
-        return this.updateByCriteria("DELETE FROM People WHERE idPeople  = " + String.valueOf(id)) > 0;
+        return this.updateByCriteria("DELETE FROM people WHERE id  = " + String.valueOf(id)) > 0;
     }
 
     public boolean delete(String name) {
-        return this.updateByCriteria("DELETE FROM People WHERE name_client = '" + name + "'") > 0;
+        return this.updateByCriteria("DELETE FROM people WHERE name = '" + name + "'") > 0;
     }
 
     public boolean update(People people) {
-        return this.updateByCriteria("UPDATE regions SET region_name = '" + people.getName() + "' WHERE region_id = " + String.valueOf(people.getIdPeople())) > 0;
+        return this.updateByCriteria("UPDATE people SET name = '" + people.getName() + "' WHERE id = " + String.valueOf(people.getId())) > 0;
     }
 
 }

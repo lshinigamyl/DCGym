@@ -40,4 +40,5 @@ public class EmployeeTypes {
     public void setState(String state) {
         this.state = state;
     }
+
 }

@@ -1,12 +1,15 @@
 package pe.com.dcgym.models;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * Created by Fjorsvartnir on 23/02/2017.
  */
 public class Employee {
     int id;
     String state;
-    int trainingCentersId;
+    TrainingCenter trainingCenters;
     People people;
     EmployeeTypes employeeTypes;
 
@@ -14,10 +17,10 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(int id, String state, int trainingCentersId, People people, EmployeeTypes employeeTypes) {
+    public Employee(int id, String state, TrainingCenter trainingCenters, People people, EmployeeTypes employeeTypes) {
         this.id = id;
         this.state = state;
-        this.trainingCentersId = trainingCentersId;
+        this.trainingCenters = trainingCenters;
         this.people = people;
         this.employeeTypes = employeeTypes;
     }
@@ -38,12 +41,12 @@ public class Employee {
         this.state = state;
     }
 
-    public int getTrainingCentersId() {
-        return trainingCentersId;
+    public TrainingCenter getTrainingCenters() {
+        return trainingCenters;
     }
 
-    public void setTrainingCentersId(int trainingCentersId) {
-        this.trainingCentersId = trainingCentersId;
+    public void setTrainingCenters(TrainingCenter trainingCenters) {
+        this.trainingCenters = trainingCenters;
     }
 
     public People getPeople() {
@@ -60,6 +63,16 @@ public class Employee {
 
     public void setEmployeeTypes(EmployeeTypes employeeTypes) {
         this.employeeTypes = employeeTypes;
+    }
+
+    public static Employee build(ResultSet resultSet, TrainingCentersEntity trainingCentersEntity,PeopleEntity peopleEntity, EmployeeTypesEntity employeeTypesEntity) {
+        try {
+            Employee employee= new Employee();
+            return new Employee(resultSet.getInt("id"),resultSet.getString("state"),trainingCentersEntity.findById(resultSet.getInt("training_centers_id")), peopleEntity.findById(resultSet.getInt("people_id")), employeeTypesEntity.findById(resultSet.getInt("employee_types_id")));
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
 
