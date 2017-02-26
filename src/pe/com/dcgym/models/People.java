@@ -1,7 +1,7 @@
 package pe.com.dcgym.models;
 
 /**
- * Created by Fjorsvartnir on 23/02/2017.
+ * tabla personas
  */
 public class People {
     int id;
