@@ -3,14 +3,14 @@ package pe.com.dcgym.models;
 /**
  * Created by Fjorsvartnir on 23/02/2017.
  */
- public class Routines {
+ public class Routine {
      private int id;
     private String name;
     private String description;
     private String state;
-	public  Routines()	{
+	public  Routine()	{
 	}
-		public  Routines(int id, String name,  String description, String state){
+		public  Routine(int id, String name,  String description, String state){
 		
 		this.id = id;
         this.name = name;
