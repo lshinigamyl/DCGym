@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Created by Fjorsvartnir on 23/02/2017.
+ * Soy un Gato xD
  */
 public class Employee {
     int id;
