@@ -1,7 +1,7 @@
 package pe.com.dcgym.models;
 
 /**
- que vista es esto?
+ 
  */
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
