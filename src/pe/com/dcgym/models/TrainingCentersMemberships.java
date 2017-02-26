@@ -6,13 +6,13 @@ package pe.com.dcgym.models;
 public class TrainingCentersMemberships {
     int id;
     String state;
-    int idTrainingCenters;
+    TrainingCenter  trainingCenter ;
     int idmembershipTypes;
  
  
-    public TrainingCenters(int id, String state, int idTrainingCenters, , int idmembershipTypes) {
+    public TrainingCenters(int id, String state, TrainingCenter trainingCenter, , int idmembershipTypes) {
         this.id = id;
-        this.idTrainingCenters = idTrainingCenters;
+        this.trainingCenter = trainingCenter;
         this.idmembershipTypes = idmembershipTypes;
         this.state = state;
 
@@ -46,17 +46,17 @@ public class TrainingCentersMemberships {
     }
 
     /**
-     * @return the idTrainingCenters
+     * @return the trainingCenter
      */
-    public int getIdTrainingCenters() {
-        return idTrainingCenters;
+    public TrainingCenter trainingCenters() {
+        return trainingCenter;
     }
 
     /**
-     * @param idTrainingCenters the idTrainingCenters to set
+     * @param trainingCenter the trainingCenter to set
      */
-    public void setIdTrainingCenters(int idTrainingCenters) {
-        this.idTrainingCenters = idTrainingCenters;
+    public void settrainingCenter(TrainingCenter trainingCenters) {
+        this.trainingCenter = trainingCenter;
     }
 
     /**
