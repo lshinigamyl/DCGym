@@ -1,7 +1,7 @@
 package pe.com.dcgym.models;
 
 /**
- * Created by Fjorsvartnir on 25/02/2017.
+ * Correjido
  */
 public class CustomersMembershipsEntity {
 
