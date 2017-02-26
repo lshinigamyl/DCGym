@@ -4,7 +4,7 @@ package pe.com.dcgym.models;
  * Created by Fjorsvartnir on 23/02/2017.
  */
  public class Records {
-     private int customers_routinesid;
+     private CustomersRoutines  customersRoutines ;
     private String date;
     private String duration ;
     private String advance;
@@ -14,9 +14,9 @@ package pe.com.dcgym.models;
 	public  Records()	{
 	}
 	
-		public  Records(int customers_routinesid, String date,  String duration, String advance, String commentary){
+		public  Records(CustomersRoutines customersRoutines, String date,  String duration, String advance, String commentary){
 		
-		this.customers_routinesid = customers_routinesid;
+		this.customersRoutines = customersRoutines;
         this.date = date;
         this.duration = duration;
         this.advance = advance;
@@ -26,17 +26,17 @@ package pe.com.dcgym.models;
 	
 	
     /**
-     * @return the customers_routinesid
+     * @return the customersRoutines
      */
-    public int getCustomers_routinesid() {
-        return customers_routinesid;
+    public int getCustomersRoutines() {
+        return customersRoutines;
     }
 
     /**
-     * @param customers_routinesid the customers_routinesid to set
+     * @param customersRoutines the customers_routinesid to set
      */
-    public void setCustomers_routinesid(int customers_routinesid) {
-        this.customers_routinesid = customers_routinesid;
+    public void setCustomersRoutines(CustomersRoutines customersRoutines) {
+        this.customersRoutines = customersRoutines;
     }
 
     /**
