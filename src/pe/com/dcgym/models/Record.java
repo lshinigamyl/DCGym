@@ -3,7 +3,7 @@ package pe.com.dcgym.models;
 /**
  * ejercicios avance
  */
- public class Records {
+ public class Record {
      private CustomersRoutines  customersRoutines ;
     private String date;
     private String duration ;
@@ -11,10 +11,10 @@ package pe.com.dcgym.models;
     private String commentary;
 
 	
-	public  Records()	{
+	public  Record()	{
 	}
 	
-		public  Records(CustomersRoutines customersRoutines, String date,  String duration, String advance, String commentary){
+		public  Record(CustomersRoutines customersRoutines, String date,  String duration, String advance, String commentary){
 		
 		this.customersRoutines = customersRoutines;
         this.date = date;
