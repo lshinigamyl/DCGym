@@ -3,14 +3,14 @@ package pe.com.dcgym.models;
 /**
  * Created by Fjorsvartnir on 23/02/2017.
  */
-public class TrainingCentersMemberships {
+public class TrainingCentersMembership {
     int id;
     String state;
     TrainingCenter  trainingCenter ;
     int idmembershipTypes;
  
  
-    public TrainingCenters(int id, String state, TrainingCenter trainingCenter, , int idmembershipTypes) {
+    public TrainingCenter(int id, String state, TrainingCenter trainingCenter, , int idmembershipTypes) {
         this.id = id;
         this.trainingCenter = trainingCenter;
         this.idmembershipTypes = idmembershipTypes;
@@ -18,7 +18,7 @@ public class TrainingCentersMemberships {
 
     }
 
-    public TrainingCentersMemberships() {
+    public TrainingCentersMembership() {
     }
  public int getId() {
         return id;
