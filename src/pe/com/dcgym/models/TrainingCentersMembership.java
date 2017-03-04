@@ -4,53 +4,75 @@ package pe.com.dcgym.models;
  * Created by Fjorsvartnir on 23/02/2017.
  */
 public class TrainingCentersMembership {
-    private int id;
-    private String state;
-    private TrainingCenter  trainingCenter ;
-    private MembershipsType membershipTypes;
+    int id;
+    String state;
+    TrainingCenter  trainingCenter ;
+    int idmembershipTypes;
  
  
-    public TrainingCentersMembership(int id, String state, TrainingCenter trainingCenter,  MembershipsType membershipTypes) {
-        this.setId(id);
-        this.setTrainingCenter(trainingCenter);
-        this.setMembershipTypes(membershipTypes);
-        this.setState(state);
+    public TrainingCenter(int id, String state, TrainingCenter trainingCenter, , int idmembershipTypes) {
+        this.id = id;
+        this.trainingCenter = trainingCenter;
+        this.idmembershipTypes = idmembershipTypes;
+        this.state = state;
 
     }
 
     public TrainingCentersMembership() {
     }
-
-
-    public int getId() {
+ public int getId() {
         return id;
     }
 
+    /**
+     * @param id the id to set
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * @return the state
+     */
     public String getState() {
         return state;
     }
 
+    /**
+     * @param state the state to set
+     */
     public void setState(String state) {
         this.state = state;
     }
 
-    public TrainingCenter getTrainingCenter() {
+    /**
+     * @return the trainingCenter
+     */
+    public TrainingCenter trainingCenters() {
         return trainingCenter;
     }
 
-    public void setTrainingCenter(TrainingCenter trainingCenter) {
+    /**
+     * @param trainingCenter the trainingCenter to set
+     */
+    public void settrainingCenter(TrainingCenter trainingCenters) {
         this.trainingCenter = trainingCenter;
     }
 
-    public MembershipsType getMembershipTypes() {
-        return membershipTypes;
+    /**
+     * @return the idmembershipTypes
+     */
+    public int getIdmembershipTypes() {
+        return idmembershipTypes;
     }
 
-    public void setMembershipTypes(MembershipsType membershipTypes) {
-        this.membershipTypes = membershipTypes;
+    /**
+     * @param idmembershipTypes the idmembershipTypes to set
+     */
+    public void setIdmembershipTypes(int idmembershipTypes) {
+        this.idmembershipTypes = idmembershipTypes;
     }
+ 
+
+
 }
