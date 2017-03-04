@@ -10,7 +10,8 @@ import java.util.List;
  * Created by Fjorsvartnir on 25/02/2017.
  */
 public class TrainingCentersEntity extends BaseEntity {
-    private static String DEFAULT_SQL = "SELECT * FROM training_centers";
+    private static String TABLE="training_centers";
+    private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;
 
     public List<TrainingCenter> findAll() {
         return this.findByCriteria(DEFAULT_SQL);
@@ -32,11 +33,19 @@ public class TrainingCentersEntity extends BaseEntity {
             try {
                 ResultSet resultSet = this.getConnection().createStatement().executeQuery(sql);
                 while (resultSet.next()) {
-                    TrainingCenter trainingCenter = new TrainingCenter() ;
-                        trainingCenter.setId(resultSet.getInt(1));
-                        trainingCenter.setName(resultSet.getString(2));
-                        trainingCenter.setDescription(resultSet.getString(3));
-                        trainingCenter.setState(resultSet.getString(4));
+                    TrainingCenter trainingCenter = new TrainingCenter();
+                    trainingCenter.setId(resultSet.getInt("id"));
+                    trainingCenter.setName(resultSet.getString("name"));
+                    trainingCenter.setRuc(resultSet.getString("ruc"));
+                    trainingCenter.setAddress(resultSet.getString("address"));
+                    trainingCenter.setTelephone(resultSet.getString("telephone"));
+                    trainingCenter.setEmail(resultSet.getString("email"));
+                    trainingCenter.setDescription(resultSet.getString("description"));
+                    trainingCenter.setWebsites(resultSet.getString("website"));
+                    trainingCenter.setCreditCard(resultSet.getString("credit_card"));
+                    trainingCenter.setUser(resultSet.getString("user"));
+                    trainingCenter.setPass(resultSet.getString("password"));
+                    trainingCenter.setState(resultSet.getString("state"));
                     trainingCenters.add(trainingCenter);
                 }
                 return trainingCenters;
@@ -50,36 +59,35 @@ public class TrainingCentersEntity extends BaseEntity {
 
 
 
-    public TrainingCenter create(String name, String ruc, String address,String telephone,String email,String description,String website,String credit_card,String user,String password,String state) {
-        if (this.findByName(name) == null && this.getConnection() != null) {
-            String sql = "INSERT INTO exercises(id, name, ruc,address, telephone, email, description, website, credit_card, user, password,state ) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
-            try {
-                PreparedStatement preparedStatement =  this.getConnection().prepareStatement(sql);
+    public TrainingCenter create(String name, String ruc, String address, String telephone, String email, String description, String website,String credit_card, String user, String password, String state) {
+        //if (this.findByName(id) == null && this.getConnection() != null) {
+        String sql = "INSERT INTO "+TABLE+"(id, name, ruc, address, telephone, email, description, website, credit_card, user, password, state) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+        try {
+            PreparedStatement obj =  this.getConnection().prepareStatement(sql);
 
-                preparedStatement.setInt   (1, (getMaxId("training_centers")+1));
-                preparedStatement.setString(2, name);
-                preparedStatement.setString(3, ruc);
-                preparedStatement.setString(4, address);
-                preparedStatement.setString(5, telephone);
-                preparedStatement.setString(6, email);
-                preparedStatement.setString(7, description);
-                preparedStatement.setString(8, website);
-                preparedStatement.setString(9, credit_card);
-                preparedStatement.setString(10, user);
-                preparedStatement.setString(11, password);
-                preparedStatement.setString(12, state);
+            obj.setInt   (1, (getMaxId(TABLE)+1));
+            obj.setString(2, name);
+            obj.setString(3, ruc);
+            obj.setString(4, address);
+            obj.setString(5, telephone);
+            obj.setString(6, email);
+            obj.setString(7, description);
+            obj.setString(8, website);
+            obj.setString(9, credit_card);
+            obj.setString(10, user);
+            obj.setString(11, password);
+            obj.setString(12, state);
 
-
-                int results = preparedStatement.executeUpdate(sql);
-                if (results > 0) {
-                    TrainingCenter TrainingCenter = new TrainingCenter(getMaxId("training_centers"), name,  ruc,  address, telephone, email, description, website, credit_card, user, password, state);
-                    return TrainingCenter;
-                }
-            }
-            catch (SQLException e) {
-                e.printStackTrace();
+            int results = obj.executeUpdate(sql);
+            if (results > 0) {
+                TrainingCenter trainingCenter = new TrainingCenter(getMaxId(TABLE),  name,  ruc,  address,  telephone,  email,  description,  website, credit_card,  user,  password,  state);
+                return trainingCenter;
             }
         }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        //}
         return null;
     }
 
@@ -96,11 +104,11 @@ public class TrainingCentersEntity extends BaseEntity {
     }
 
     public boolean delete(int id) {
-        return this.updateByCriteria("DELETE FROM training_centers WHERE id  = " + String.valueOf(id)) > 0;
+        return this.updateByCriteria("DELETE FROM "+TABLE+" WHERE id  = " + String.valueOf(id)) > 0;
     }
-/*
-    public boolean update(Exercise exercise) {
-        return this.updateByCriteria("UPDATE exercises SET name ='"+exercise.getName()+"', description='"+exercise.getDescription()+"', state='"+exercise.getState()+"' WHERE id = " + String.valueOf(exercise.getId())) > 0;
+
+    public boolean update(TrainingCenter trainingCenter) {
+        return this.updateByCriteria("UPDATE "+TABLE+" SET name = '" + trainingCenter.getName() + "', description ='"+trainingCenter.getDescription()+"', state='"+ trainingCenter.getState()+"'  WHERE id = " + String.valueOf(trainingCenter.getId())) > 0;
     }
-*/
+
 }
