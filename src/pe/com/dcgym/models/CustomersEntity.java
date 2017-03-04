@@ -10,7 +10,8 @@ import java.util.List;
  *
  */
 public class CustomersEntity extends BaseEntity {
-    private static String DEFAULT_SQL = "SELECT * FROM customers";
+    private static String TABLE="customers";
+    private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;
     private PeopleEntity peopleEntity;
 
     public List<Customer> findAll() {
@@ -21,12 +22,12 @@ public class CustomersEntity extends BaseEntity {
         List<Customer> customers = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
         return customers != null ? customers.get(0) : null;
     }
-
+/*
     public Customer findByName(String name) {
         List<Customer> customers = this.findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
         return customers.isEmpty() ? null : customers.get(0);
     }
-
+*/
     private List<Customer> findByCriteria(String sql) {
         if (this.getConnection() != null) {
             ArrayList<Customer> customers = new ArrayList<Customer>();
@@ -47,20 +48,20 @@ public class CustomersEntity extends BaseEntity {
 
 
 
-    public Customer create(String coment,  String state, People people) {
+    public Customer create(String coment, String state, People people) {
         //if (this.findByName(id) == null && this.getConnection() != null) {
             String sql = "INSERT INTO customers(id, coment, state, people_id) VALUES(?,?,?,?)";
             try {
                 PreparedStatement obj =  this.getConnection().prepareStatement(sql);
 
-                    obj.setInt   (1, (getMaxId("customers")+1));
+                    obj.setInt   (1, (getMaxId(TABLE)+1));
                     obj.setString(2, coment);
                     obj.setString(3, state);
                     obj.setInt   (4, people.getId());
 
                 int results = obj.executeUpdate(sql);
                 if (results > 0) {
-                    Customer customer = new Customer(getMaxId("customers"), coment,state, people);
+                    Customer customer = new Customer(getMaxId(TABLE), coment,state, people);
                     return customer;
                 }
             }
@@ -84,11 +85,11 @@ public class CustomersEntity extends BaseEntity {
     }
 
     public boolean delete(int id) {
-        return this.updateByCriteria("DELETE FROM customers WHERE id  = " + String.valueOf(id)) > 0;
+        return this.updateByCriteria("DELETE FROM "+TABLE+" WHERE id  = " + String.valueOf(id)) > 0;
     }
 
     public boolean update(Customer customer) {
-        return this.updateByCriteria("UPDATE customers SET coment = '" + customer.getComment() + "', state ='"+customer.getState()+"', people_id="+customer.people.getId()+"  WHERE id = " + String.valueOf(customer.getId())) > 0;
+        return this.updateByCriteria("UPDATE "+TABLE+" SET coment = '" + customer.getComment() + "', state ='"+customer.getState()+"', people_id="+ customer.getPeople().getId()+"  WHERE id = " + String.valueOf(customer.getId())) > 0;
     }
 
     public PeopleEntity getPeopleEntity() {
