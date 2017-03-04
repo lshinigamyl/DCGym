@@ -4,19 +4,19 @@ package pe.com.dcgym.models;
  * Created by Fjorsvartnir on 23/02/2017.
  */
 public class Exercise {
-    int id;
-    String name;
-    String description;
-    String state;
+    private int id;
+    private String name;
+    private String description;
+    private String state;
 
     public Exercise() {
     }
 
     public Exercise(int id, String name, String description, String state) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.state = state;
+        this.setId(id);
+        this.setName(name);
+        this.setDescription(description);
+        this.setState(state);
     }
 
     public int getId() {

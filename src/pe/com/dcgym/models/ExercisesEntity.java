@@ -10,7 +10,8 @@ import java.util.List;
  * 
  */
 public class ExercisesEntity extends BaseEntity {
-    private static String DEFAULT_SQL = "SELECT * FROM exercises";
+    private static String TABLE="exercises";
+    private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;
 
     public List<Exercise> findAll() {
         return this.findByCriteria(DEFAULT_SQL);
@@ -20,12 +21,12 @@ public class ExercisesEntity extends BaseEntity {
         List<Exercise> exercises = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
         return exercises != null ? exercises.get(0) : null;
     }
-
+/*
     public Exercise findByName(String name) {
         List<Exercise> exercises = this.findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
         return exercises.isEmpty() ? null : exercises.get(0);
     }
-
+*/
     private List<Exercise> findByCriteria(String sql) {
         if (this.getConnection() != null) {
             ArrayList<Exercise> exercises = new ArrayList<Exercise>();
@@ -33,10 +34,10 @@ public class ExercisesEntity extends BaseEntity {
                 ResultSet resultSet = this.getConnection().createStatement().executeQuery(sql);
                 while (resultSet.next()) {
                     Exercise exercise = new Exercise() ;
-                    exercise.setId(resultSet.getInt(1));
-                    exercise.setName(resultSet.getString(2));
-                    exercise.setDescription(resultSet.getString(3));
-                    exercise.setState(resultSet.getString(4));
+                        exercise.setId(resultSet.getInt(1));
+                        exercise.setName(resultSet.getString(2));
+                        exercise.setDescription(resultSet.getString(3));
+                        exercise.setState(resultSet.getString(4));
                     exercises.add(exercise);
                 }
                 return exercises;
@@ -51,26 +52,26 @@ public class ExercisesEntity extends BaseEntity {
 
 
     public Exercise create(String name, String description, String state) {
-        if (this.findByName(name) == null && this.getConnection() != null) {
-        String sql = "INSERT INTO exercises(id, name, description,state) VALUES(?,?,?,?)";
+       // if (this.findByName(name) == null && this.getConnection() != null) {
+        String sql = "INSERT INTO "+TABLE+"(id, name, description, state) VALUES(?,?,?,?)";
         try {
             PreparedStatement preparedStatement =  this.getConnection().prepareStatement(sql);
 
-            preparedStatement.setInt   (1, (getMaxId("exercises")+1));
+            preparedStatement.setInt   (1, (getMaxId(TABLE)+1));
             preparedStatement.setString(2, name);
             preparedStatement.setString(3, description);
             preparedStatement.setString(4, state);
 
             int results = preparedStatement.executeUpdate(sql);
             if (results > 0) {
-                Exercise exercise = new Exercise( getMaxId("exercises"), name, description, state);
+                Exercise exercise = new Exercise( getMaxId(TABLE), name, description, state);
                 return exercise;
             }
         }
         catch (SQLException e) {
             e.printStackTrace();
         }
-        }
+      //  }
         return null;
     }
 
