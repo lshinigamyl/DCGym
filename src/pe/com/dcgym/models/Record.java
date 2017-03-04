@@ -1,98 +1,86 @@
 package pe.com.dcgym.models;
 
-/**
- * ejercicios avance
- */
- public class Record {
-     private CustomersRoutines  customersRoutines ;
-    private String date;
-    private String duration ;
-    private String advance;
-    private String commentary;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-	
-	public  Record()	{
-	}
-	
-		public  Record(CustomersRoutines customersRoutines, String date,  String duration, String advance, String commentary){
-		
-		this.customersRoutines = customersRoutines;
+/**
+ *
+ */
+public class Record {
+    private int id;
+    private String date;
+    private String duration;
+    private String advance;
+    private String coment;
+    private CustomerRoutine customerRoutine;
+
+    public Record(){
+
+    }
+
+    public Record(int id, String date, String duration, String advance, String coment, CustomerRoutine customerRoutine) {
+        this.id = id;
         this.date = date;
         this.duration = duration;
         this.advance = advance;
-        this.commentary = commentary;
-		}
-		
-	
-	
-    /**
-     * @return the customersRoutines
-     */
-    public int getCustomersRoutines() {
-        return customersRoutines;
+        this.coment = coment;
+        this.customerRoutine = customerRoutine;
+    }
+    public static Record build(ResultSet resultSet, CustomersRoutinesEntity customersRoutinesEntity) {
+        try {
+            return new Record(resultSet.getInt("id"),resultSet.getString("date"),resultSet.getString("duration"),resultSet.getString("advance"),resultSet.getString("coment"),customersRoutinesEntity.findById(resultSet.getInt("customer_routine_id")));
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
-    /**
-     * @param customersRoutines the customers_routinesid to set
-     */
-    public void setCustomersRoutines(CustomersRoutines customersRoutines) {
-        this.customersRoutines = customersRoutines;
+    public int getId() {
+        return id;
     }
 
-    /**
-     * @return the date
-     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getDate() {
         return date;
     }
 
-    /**
-     * @param date the date to set
-     */
     public void setDate(String date) {
         this.date = date;
     }
 
-    /**
-     * @return the duration
-     */
     public String getDuration() {
         return duration;
     }
 
-    /**
-     * @param duration the duration to set
-     */
     public void setDuration(String duration) {
         this.duration = duration;
     }
 
-    /**
-     * @return the advance
-     */
     public String getAdvance() {
         return advance;
     }
 
-    /**
-     * @param advance the advance to set
-     */
     public void setAdvance(String advance) {
         this.advance = advance;
     }
 
-    /**
-     * @return the commentary
-     */
-    public String getCommentary() {
-        return commentary;
+    public String getComent() {
+        return coment;
     }
 
-    /**
-     * @param commentary the commentary to set
-     */
-    public void setCommentary(String commentary) {
-        this.commentary = commentary;
+    public void setComent(String coment) {
+        this.coment = coment;
     }
 
- }
+    public CustomerRoutine getCustomerRoutine() {
+        return customerRoutine;
+    }
+
+    public void setCustomerRoutine(CustomerRoutine customerRoutine) {
+        this.customerRoutine = customerRoutine;
+    }
+}
+
