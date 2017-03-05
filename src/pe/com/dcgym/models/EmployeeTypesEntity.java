@@ -10,7 +10,8 @@ import java.util.List;
  * Created by Fjorsvartnir on 25/02/2017.
  */
 public class EmployeeTypesEntity  extends BaseEntity{
-    private static String DEFAULT_SQL = "SELECT * FROM employee_types";
+    private static String TABLE="employee_types";
+    private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;
 
     public List<EmployeeTypes> findAll() {
         return this.findByCriteria(DEFAULT_SQL);
@@ -22,9 +23,9 @@ public class EmployeeTypesEntity  extends BaseEntity{
     }
 
     public EmployeeTypes findByName(String name) {
-            List<EmployeeTypes> employeeTypes = this.findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
-            return employeeTypes.isEmpty() ? null : employeeTypes.get(0);
-        }
+        List<EmployeeTypes> employeeTypes = this.findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
+        return employeeTypes.isEmpty() ? null : employeeTypes.get(0);
+    }
 
     private List<EmployeeTypes> findByCriteria(String sql) {
         if (this.getConnection() != null) {
@@ -32,11 +33,11 @@ public class EmployeeTypesEntity  extends BaseEntity{
             try {
                 ResultSet resultSet = this.getConnection().createStatement().executeQuery(sql);
                 while (resultSet.next()) {
-                    EmployeeTypes employeeTypes = new EmployeeTypes() ;
-                        employeeTypes.setId(resultSet.getInt(1));
-                        employeeTypes.setName(resultSet.getString(2));
-                        employeeTypes.setState(resultSet.getString(3));
-                    employeesTypes.add(employeeTypes);
+                    EmployeeTypes employeeType = new EmployeeTypes() ;
+                    employeeType.setId(resultSet.getInt(1));
+                    employeeType.setName(resultSet.getString(2));
+                    employeeType.setState(resultSet.getString(3));
+                    employeesTypes.add(employeeType);
                 }
                 return employeesTypes;
             }
@@ -51,18 +52,18 @@ public class EmployeeTypesEntity  extends BaseEntity{
 
     public EmployeeTypes create(String nane, String state) {
         //if (this.findByName(id) == null && this.getConnection() != null) {
-        String sql = "INSERT INTO employee_types(id, nane, state) VALUES(?,?,?)";
+        String sql = "INSERT INTO "+TABLE+"(id, nane, state) VALUES(?,?,?)";
         try {
             PreparedStatement preparedStatement =  this.getConnection().prepareStatement(sql);
 
-            preparedStatement.setInt   (1, (getMaxId("employee_types")+1));
+            preparedStatement.setInt   (1, (getMaxId(TABLE)+1));
             preparedStatement.setString(2, nane);
             preparedStatement.setString(3, state);
 
             int results = preparedStatement.executeUpdate(sql);
             if (results > 0) {
-                EmployeeTypes employeeTypes = new EmployeeTypes(getMaxId("employee_types"),nane, state);
-                return employeeTypes;
+                EmployeeTypes employeeType = new EmployeeTypes(getMaxId(TABLE),nane, state);
+                return employeeType;
             }
         }
         catch (SQLException e) {
@@ -85,10 +86,10 @@ public class EmployeeTypesEntity  extends BaseEntity{
     }
 
     public boolean delete(int id) {
-        return this.updateByCriteria("DELETE FROM employee_types WHERE id  = " + String.valueOf(id)) > 0;
+        return this.updateByCriteria("DELETE FROM "+TABLE+" WHERE id  = " + String.valueOf(id)) > 0;
     }
 
-    public boolean update(EmployeeTypes employeeTypes) {
-        return this.updateByCriteria("UPDATE employee_types SET nane ='"+employeeTypes.getName()+"', state='"+employeeTypes.getState()+"' WHERE id = " + String.valueOf(employeeTypes.getId())) > 0;
+    public boolean update(EmployeeTypes employeeType) {
+        return this.updateByCriteria("UPDATE "+TABLE+" SET nane ='"+ employeeType.getName()+"', state='"+ employeeType.getState()+"' WHERE id = " + String.valueOf(employeeType.getId())) > 0;
     }
 }
