@@ -24,12 +24,12 @@ public class CustomersRoutinesEntity  extends  BaseEntity{
         List<CustomerRoutine> customerRoutines = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
         return customerRoutines != null ? customerRoutines.get(0) : null;
     }
-/*
+
     public CustomerRoutine findByName(String name) {
         List<CustomerRoutine> customerRoutines = this.findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
         return customerRoutines.isEmpty() ? null : customerRoutines.get(0);
     }
-*/
+
     private List<CustomerRoutine> findByCriteria(String sql) {
         if (this.getConnection() != null) {
             ArrayList<CustomerRoutine> customerRoutines = new ArrayList<CustomerRoutine>();
