@@ -3,9 +3,7 @@ package pe.com.dcgym.models;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * Created by Fjorsvartnir on 23/02/2017.
- */
+
 public class CustomerMembership {
     private int id;
     private String state;
