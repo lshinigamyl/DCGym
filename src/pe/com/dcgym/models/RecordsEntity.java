@@ -6,9 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Administrador on 04/03/2017.
- */
+
 public class RecordsEntity extends BaseEntity{
     private static String TABLE="records";
     private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;
@@ -22,12 +20,12 @@ public class RecordsEntity extends BaseEntity{
         List<Record> records = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
         return records != null ? records.get(0) : null;
     }
-    /*
+    
         public Record findByName(String name) {
             List<Record> customerRoutines = this.findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
             return customerRoutines.isEmpty() ? null : customerRoutines.get(0);
         }
-    */
+    
     private List<Record> findByCriteria(String sql) {
         if (this.getConnection() != null) {
             ArrayList<Record> records = new ArrayList<Record>();
