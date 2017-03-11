@@ -17,12 +17,13 @@ public class ExercisesRoutines {
      * @return the sequence
      */
 	 
-	 		public  ExercisesRoutines()	{
+	public  ExercisesRoutines()	
+	{
 	}
 	
-		public  ExercisesRoutines( String sequence,  String range, String repeat, String value_percent,int exercises_id,int routines_id){
+    public  ExercisesRoutines( String sequence,  String range, String repeat, String value_percent,int exercises_id,int routines_id){
 		
-		this.sequence = sequence;
+       this.sequence = sequence;
         this.range = range;
         this.repeat = repeat;
         this.value_percent = value_percent;
