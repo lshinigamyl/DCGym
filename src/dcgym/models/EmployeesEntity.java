@@ -1,4 +1,4 @@
-package pe.com.dcgym.models;
+package dcgym.models;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,19 +10,18 @@ import java.util.List;
  * Created by Fjorsvartnir on 25/02/2017.
  */
 public class EmployeesEntity extends BaseEntity {
-    private static String TABLE = "employees";
-    private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;
+    private static String DEFAULT_SQL = "SELECT * FROM employees";
     private TrainingCentersEntity trainingCentersEntity;
     private PeopleEntity peopleEntity;
-    private EmployeeTypesEntity employeeTypesEntity;
+    private EmployeesEntity employeeTypesEntity;
 
     public List<Employee> findAll() {
         return this.findByCriteria(DEFAULT_SQL);
     }
 
     public Employee findById(int id) {
-        List<Employee> employees = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
-        return employees != null ? employees.get(0) : null;
+        List<Employee> customers = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
+        return customers != null ? customers.get(0) : null;
     }
 /*
     public Employee findByName(String name) {
@@ -50,21 +49,21 @@ public class EmployeesEntity extends BaseEntity {
 
 
 
-    public Employee create(String state, TrainingCenter trainingCenters, People people, EmployeeType employeeType) {
+    public Employee create(String state, TrainingCenter trainingCenters, People people, EmployeeTypes employeeTypes) {
         //if (this.findByName(id) == null && this.getConnection() != null) {
         String sql = "INSERT INTO employees(id, state, training_centers_id, people_id, employee_types_id) VALUES(?,?,?,?,?)";
         try {
             PreparedStatement preparedStatement =  this.getConnection().prepareStatement(sql);
 
-                preparedStatement.setInt   (1, (getMaxId(TABLE)+1));
+                preparedStatement.setInt   (1, (getMaxId("employees")+1));
                 preparedStatement.setString(2, state);
                 preparedStatement.setInt   (3, trainingCenters.getId());
                 preparedStatement.setInt   (4, people.getId());
-                preparedStatement.setInt   (3, employeeType.getId());
+                preparedStatement.setInt   (3, employeeTypes.getId());
 
             int results = preparedStatement.executeUpdate(sql);
             if (results > 0) {
-                Employee employee = new Employee(getMaxId(TABLE),state, trainingCenters, people, employeeType);
+                Employee employee = new Employee(getMaxId("employees"),state, trainingCenters,people,employeeTypes);
                 return employee;
             }
         }
@@ -88,11 +87,11 @@ public class EmployeesEntity extends BaseEntity {
     }
 
     public boolean delete(int id) {
-        return this.updateByCriteria("DELETE FROM "+TABLE+" WHERE id  = " + String.valueOf(id)) > 0;
+        return this.updateByCriteria("DELETE FROM employees WHERE id  = " + String.valueOf(id)) > 0;
     }
 
     public boolean update(Employee employee) {
-        return this.updateByCriteria("UPDATE "+TABLE+" SET state ='"+employee.getState()+"', training_centers_id="+ employee.getTrainingCenters().getId()+" ,people_id="+ employee.getPeople().getId()+" ,employee_types_id="+ employee.getEmployeeType().getId()+"  WHERE id = " + String.valueOf(employee.getId())) > 0;
+        return this.updateByCriteria("UPDATE employees SET state ='"+employee.getState()+"', training_centers_id="+employee.trainingCenters.getId()+" ,people_id="+employee.people.getId()+" ,employee_types_id="+employee.employeeTypes.getId()+"  WHERE id = " + String.valueOf(employee.getId())) > 0;
     }
 
     private PeopleEntity getPeopleEntity() {
@@ -111,11 +110,11 @@ public class EmployeesEntity extends BaseEntity {
         this.trainingCentersEntity = trainingCentersEntity;
     }
 
-    public EmployeeTypesEntity getEmployeeTypesEntity() {
+    private EmployeesEntity getEmployeeTypesEntity() {
         return employeeTypesEntity;
     }
 
-    public void setEmployeeTypesEntity(EmployeeTypesEntity employeeTypesEntity) {
+    public void setEmployeeTypesEntity(EmployeesEntity employeeTypesEntity) {
         this.employeeTypesEntity = employeeTypesEntity;
     }
 }

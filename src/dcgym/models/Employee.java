@@ -1,4 +1,4 @@
-package pe.com.dcgym.models;
+package dcgym.models;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,22 +7,22 @@ import java.sql.SQLException;
  * Soy un Gato xD
  */
 public class Employee {
-    private int id;
-    private String state;
-    private TrainingCenter trainingCenters;
-    private People people;
-    private EmployeeType employeeType;
+    int id;
+    String state;
+    TrainingCenter trainingCenters;
+    People people;
+    EmployeeTypes employeeTypes;
 
 
     public Employee() {
     }
 
-    public Employee(int id, String state, TrainingCenter trainingCenters, People people, EmployeeType employeeType) {
-        this.setId(id);
-        this.setState(state);
-        this.setTrainingCenters(trainingCenters);
-        this.setPeople(people);
-        this.setEmployeeType(employeeType);
+    public Employee(int id, String state, TrainingCenter trainingCenters, People people, EmployeeTypes employeeTypes) {
+        this.id = id;
+        this.state = state;
+        this.trainingCenters = trainingCenters;
+        this.people = people;
+        this.employeeTypes = employeeTypes;
     }
 
     public int getId() {
@@ -57,12 +57,12 @@ public class Employee {
         this.people = people;
     }
 
-    public EmployeeType getEmployeeType() {
-        return employeeType;
+    public EmployeeTypes getEmployeeTypes() {
+        return employeeTypes;
     }
 
-    public void setEmployeeType(EmployeeType employeeType) {
-        this.employeeType = employeeType;
+    public void setEmployeeTypes(EmployeeTypes employeeTypes) {
+        this.employeeTypes = employeeTypes;
     }
 
     public static Employee build(ResultSet resultSet, TrainingCentersEntity trainingCentersEntity,PeopleEntity peopleEntity, EmployeeTypesEntity employeeTypesEntity) {
