@@ -25,17 +25,19 @@ public class HrService {
     }
 
     public boolean validateUser(String userName, String password) {
-        return (peopleEntity.validateUser(userName,password));
+        return (getPeopleEntity().validateUser(userName,password));
     }
 
     public Connection getConnection() {
         if(connection == null) {
             try {
                 InitialContext ctx = new InitialContext();
-                connection = ((DataSource) ctx.lookup("jdbc/MySQLDataSource/dcgym")).getConnection();
+                connection = ((DataSource) ctx.lookup("jdbc/MySQLDataSource_dcgym")).getConnection();
             } catch (NamingException e) {
+                System.out.println("Error  naming exception");
                 e.printStackTrace();
             } catch (SQLException e) {
+                System.out.println("Error  SQLException");
                 e.printStackTrace();
             }
         }
@@ -47,6 +49,10 @@ public class HrService {
     }
 
     public PeopleEntity getPeopleEntity() {
+        if(peopleEntity == null) {
+            peopleEntity = new PeopleEntity();
+            peopleEntity.setConnection(getConnection());
+        }
         return peopleEntity;
     }
 

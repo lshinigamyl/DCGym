@@ -21,7 +21,7 @@ and open the template in the editor.
 </head>
 <body>
 
-<s:form action="validatelogin">
+<s:form action="validate">
     <s:textfield name="userName" label="User name"/>
     <s:password name="password" label="Password"/>
     <s:submit value="login"/>

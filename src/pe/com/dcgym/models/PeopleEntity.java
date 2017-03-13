@@ -103,7 +103,24 @@ public class PeopleEntity extends BaseEntity{
         return this.updateByCriteria("UPDATE people SET name = '" + people.getName() + "' WHERE id = " + String.valueOf(people.getId())) > 0;
     }
     public boolean validateUser(String username , String password){
-        return this.updateByCriteria("SELECT * FROM people as p where p.user='"+username+"' and p.password='"+password+"'")>0;
+        int count=0;
+        if (this.getConnection() != null) {
+            try {
+                ResultSet rs = getConnection().createStatement().executeQuery("SELECT * FROM people as p where p.user='"+username+"' and p.password='"+password+"';");
+                while (rs.next()){
+                    count+=1;
+                }
+                if(count==1){
+                    return true;
+                }
+
+            }
+            catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+
     }
 
 }
