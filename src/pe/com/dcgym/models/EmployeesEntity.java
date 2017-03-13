@@ -24,10 +24,7 @@ public class EmployeesEntity extends BaseEntity {
         return customers != null ? customers.get(0) : null;
     }
 /*
-    public Employee findByName(String name) {
-        List<Employee> customers = this.findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
-        return customers.isEmpty() ? null : customers.get(0);
-    }
+
 */
     private List<Employee> findByCriteria(String sql) {
         if (this.getConnection() != null) {
@@ -50,7 +47,7 @@ public class EmployeesEntity extends BaseEntity {
 
 
     public Employee create(String state, TrainingCenter trainingCenters, People people, EmployeeTypes employeeTypes) {
-        //if (this.findByName(id) == null && this.getConnection() != null) {
+        //
         String sql = "INSERT INTO employees(id, state, training_centers_id, people_id, employee_types_id) VALUES(?,?,?,?,?)";
         try {
             PreparedStatement preparedStatement =  this.getConnection().prepareStatement(sql);
@@ -70,7 +67,7 @@ public class EmployeesEntity extends BaseEntity {
         catch (SQLException e) {
             e.printStackTrace();
         }
-        //}
+        //
         return null;
     }
 
