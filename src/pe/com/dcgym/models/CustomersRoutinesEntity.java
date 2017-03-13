@@ -51,7 +51,7 @@ public class CustomersRoutinesEntity  extends  BaseEntity{
 
 
     public CustomerRoutine create(String state, Customer customer,Routine routine,Employee employee) {
-        //if (this.findByName(id) == null && this.getConnection() != null) {
+        //
         String sql = "INSERT INTO "+TABLE+"(id, state, customers_id, routines_id, employees_id) VALUES(?,?,?,?,?)";
         try {
             PreparedStatement obj =  this.getConnection().prepareStatement(sql);
@@ -71,7 +71,7 @@ public class CustomersRoutinesEntity  extends  BaseEntity{
         catch (SQLException e) {
             e.printStackTrace();
         }
-        //}
+        //
         return null;
     }
 
