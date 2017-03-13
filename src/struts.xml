@@ -5,4 +5,13 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+    <package name="default" extends="struts-default">
+        <action name="login">
+            <result>login.jsp</result>
+        </action>
+        <action name="validate" class="pe.com.dcgym.actions.LoginAction" method="validate">
+            <result name="success">dashboard_client.jsp</result>
+            <result name="error">login.jsp</result>
+        </action>
+    </package>
 </struts>

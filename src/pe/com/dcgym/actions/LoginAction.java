@@ -1,6 +1,8 @@
 package pe.com.dcgym.actions;
 
 
+import pe.com.dcgym.services.HrService;
+
 /**
  * Created by GrupoUTP on 10/03/2017.
  */
@@ -29,6 +31,8 @@ public class LoginAction {
     }
 
     public String validate() {
-        return "success";
+        HrService service = new HrService();
+        return service.validateUser(getUserName(), getPassword()) ?
+                "success" : "error";
     }
 }

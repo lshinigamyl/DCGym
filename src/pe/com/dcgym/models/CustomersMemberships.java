@@ -4,51 +4,50 @@ package pe.com.dcgym.models;
  * Created by Fjorsvartnir on 23/02/2017.
  */
 public class CustomersMemberships {
-    int id;
-    int state;
-    Customer customer;
-    Membership Memberships;
+    private int id;
+    private int state;
+    private Customer customer;
+    private MembershipType membershipType;
 
     public CustomersMemberships() {
     }
 
-    public CustomersMemberships(int idMemberships, int idPeople, int idType, String state) {
-        this.idMemberships = idMemberships;
-        this.idPeople = idPeople;
-        this.idType = idType;
+    public CustomersMemberships(int id, int state, Customer customer, MembershipType membershipType) {
+        this.id = id;
         this.state = state;
+        this.customer = customer;
+        this.membershipType = membershipType;
     }
 
-    public int getIdMemberships() {
-        return idMemberships;
+    public int getId() {
+        return id;
     }
 
-    public void setIdMemberships(int idMemberships) {
-        this.idMemberships = idMemberships;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getIdPeople() {
-        return idPeople;
-    }
-
-    public void setIdPeople(int idPeople) {
-        this.idPeople = idPeople;
-    }
-
-    public int getIdType() {
-        return idType;
-    }
-
-    public void setIdType(int idType) {
-        this.idType = idType;
-    }
-
-    public String getState() {
+    public int getState() {
         return state;
     }
 
-    public void setState(String state) {
+    public void setState(int state) {
         this.state = state;
     }
 
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public MembershipType getMembershipType() {
+        return membershipType;
+    }
+
+    public void setMembershipType(MembershipType membershipType) {
+        this.membershipType = membershipType;
+    }
 }

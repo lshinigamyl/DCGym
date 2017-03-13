@@ -1,18 +1,20 @@
 package pe.com.dcgym.services;
 
 
+import pe.com.dcgym.models.PeopleEntity;
+
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.List;
 
 /**
  * Created by GrupoUTP on 04/03/2017.
  */
 public class HrService {
     private Connection connection;
+    private PeopleEntity peopleEntity;
 
     public HrService() {
 
@@ -23,15 +25,14 @@ public class HrService {
     }
 
     public boolean validateUser(String userName, String password) {
-        return (userName.equalsIgnoreCase("admin") &&
-                password.equalsIgnoreCase("password"));
+        return (peopleEntity.validateUser(userName,password));
     }
 
     public Connection getConnection() {
         if(connection == null) {
             try {
                 InitialContext ctx = new InitialContext();
-                connection = ((DataSource) ctx.lookup("jdbc/MySQLDataSource")).getConnection();
+                connection = ((DataSource) ctx.lookup("jdbc/MySQLDataSource/dcgym")).getConnection();
             } catch (NamingException e) {
                 e.printStackTrace();
             } catch (SQLException e) {
@@ -45,5 +46,11 @@ public class HrService {
         this.connection = connection;
     }
 
+    public PeopleEntity getPeopleEntity() {
+        return peopleEntity;
+    }
 
+    public void setPeopleEntity(PeopleEntity peopleEntity) {
+        this.peopleEntity = peopleEntity;
+    }
 }

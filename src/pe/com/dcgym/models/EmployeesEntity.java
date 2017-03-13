@@ -13,7 +13,7 @@ public class EmployeesEntity extends BaseEntity {
     private static String DEFAULT_SQL = "SELECT * FROM employees";
     private TrainingCentersEntity trainingCentersEntity;
     private PeopleEntity peopleEntity;
-    private EmployeesEntity employeeTypesEntity;
+    private EmployeeTypesEntity employeeTypesEntity;
 
     public List<Employee> findAll() {
         return this.findByCriteria(DEFAULT_SQL);
@@ -110,11 +110,11 @@ public class EmployeesEntity extends BaseEntity {
         this.trainingCentersEntity = trainingCentersEntity;
     }
 
-    private EmployeesEntity getEmployeeTypesEntity() {
+    public EmployeeTypesEntity getEmployeeTypesEntity() {
         return employeeTypesEntity;
     }
 
-    public void setEmployeeTypesEntity(EmployeesEntity employeeTypesEntity) {
+    public void setEmployeeTypesEntity(EmployeeTypesEntity employeeTypesEntity) {
         this.employeeTypesEntity = employeeTypesEntity;
     }
 }
