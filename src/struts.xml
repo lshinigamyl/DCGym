@@ -10,8 +10,10 @@
             <result>login.jsp</result>
         </action>
         <action name="validate" class="pe.com.dcgym.actions.LoginAction" method="validate">
-            <result name="success">dashboard_client.jsp</result>
+            <result name="clientconnect">dashboard_client.jsp</result>
+            <result name="bussinessconnect">dashboard_bussiness.jsp</result>
             <result name="error">login.jsp</result>
         </action>
+
     </package>
 </struts>

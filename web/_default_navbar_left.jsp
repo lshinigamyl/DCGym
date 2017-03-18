@@ -1,4 +1,4 @@
-<div class="container">
+
     <div class="col-md-3">
         <div class="well"><strong>DASHBOARD</strong> </div>
         <div class="well"><strong>MIS EJERCICIOS</strong> </div>
@@ -145,8 +145,3 @@
         <!--                </div>-->
         <!--              </div>-->
     </div>
-    <div class="col-sm-9">
-        <h1 class="text-center">Hola a todos</h1>
-    </div>
-
-</div>

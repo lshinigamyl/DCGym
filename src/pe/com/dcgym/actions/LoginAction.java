@@ -32,7 +32,15 @@ public class LoginAction {
 
     public String validate() {
         HrService service = new HrService();
-        return service.validateUser(getUserName(), getPassword()) ?
-                "success" : "error";
+        if (service.validateUser(getUserName(), getPassword())) {
+            if(getUserName()=="user3"){
+                return "clientconnect";
+            }else {
+                return "bussinessconnect";
+            }
+        } else {
+            return "error";
+
+        }
     }
 }
