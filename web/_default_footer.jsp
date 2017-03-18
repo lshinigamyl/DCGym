@@ -5,10 +5,11 @@
             <button class="btn btn-success">Conocenos</button>
         </div>
         <div class="col-sm-4 text-center">
-            <p>hols smos team dc</p>
-            <p>hols smos team dc</p>
-            <p>hols smos team dc</p>
-            <p>hols smos team dc</p>
+             <ul>
+                <li><a href="#">Preguntas Frecuentess</a></li>
+                <li><a href="#">Políticas de Privacidad</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+           </ul>
         </div>
         <div class="col-sm-4 text-center">
             <button class="btn btn-success">Contactanos</button>
