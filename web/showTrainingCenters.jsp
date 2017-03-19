@@ -8,7 +8,7 @@
 --%>
 
 <s:iterator value="trainingCenters">
-<div class="row searchhere" >
+<div class="row searchhere" style="display: none;">
     <div class="col-sm-8 col-sm-offset-2 thumbnail">
 
         <div class="row">
