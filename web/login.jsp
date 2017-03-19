@@ -1,4 +1,4 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: Fjorsvartnir
@@ -7,68 +7,74 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 
 <html>
 <head>
-    <title>TODO supply a title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <title>Login</title>
+    <script src="js/jquery.js"/>
+    <sb:head/>
+    <jsp:include page="_default_head.jsp"/>
 </head>
 <body>
+    <%--<s:actionerror theme="bootstrap"/>--%>
+    <%--<s:actionmessage theme="bootstrap"/>--%>
+    <%--<s:fielderror theme="bootstrap"/>--%>
+    <%--<s:form action="validate" enctype="multipart/form-data" theme="bootstrap" cssClass="form-horizontal"--%>
+                <%--label="A sample horizontal Form">--%>
+        <%--<s:textfield name="userName" label="Usuario"/>--%>
+        <%--<s:password name="password" label="Password"/>--%>
+        <%--<s:submit value="login" cssClass="btn"/>--%>
+    <%--</s:form>--%>
 
-<s:form action="validate">
-    <s:textfield name="userName" label="User name"/>
-    <s:password name="password" label="Password"/>
-    <s:submit value="login"/>
-</s:form>
-<%--<div class="container" style="margin-top:30px">--%>
-    <%--<div class="col-md-4 col-md-offset-4">--%>
-        <%--<div class="panel panel-default">--%>
-            <%--<div class="panel-heading"><h3 class="panel-title"><strong>Sign in </strong></h3>--%>
-                <%--<div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>--%>
-            <%--</div>--%>
+<div class="container" style="margin-top:30px">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title"><strong>Login</strong></h3>
+                <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Olvidaste tu contraseña?</a></div>
+            </div>
 
-            <%--<div class="panel-body">--%>
-                <%--<form role="form" method="post">--%>
-                    <%--<div class="alert alert-danger">--%>
-                        <%--<a class="close" data-dismiss="alert" href="#">×</a>Incorrect Username or Password!--%>
-                    <%--</div>--%>
-                    <%--<div style="margin-bottom: 12px" class="input-group">--%>
-                        <%--<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>--%>
-                        <%--<input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username or email">--%>
-                    <%--</div>--%>
-                    <%--<div style="margin-bottom: 12px" class="input-group">--%>
-                        <%--<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>--%>
-                        <%--<input id="login-password" type="password" class="form-control" name="password" placeholder="password">--%>
-                    <%--</div>--%>
-                    <%--<div class="input-group">--%>
-                        <%--<div class="checkbox" style="margin-top: 0px;">--%>
-                            <%--<label>--%>
-                                <%--<input id="login-remember" type="checkbox" name="remember" value="1"> Remember me--%>
-                            <%--</label>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
+            <div class="panel-body">
+                <form id="validate" name="validate" action="/dcgym/validate.action" enctype="multipart/form-data" role="form" method="post">
+                    <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#">×</a>Incorrect Username or Password!
+                    </div>
+                    <div style="margin-bottom: 12px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input id="validate_userName" type="text" class="form-control" name="userName" value="" placeholder="Usuario">
+                    </div>
+                    <div style="margin-bottom: 12px" class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input id="validate_password" type="password" class="form-control" name="password" placeholder="contraseña">
+                    </div>
+                    <div class="input-group">
+                        <div class="checkbox" style="margin-top: 0px;">
+                            <label>
+                                <input id="login-remember" type="checkbox" name="remember" value="1"> Recuerdame
+                            </label>
+                        </div>
+                    </div>
 
-                    <%--<button type="submit" class="btn btn-success">Sign in</button>--%>
+                    <input id="validate_0" type="submit"  value="login" class="btn btn-success">
 
-                    <%--<hr style="margin-top:10px;margin-bottom:10px;" >--%>
+                    <hr style="margin-top:10px;margin-bottom:10px;" >
 
-                    <%--<div class="form-group">--%>
+                    <div class="form-group">
 
-                        <%--<div style="font-size:85%">--%>
-                            <%--Don't have an account!--%>
-                            <%--<a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">--%>
-                                <%--Sign Up Here--%>
-                            <%--</a>--%>
-                        <%--</div>--%>
+                        <div style="font-size:85%">
+                            Don't have an account!
+                            <a href="#" onClick="$('#loginbox').hide(); $('#signupbox').show()">
+                                Sign Up Here
+                            </a>
+                        </div>
 
-                    <%--</div>--%>
-                <%--</form>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
-<%--</div>--%>
-<script src="js/jquery.js" type="text/javascript"></script>
-<script src="js/bootstrap.min.js" type="text/javascript"></script>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<jsp:include page="_default_footer.jsp"/>
 </body>
 </html>

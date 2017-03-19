@@ -6,13 +6,20 @@
 
 <struts>
     <package name="default" extends="struts-default">
+        <default-action-ref name="show"/>
+        <action name="show" class="pe.com.dcgym.actions.ShowAction">
+            <result name="success">/showTrainingCenters.jsp</result>
+        </action>
         <action name="login">
             <result>login.jsp</result>
         </action>
-        <action name="validate" class="pe.com.dcgym.actions.LoginAction" method="validate">
-            <result name="clientconnect">dashboard_client.jsp</result>
-            <result name="bussinessconnect">dashboard_bussiness.jsp</result>
-            <result name="error">login.jsp</result>
+        <!--<action name="validate" class="pe.com.dcgym.actions.LoginAction" method="validate">-->
+            <!--<result name="clientconnect">dashboard_client.jsp</result>-->
+            <!--<result name="bussinessconnect">dashboard_bussiness.jsp</result>-->
+            <!--<result name="error">login.jsp</result>-->
+        <!--</action>-->
+        <action name="redirect" class="pe.com.dcgym.actions.SearchAction" method="execute">
+
         </action>
 
     </package>

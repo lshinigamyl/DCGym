@@ -1,31 +1,17 @@
 package pe.com.dcgym.services;
 
-
-import pe.com.dcgym.models.PeopleEntity;
-
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-/**
- * Created by GrupoUTP on 04/03/2017.
- */
-public class HrService {
+
+public abstract class BaseService {
     private Connection connection;
-    private PeopleEntity peopleEntity;
 
-    public HrService() {
+    public BaseService() {
 
-    }
-
-    public int getRegionsCount() {
-        return 10;
-    }
-
-    public boolean validateUser(String userName, String password) {
-        return (getPeopleEntity().validateUser(userName,password));
     }
 
     public Connection getConnection() {
@@ -47,16 +33,6 @@ public class HrService {
     public void setConnection(Connection connection) {
         this.connection = connection;
     }
-
-    public PeopleEntity getPeopleEntity() {
-        if(peopleEntity == null) {
-            peopleEntity = new PeopleEntity();
-            peopleEntity.setConnection(getConnection());
-        }
-        return peopleEntity;
-    }
-
-    public void setPeopleEntity(PeopleEntity peopleEntity) {
-        this.peopleEntity = peopleEntity;
-    }
 }
+
+
