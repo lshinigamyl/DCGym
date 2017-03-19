@@ -13,17 +13,7 @@ public class LoginAction extends ActionSupport {
     private String password;
 
 //    @Override
-  public String execute() throws Exception {
-      BaseService service = new BaseService();
-      if(service.validateUser(getUserName(),getPassword())){
-          Map session = ActionContext.getContext().getSession();
-           session.put("logged-in","true");
-           return SUCCESS;
-       }
-      else {
-          return ERROR;
-      }
-   }
+  
     public String logout() throws Exception{
         Map session = ActionContext.getContext().getSession();
         session.remove("logeed-in");
