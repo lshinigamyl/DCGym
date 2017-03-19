@@ -23,7 +23,7 @@
                 <h2 class="text-center">Ingrese datos de referencia</h2>
                 <div id="custom-search-input">
                     <div class="input-group col-md-12">
-                        <input type="text" class="form-control input-lg" placeholder="Buscar"/>
+                        <input id="search" type="text" class="form-control input-lg" placeholder="Buscar"/>
                         <span class="input-group-btn">
                             <button class="btn btn-info btn-lg" type="button">
                                 <i class="glyphicon glyphicon-search"></i>
@@ -37,10 +37,11 @@
     <%--FIN Buscador--%>
 
     <%--Resultados--%>
-    <div class="container">
+    <div id="searchhere" class="container">
         <s:action name="show" flush="true" executeResult="true" namespace="/"/>
     </div>
 
 <jsp:include page="_default_footer.jsp"/>
+    <script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>
