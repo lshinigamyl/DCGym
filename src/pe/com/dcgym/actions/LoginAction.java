@@ -46,9 +46,9 @@ public class LoginAction extends ActionSupport {
     }
 
 
-//    public String execute() {
-//        return "error";
-//    }
+  public String execute() {
+       return "error";
+    }
 
 
 //    public String validate() {
