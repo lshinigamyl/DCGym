@@ -22,8 +22,8 @@ public class TrainingCentersEntity extends BaseEntity {
         return trainingCenters != null ? trainingCenters.get(0) : null;
     }
 
-    public TrainingCenter findByName(String name) {
-        List<TrainingCenter> trainingCenters = this.findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
+    public TrainingCenter findByUser(String user) {
+        List<TrainingCenter> trainingCenters = this.findByCriteria(DEFAULT_SQL + " WHERE user = '" +user+ "'");
         return trainingCenters.isEmpty() ? null : trainingCenters.get(0);
     }
 

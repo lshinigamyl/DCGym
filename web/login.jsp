@@ -36,13 +36,17 @@
             </div>
 
             <div class="panel-body">
-                <form id="validate" name="validate" action="/dcgym/validate.action" enctype="multipart/form-data" role="form" method="post">
-                    <div class="alert alert-danger">
-                        <a class="close" data-dismiss="alert" href="#">×</a>Incorrect Username or Password!
-                    </div>
+                <form id="login" name="login" action="<s:url value="login.action"/>" enctype="multipart/form-data" role="form" method="post">
+                    <s:if test="hasActionErrors()">
+                        <div class="alert alert-danger">
+                        <a class="close" data-dismiss="alert" href="#">×</a><s:actionerror/>
+                        </div>
+                    </s:if>
+
+
                     <div style="margin-bottom: 12px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input id="validate_userName" type="text" class="form-control" name="userName" value="" placeholder="Usuario">
+                        <input id="validate_userName" type="text" class="form-control" name="userName" value="" placeholder="usuario">
                     </div>
                     <div style="margin-bottom: 12px" class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -56,7 +60,7 @@
                         </div>
                     </div>
 
-                    <input id="validate_0" type="submit"  value="login" class="btn btn-success">
+                    <input id="validate_0" type="submit"  value="Submit" class="btn btn-success">
 
                     <hr style="margin-top:10px;margin-bottom:10px;" >
 

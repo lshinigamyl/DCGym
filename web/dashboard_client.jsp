@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Fjorsvartnir
@@ -88,7 +89,8 @@
 <div class="container">
 <jsp:include page="_default_navbar_left.jsp"/>
     <div class="col-sm-9">
-        <h1 class="text-center">Hola a todos los cleintes</h1>
+        <h1 class="text-center"><s:property value="#session.user"/></h1>
+        <h2 class="text-center">Soy un cliente</h2>
     </div>
 
 </div>

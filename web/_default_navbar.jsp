@@ -14,7 +14,7 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <!--            <li><a href="../navbar/">Default</a></li>-->
-                <li class="active"><a href="./">Login <span class="sr-only">Inicia sesion</span></a></li>
+                <li class="active"><a href="login.action">Login <span class="sr-only">Inicia sesion</span></a></li>
                 <!--<li><a href="../navbar-fixed-top/">Fixed top</a></li>-->
             </ul>
         </div><!--/.nav-collapse -->

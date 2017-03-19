@@ -51,7 +51,7 @@ public class TrainingCentersMembershipsEntity extends BaseEntity{
 
     public TrainingCenterMembership create(String state, TrainingCenter trainingCenter,MembershipType membershipType) {
         //if (this.findByName(id) == null && this.getConnection() != null) {
-        String sql = "INSERT INTO "+TABLE+"(id, state, training_centers_id, membership_types_id) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO "+TABLE+" (id, state, training_centers_id, membership_types_id) VALUES(?,?,?,?)";
         try {
             PreparedStatement obj =  this.getConnection().prepareStatement(sql);
 
@@ -69,7 +69,7 @@ public class TrainingCentersMembershipsEntity extends BaseEntity{
         catch (SQLException e) {
             e.printStackTrace();
         }
-        //}
+
         return null;
     }
 

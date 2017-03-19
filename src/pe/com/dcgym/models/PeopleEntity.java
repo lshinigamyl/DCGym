@@ -22,8 +22,8 @@ public class PeopleEntity extends BaseEntity{
         return peoples != null ? peoples.get(0) : null;
     }
 
-    public People findByName(String name) {
-        List<People> peoples = this.findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
+    public People findByUser(String user) {
+        List<People> peoples = this.findByCriteria(DEFAULT_SQL + " WHERE user = '" +user+ "'");
         return peoples.isEmpty() ? null : peoples.get(0);
     }
 
@@ -48,7 +48,7 @@ public class PeopleEntity extends BaseEntity{
 
 
     public People create( String name, String surName,  String numDocument, String email, String dateBirth, String address, String cellphone, String telephone, String user, String password, String state ) {
-        if (this.findByName(name) == null && this.getConnection() != null) {
+        if (this.findByUser(user) == null && this.getConnection() != null) {
             String sql = "INSERT INTO People(id, name, surname, document_number, email, date_birth, address, cellphone, telephone, user, password, state) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
             try {
                 PreparedStatement obj =  this.getConnection().prepareStatement(sql);

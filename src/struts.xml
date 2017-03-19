@@ -5,22 +5,25 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+    <constant name="struts.devMode" value="true" />
     <package name="default" extends="struts-default">
-        <default-action-ref name="show"/>
         <action name="show" class="pe.com.dcgym.actions.ShowAction">
             <result name="success">/showTrainingCenters.jsp</result>
         </action>
-        <action name="login">
-            <result>login.jsp</result>
-        </action>
-        <!--<action name="validate" class="pe.com.dcgym.actions.LoginAction" method="validate">-->
-            <!--<result name="clientconnect">dashboard_client.jsp</result>-->
-            <!--<result name="bussinessconnect">dashboard_bussiness.jsp</result>-->
-            <!--<result name="error">login.jsp</result>-->
-        <!--</action>-->
-        <action name="redirect" class="pe.com.dcgym.actions.SearchAction" method="execute">
+        <action name="login" class="pe.com.dcgym.actions.LoginAction">
+            <result name="success" type="redirect">${url}</result>
 
+            <result name="error" >_error.jsp</result>
+            <result name="input" >login.jsp</result>
         </action>
 
+        <action name="client" class="pe.com.dcgym.actions.ClientAction">
+            <result name="success">dashboard_client.jsp</result>
+            <result name="error">_error.jsp</result>
+        </action>
+        <action name="company" class="pe.com.dcgym.actions.CompanyAction">
+            <result name="success">dashboard_company.jsp</result>
+            <result name="error" >_error.jsp</result>
+        </action>
     </package>
 </struts>
