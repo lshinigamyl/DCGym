@@ -7,9 +7,7 @@ import pe.com.dcgym.services.BaseService;
 
 import java.util.Map;
 
-/**
- * Created by GrupoUTP on 10/03/2017.
- */
+
 public class LoginAction extends ActionSupport {
     private String userName;
     private String password;
