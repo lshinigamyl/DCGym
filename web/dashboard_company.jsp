@@ -15,7 +15,7 @@
 <body>
 <jsp:include page="_default_navbar.jsp"/>
     <div class="container">
-        <jsp:include page="_default_navbar_left.jsp"/>
+        <jsp:include page="_default_navbar_left_company.jsp"/>
         <div class="col-sm-9">
             <h1 class="text-center"><s:property value="#session.user"/></h1>
             <h2 class="text-center">Soy un negocio</h2>
