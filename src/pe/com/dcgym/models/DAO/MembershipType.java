@@ -1,21 +1,25 @@
-package pe.com.dcgym.models;
+package pe.com.dcgym.models.DAO;
 
 /**
- * Created by Fjorsvartnir on 23/02/2017.
+ * Created by Administrador on 03/03/2017.
  */
-public class Exercise {
+public class MembershipType {
     private int id;
     private String name;
+    private float cost;
     private String description;
+    private String type;
     private String state;
 
-    public Exercise() {
-    }
+    public MembershipType(){
 
-    public Exercise(int id, String name, String description, String state) {
+    }
+    public MembershipType(int id, String name, float cost, String description, String type, String state){
         this.setId(id);
         this.setName(name);
+        this.setCost(cost);
         this.setDescription(description);
+        this.setType(type);
         this.setState(state);
     }
 
@@ -35,12 +39,28 @@ public class Exercise {
         this.name = name;
     }
 
+    public float getCost() {
+        return cost;
+    }
+
+    public void setCost(float cost) {
+        this.cost = cost;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getState() {
@@ -50,4 +70,5 @@ public class Exercise {
     public void setState(String state) {
         this.state = state;
     }
+
 }

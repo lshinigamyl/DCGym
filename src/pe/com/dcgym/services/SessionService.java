@@ -1,8 +1,8 @@
 package pe.com.dcgym.services;
 
-import pe.com.dcgym.models.People;
+import pe.com.dcgym.models.DAO.People;
 import pe.com.dcgym.models.PeopleEntity;
-import pe.com.dcgym.models.TrainingCenter;
+import pe.com.dcgym.models.DAO.TrainingCenter;
 import pe.com.dcgym.models.TrainingCentersEntity;
 
 /**

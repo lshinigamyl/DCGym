@@ -4,7 +4,8 @@ package pe.com.dcgym.actions;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.SessionAware;
-import pe.com.dcgym.models.*;
+import pe.com.dcgym.models.DAO.People;
+import pe.com.dcgym.models.DAO.TrainingCenter;
 import pe.com.dcgym.services.SessionService;
 
 import java.util.List;

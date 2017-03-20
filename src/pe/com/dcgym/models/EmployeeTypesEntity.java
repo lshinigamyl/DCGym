@@ -1,5 +1,7 @@
 package pe.com.dcgym.models;
 
+import pe.com.dcgym.models.DAO.EmployeeType;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,27 +15,27 @@ public class EmployeeTypesEntity  extends BaseEntity{
     private static String TABLE="employee_types";
     private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;
 
-    public List<EmployeeTypes> findAll() {
+    public List<EmployeeType> findAll() {
         return this.findByCriteria(DEFAULT_SQL);
     }
 
-    public EmployeeTypes findById(int id) {
-        List<EmployeeTypes> employeeTypes = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
+    public EmployeeType findById(int id) {
+        List<EmployeeType> employeeTypes = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
         return employeeTypes != null ? employeeTypes.get(0) : null;
     }
 
-    public EmployeeTypes findByName(String name) {
-        List<EmployeeTypes> employeeTypes = this.findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
+    public EmployeeType findByName(String name) {
+        List<EmployeeType> employeeTypes = this.findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
         return employeeTypes.isEmpty() ? null : employeeTypes.get(0);
     }
 
-    private List<EmployeeTypes> findByCriteria(String sql) {
+    private List<EmployeeType> findByCriteria(String sql) {
         if (this.getConnection() != null) {
-            ArrayList<EmployeeTypes> employeesTypes = new ArrayList<EmployeeTypes>();
+            ArrayList<EmployeeType> employeesTypes = new ArrayList<EmployeeType>();
             try {
                 ResultSet resultSet = this.getConnection().createStatement().executeQuery(sql);
                 while (resultSet.next()) {
-                    EmployeeTypes employeeType = new EmployeeTypes() ;
+                    EmployeeType employeeType = new EmployeeType() ;
                     employeeType.setId(resultSet.getInt(1));
                     employeeType.setName(resultSet.getString(2));
                     employeeType.setState(resultSet.getString(3));
@@ -50,7 +52,7 @@ public class EmployeeTypesEntity  extends BaseEntity{
 
 
 
-    public EmployeeTypes create(String nane, String state) {
+    public EmployeeType create(String nane, String state) {
         //if (this.findByName(id) == null && this.getConnection() != null) {
         String sql = "INSERT INTO "+TABLE+"(id, nane, state) VALUES(?,?,?)";
         try {
@@ -62,7 +64,7 @@ public class EmployeeTypesEntity  extends BaseEntity{
 
             int results = preparedStatement.executeUpdate(sql);
             if (results > 0) {
-                EmployeeTypes employeeType = new EmployeeTypes(getMaxId(TABLE),nane, state);
+                EmployeeType employeeType = new EmployeeType(getMaxId(TABLE),nane, state);
                 return employeeType;
             }
         }
@@ -89,7 +91,7 @@ public class EmployeeTypesEntity  extends BaseEntity{
         return this.updateByCriteria("DELETE FROM "+TABLE+" WHERE id  = " + String.valueOf(id)) > 0;
     }
 
-    public boolean update(EmployeeTypes employeeType) {
+    public boolean update(EmployeeType employeeType) {
         return this.updateByCriteria("UPDATE "+TABLE+" SET nane ='"+ employeeType.getName()+"', state='"+ employeeType.getState()+"' WHERE id = " + String.valueOf(employeeType.getId())) > 0;
     }
 }

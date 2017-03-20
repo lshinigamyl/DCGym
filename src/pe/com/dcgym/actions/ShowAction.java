@@ -1,7 +1,7 @@
 package pe.com.dcgym.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
-import pe.com.dcgym.models.TrainingCenter;
+import pe.com.dcgym.models.DAO.TrainingCenter;
 import pe.com.dcgym.services.TrainingCenterServices;
 
 import java.util.List;

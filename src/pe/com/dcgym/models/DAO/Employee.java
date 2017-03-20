@@ -1,4 +1,8 @@
-package pe.com.dcgym.models;
+package pe.com.dcgym.models.DAO;
+
+import pe.com.dcgym.models.EmployeeTypesEntity;
+import pe.com.dcgym.models.PeopleEntity;
+import pe.com.dcgym.models.TrainingCentersEntity;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,18 +15,18 @@ public class Employee {
     String state;
     TrainingCenter trainingCenters;
     People people;
-    EmployeeTypes employeeTypes;
+    EmployeeType employeeType;
 
 
     public Employee() {
     }
 
-    public Employee(int id, String state, TrainingCenter trainingCenters, People people, EmployeeTypes employeeTypes) {
+    public Employee(int id, String state, TrainingCenter trainingCenters, People people, EmployeeType employeeType) {
         this.id = id;
         this.state = state;
         this.trainingCenters = trainingCenters;
         this.people = people;
-        this.employeeTypes = employeeTypes;
+        this.employeeType = employeeType;
     }
 
     public int getId() {
@@ -57,15 +61,15 @@ public class Employee {
         this.people = people;
     }
 
-    public EmployeeTypes getEmployeeTypes() {
-        return employeeTypes;
+    public EmployeeType getEmployeeType() {
+        return employeeType;
     }
 
-    public void setEmployeeTypes(EmployeeTypes employeeTypes) {
-        this.employeeTypes = employeeTypes;
+    public void setEmployeeType(EmployeeType employeeType) {
+        this.employeeType = employeeType;
     }
 
-    public static Employee build(ResultSet resultSet, TrainingCentersEntity trainingCentersEntity,PeopleEntity peopleEntity, EmployeeTypesEntity employeeTypesEntity) {
+    public static Employee build(ResultSet resultSet, TrainingCentersEntity trainingCentersEntity, PeopleEntity peopleEntity, EmployeeTypesEntity employeeTypesEntity) {
         try {
             Employee employee= new Employee();
             return new Employee(resultSet.getInt("id"),resultSet.getString("state"),trainingCentersEntity.findById(resultSet.getInt("training_centers_id")), peopleEntity.findById(resultSet.getInt("people_id")), employeeTypesEntity.findById(resultSet.getInt("employee_types_id")));

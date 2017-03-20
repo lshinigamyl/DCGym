@@ -1,5 +1,8 @@
 package pe.com.dcgym.models;
 
+import pe.com.dcgym.models.DAO.CustomerRoutine;
+import pe.com.dcgym.models.DAO.Record;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

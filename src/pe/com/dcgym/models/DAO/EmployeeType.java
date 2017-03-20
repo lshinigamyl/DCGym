@@ -1,17 +1,17 @@
-package pe.com.dcgym.models;
+package pe.com.dcgym.models.DAO;
 
 /**
  * 
  */
-public class EmployeeTypes {
+public class EmployeeType {
     int id;
     String name;
     String state;
 
-    public EmployeeTypes() {
+    public EmployeeType() {
     }
 
-    public EmployeeTypes(int id, String name, String state) {
+    public EmployeeType(int id, String name, String state) {
         this.id = id;
         this.name = name;
         this.state = state;

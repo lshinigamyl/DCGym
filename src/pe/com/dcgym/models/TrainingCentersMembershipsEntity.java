@@ -1,5 +1,9 @@
 package pe.com.dcgym.models;
 
+import pe.com.dcgym.models.DAO.MembershipType;
+import pe.com.dcgym.models.DAO.TrainingCenter;
+import pe.com.dcgym.models.DAO.TrainingCenterMembership;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -49,7 +53,7 @@ public class TrainingCentersMembershipsEntity extends BaseEntity{
 
 
 
-    public TrainingCenterMembership create(String state, TrainingCenter trainingCenter,MembershipType membershipType) {
+    public TrainingCenterMembership create(String state, TrainingCenter trainingCenter, MembershipType membershipType) {
         //if (this.findByName(id) == null && this.getConnection() != null) {
         String sql = "INSERT INTO "+TABLE+" (id, state, training_centers_id, membership_types_id) VALUES(?,?,?,?)";
         try {

@@ -1,5 +1,10 @@
 package pe.com.dcgym.models;
 
+import pe.com.dcgym.models.DAO.Employee;
+import pe.com.dcgym.models.DAO.EmployeeType;
+import pe.com.dcgym.models.DAO.People;
+import pe.com.dcgym.models.DAO.TrainingCenter;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -46,7 +51,7 @@ public class EmployeesEntity extends BaseEntity {
 
 
 
-    public Employee create(String state, TrainingCenter trainingCenters, People people, EmployeeTypes employeeTypes) {
+    public Employee create(String state, TrainingCenter trainingCenters, People people, EmployeeType employeeType) {
         //
         String sql = "INSERT INTO employees(id, state, training_centers_id, people_id, employee_types_id) VALUES(?,?,?,?,?)";
         try {
@@ -56,11 +61,11 @@ public class EmployeesEntity extends BaseEntity {
                 preparedStatement.setString(2, state);
                 preparedStatement.setInt   (3, trainingCenters.getId());
                 preparedStatement.setInt   (4, people.getId());
-                preparedStatement.setInt   (3, employeeTypes.getId());
+                preparedStatement.setInt   (3, employeeType.getId());
 
             int results = preparedStatement.executeUpdate(sql);
             if (results > 0) {
-                Employee employee = new Employee(getMaxId("employees"),state, trainingCenters,people,employeeTypes);
+                Employee employee = new Employee(getMaxId("employees"),state, trainingCenters,people, employeeType);
                 return employee;
             }
         }

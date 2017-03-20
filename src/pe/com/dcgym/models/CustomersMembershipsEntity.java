@@ -1,5 +1,9 @@
 package pe.com.dcgym.models;
 
+import pe.com.dcgym.models.DAO.Customer;
+import pe.com.dcgym.models.DAO.CustomerMembership;
+import pe.com.dcgym.models.DAO.MembershipType;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -49,7 +53,7 @@ public class CustomersMembershipsEntity extends BaseEntity{
 
 
 
-    public CustomerMembership create(String coment,  String state, Customer customer, MembershipType membershipType) {
+    public CustomerMembership create(String coment, String state, Customer customer, MembershipType membershipType) {
         //if (this.findByName(id) == null && this.getConnection() != null) {
         String sql = "INSERT INTO "+TABLE+"(id, coment, state, people_id) VALUES(?,?,?,?)";
         try {

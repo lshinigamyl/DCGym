@@ -1,5 +1,10 @@
 package pe.com.dcgym.models;
 
+import pe.com.dcgym.models.DAO.Customer;
+import pe.com.dcgym.models.DAO.CustomerRoutine;
+import pe.com.dcgym.models.DAO.Employee;
+import pe.com.dcgym.models.DAO.Routine;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -50,7 +55,7 @@ public class CustomersRoutinesEntity  extends  BaseEntity{
 
 
 
-    public CustomerRoutine create(String state, Customer customer,Routine routine,Employee employee) {
+    public CustomerRoutine create(String state, Customer customer, Routine routine, Employee employee) {
         //
         String sql = "INSERT INTO "+TABLE+"(id, state, customers_id, routines_id, employees_id) VALUES(?,?,?,?,?)";
         try {
