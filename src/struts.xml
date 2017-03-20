@@ -25,5 +25,17 @@
             <result name="success">dashboard_company.jsp</result>
             <result name="error" >_error.jsp</result>
         </action>
+        <action name="companyusuarios" class="pe.com.dcgym.actions.CompanyAction" method="usuarios">
+            <result name="success">dashboard_company_2usuarios.jsp</result>
+            <result name="error">_error.jsp</result>
+        </action>
+        <action name="companymembresia" class="pe.com.dcgym.actions.CompanyAction" method="membresia">
+            <result name="success">dashboard_company_3membresia.jsp</result>
+            <result name="error">_error.jsp</result>
+        </action>
+        <action name="companyentrenadores" class="pe.com.dcgym.actions.CompanyAction" method="entrenadores">
+            <result name="success">dashboard_company_4entrenadores.jsp</result>
+            <result name="error">_error.jsp</result>
+        </action>
     </package>
 </struts>

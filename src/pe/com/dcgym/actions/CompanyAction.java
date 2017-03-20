@@ -27,4 +27,18 @@ public class CompanyAction extends ActionSupport implements SessionAware {
                 return ERROR;
         }
     }
+
+    public String usuarios() throws Exception{
+
+        return SUCCESS;
+    }
+
+    public String membresia() throws Exception{
+
+        return SUCCESS;
+    }
+    public String entrenadores() throws Exception{
+
+        return SUCCESS;
+    }
 }
