@@ -7,10 +7,6 @@ import java.sql.SQLException;
 
 /**
  * Created by Fjorsvartnir on 23/02/2017.
- * Un applet es un programa que anima una porción de
- * una página Web. Se recupera a partir de la red y corre
- * en la máquina del usuario, pero con muchas restricciones
- * de modo que no pueda afectar la integridad del ambiente del usuario.
  */
 public class Customer {
     private int id;
