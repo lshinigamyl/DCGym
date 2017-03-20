@@ -6,7 +6,7 @@ package pe.com.dcgym.models.DAO;
 public class MembershipType {
     private int id;
     private String name;
-    private float cost;
+    private double cost;
     private String description;
     private String type;
     private String state;
@@ -14,13 +14,14 @@ public class MembershipType {
     public MembershipType(){
 
     }
-    public MembershipType(int id, String name, float cost, String description, String type, String state){
-        this.setId(id);
-        this.setName(name);
-        this.setCost(cost);
-        this.setDescription(description);
-        this.setType(type);
-        this.setState(state);
+
+    public MembershipType(int id, String name, double cost, String description, String type, String state) {
+        this.id = id;
+        this.name = name;
+        this.cost = cost;
+        this.description = description;
+        this.type = type;
+        this.state = state;
     }
 
     public int getId() {
@@ -39,11 +40,11 @@ public class MembershipType {
         this.name = name;
     }
 
-    public float getCost() {
+    public double getCost() {
         return cost;
     }
 
-    public void setCost(float cost) {
+    public void setCost(double cost) {
         this.cost = cost;
     }
 
@@ -70,5 +71,4 @@ public class MembershipType {
     public void setState(String state) {
         this.state = state;
     }
-
 }

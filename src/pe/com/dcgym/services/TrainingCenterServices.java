@@ -1,7 +1,7 @@
 package pe.com.dcgym.services;
 
 import pe.com.dcgym.models.DAO.TrainingCenter;
-import pe.com.dcgym.models.TrainingCentersEntity;
+import pe.com.dcgym.models.DTO.TrainingCentersEntity;
 
 import java.util.List;
 

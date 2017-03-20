@@ -1,4 +1,4 @@
-package pe.com.dcgym.models;
+package pe.com.dcgym.models.DTO;
 
 import pe.com.dcgym.models.DAO.Customer;
 import pe.com.dcgym.models.DAO.People;
@@ -13,7 +13,7 @@ import java.util.List;
  *
  */
 public class CustomersEntity extends BaseEntity {
-    private static String TABLE="customers";
+    private static final String TABLE = "customers";
     private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;
     private PeopleEntity peopleEntity;
 
@@ -22,8 +22,8 @@ public class CustomersEntity extends BaseEntity {
     }
 
     public Customer findById(int id) {
-        List<Customer> customers = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
-        return customers != null ? customers.get(0) : null;
+        List<Customer> customers = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id)+";");
+        return customers.isEmpty() ?  null : customers.get(0);
     }
 /*
     public Customer findByName(String name) {

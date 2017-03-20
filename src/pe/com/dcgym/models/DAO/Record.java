@@ -1,6 +1,6 @@
 package pe.com.dcgym.models.DAO;
 
-import pe.com.dcgym.models.CustomersRoutinesEntity;
+import pe.com.dcgym.models.DTO.CustomersRoutinesEntity;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

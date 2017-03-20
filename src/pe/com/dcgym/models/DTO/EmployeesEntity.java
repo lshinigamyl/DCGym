@@ -1,4 +1,4 @@
-package pe.com.dcgym.models;
+package pe.com.dcgym.models.DTO;
 
 import pe.com.dcgym.models.DAO.Employee;
 import pe.com.dcgym.models.DAO.EmployeeType;
@@ -93,7 +93,7 @@ public class EmployeesEntity extends BaseEntity {
     }
 
     public boolean update(Employee employee) {
-        return this.updateByCriteria("UPDATE employees SET state ='"+employee.getState()+"', training_centers_id="+employee.trainingCenters.getId()+" ,people_id="+employee.people.getId()+" ,employee_types_id="+employee.employeeTypes.getId()+"  WHERE id = " + String.valueOf(employee.getId())) > 0;
+        return this.updateByCriteria("UPDATE employees SET state ='"+employee.getState()+"', training_centers_id="+employee.getTrainingCenters().getId()+" ,people_id="+employee.getPeople().getId()+" ,employee_types_id="+employee.getEmployeeType().getId()+"  WHERE id = " + String.valueOf(employee.getId())) > 0;
     }
 
     private PeopleEntity getPeopleEntity() {

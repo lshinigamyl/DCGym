@@ -1,7 +1,7 @@
 package pe.com.dcgym.models.DAO;
 
-import pe.com.dcgym.models.MembershipsTypeEntity;
-import pe.com.dcgym.models.TrainingCentersEntity;
+import pe.com.dcgym.models.DTO.MembershipsTypeEntity;
+import pe.com.dcgym.models.DTO.TrainingCentersEntity;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

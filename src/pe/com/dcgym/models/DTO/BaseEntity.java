@@ -1,4 +1,4 @@
-package pe.com.dcgym.models;
+package pe.com.dcgym.models.DTO;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

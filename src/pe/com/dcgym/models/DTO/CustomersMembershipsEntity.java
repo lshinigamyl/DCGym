@@ -1,4 +1,4 @@
-package pe.com.dcgym.models;
+package pe.com.dcgym.models.DTO;
 
 import pe.com.dcgym.models.DAO.Customer;
 import pe.com.dcgym.models.DAO.CustomerMembership;

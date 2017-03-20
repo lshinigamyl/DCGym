@@ -1,4 +1,4 @@
-package pe.com.dcgym.models;
+package pe.com.dcgym.models.DTO;
 
 import pe.com.dcgym.models.DAO.MembershipType;
 
@@ -20,8 +20,8 @@ public class MembershipsTypeEntity extends BaseEntity{
     }
 
     public MembershipType findById(int id) {
-        List<MembershipType> membershipTypes = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
-        return membershipTypes != null ? membershipTypes.get(0) : null;
+        List<MembershipType> membershipTypes = this.findByCriteria(DEFAULT_SQL + " WHERE id = "+ String.valueOf(id)+";");
+        return membershipTypes.isEmpty() ? null : membershipTypes.get(0);
     }
 
     public MembershipType findByName(String name) {
@@ -31,20 +31,20 @@ public class MembershipsTypeEntity extends BaseEntity{
 
     private List<MembershipType> findByCriteria(String sql) {
         if (this.getConnection() != null) {
-            ArrayList<MembershipType> customers = new ArrayList<MembershipType>();
+            ArrayList<MembershipType> membershipTypes = new ArrayList<MembershipType>();
             try {
                 ResultSet resultSet = this.getConnection().createStatement().executeQuery(sql);
                 while (resultSet.next()) {
-                    MembershipType customer = new MembershipType();
-                    customer.setId(resultSet.getInt("id"));
-                    customer.setName(resultSet.getString("name"));
-                    customer.setCost(resultSet.getFloat("cost"));
-                    customer.setDescription(resultSet.getString("description"));
-                    customer.setType(resultSet.getString("type"));
-                    customer.setState(resultSet.getString("state"));
-                    customers.add(customer);
+                    MembershipType membershipType = new MembershipType();
+                    membershipType.setId(resultSet.getInt("id"));
+                    membershipType.setName(resultSet.getString("name"));
+                    membershipType.setCost(resultSet.getFloat("cost"));
+                    membershipType.setDescription(resultSet.getString("description"));
+                    membershipType.setType(resultSet.getString("type"));
+                    membershipType.setState(resultSet.getString("state"));
+                    membershipTypes.add(membershipType);
                 }
-                return customers;
+                return membershipTypes;
             }
             catch (SQLException e) {
                 e.printStackTrace();
