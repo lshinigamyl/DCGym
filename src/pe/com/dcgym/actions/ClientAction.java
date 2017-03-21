@@ -11,6 +11,7 @@ import java.util.Map;
 public class ClientAction extends ActionSupport implements SessionAware {
 
     private Map<String,Object> session;
+    private String menuOption="";
 
 
     @Override
@@ -22,12 +23,67 @@ public class ClientAction extends ActionSupport implements SessionAware {
     public String execute() throws Exception {
         String typeSession = (String) session.get("typeSession");
         switch (typeSession){
-            case "enterprise":
-                return ERROR;
             case "client":
+                setMenuOption("index");
+
                 return SUCCESS;
+            case "company":
+                return ERROR;
             default:
                 return ERROR;
         }
+    }
+
+
+
+    public String ejercicio() throws Exception{
+        String typeSession = (String) session.get("typeSession");
+        switch (typeSession){
+            case "client":
+                setMenuOption("ejercicio");
+
+                return SUCCESS;
+            case "company":
+                return ERROR;
+            default:
+                return ERROR;
+        }
+    }
+
+
+    public String historial() throws Exception{
+        String typeSession = (String) session.get("typeSession");
+        switch (typeSession){
+            case "client":
+
+                setMenuOption("historial");
+                return SUCCESS;
+            case "company":
+                return ERROR;
+            default:
+                return ERROR;
+        }
+    }
+    public String suscripcion() throws Exception{
+        String typeSession = (String) session.get("typeSession");
+        switch (typeSession){
+            case "client":
+                setMenuOption("suscripcion");
+
+                return SUCCESS;
+            case "company":
+                return ERROR;
+            default:
+                return ERROR;
+        }
+
+    }
+
+    public String getMenuOption() {
+        return menuOption;
+    }
+
+    public void setMenuOption(String menuOption) {
+        this.menuOption = menuOption;
     }
 }

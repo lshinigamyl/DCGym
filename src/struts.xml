@@ -21,6 +21,18 @@
             <result name="success">dashboard_client.jsp</result>
             <result name="error">_error.jsp</result>
         </action>
+        <action name="clientejercicios" class="pe.com.dcgym.actions.ClientAction" method="ejercicio">
+            <result name="success">dashboard_client_02ejercicio.jsp</result>
+            <result name="error">_error.jsp</result>
+        </action>
+        <action name="clienthistorial" class="pe.com.dcgym.actions.ClientAction" method="historial">
+            <result name="success">dashboard_client_03historial.jsp</result>
+            <result name="error">_error.jsp</result>
+        </action>
+        <action name="clientsuscripcion" class="pe.com.dcgym.actions.ClientAction" method="suscripcion">
+            <result name="success">dashboard_client_04suscripcion.jsp</result>
+            <result name="error">_error.jsp</result>
+        </action>
         <action name="company" class="pe.com.dcgym.actions.CompanyAction">
             <result name="success">dashboard_company.jsp</result>
             <result name="error" >_error.jsp</result>
