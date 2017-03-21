@@ -28,10 +28,11 @@ public class CompanyAction extends ActionSupport implements SessionAware {
 
     @Override
     public String execute() throws Exception {
-        setMenuOption("index");
+
         String typeSession = (String) session.get("typeSession");
         switch (typeSession){
             case "company":
+                setMenuOption("index");
                 return SUCCESS;
             case "client":
                 return ERROR;
@@ -43,24 +44,49 @@ public class CompanyAction extends ActionSupport implements SessionAware {
 
 
     public String usuarios() throws Exception{
-        setMenuOption("usuario");
-        CompanyService service = new CompanyService();
-        setCustomerMemberships(service.findAllCustomerMembership());
-        return SUCCESS;
+        String typeSession = (String) session.get("typeSession");
+        switch (typeSession){
+            case "company":
+                setMenuOption("usuario");
+                CompanyService service = new CompanyService();
+                setCustomerMemberships(service.findAllCustomerMembership());
+                return SUCCESS;
+            case "client":
+                return ERROR;
+            default:
+                return ERROR;
+        }
     }
 
 
     public String membresia() throws Exception{
-        CompanyService service = new CompanyService();
-        setMembershipTypes(service.findAllMembershipsType());
-        setMenuOption("membresia");
-        return SUCCESS;
+        String typeSession = (String) session.get("typeSession");
+        switch (typeSession){
+            case "company":
+                CompanyService service = new CompanyService();
+                setMembershipTypes(service.findAllMembershipsType());
+                setMenuOption("membresia");
+                return SUCCESS;
+            case "client":
+                return ERROR;
+            default:
+                return ERROR;
+        }
     }
     public String entrenadores() throws Exception{
-        setMenuOption("entrenador");
-        CompanyService service = new CompanyService();
-        setEmployees(service.findAllEmployee());
-        return SUCCESS;
+        String typeSession = (String) session.get("typeSession");
+        switch (typeSession){
+            case "company":
+                setMenuOption("entrenador");
+                CompanyService service = new CompanyService();
+                setEmployees(service.findAllEmployee());
+                return SUCCESS;
+            case "client":
+                return ERROR;
+            default:
+                return ERROR;
+        }
+
     }
     public String getMenuOption() {
         return menuOption;
