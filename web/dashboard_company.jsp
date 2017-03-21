@@ -21,6 +21,8 @@
             <h2 class="text-center">Soy un negocio</h2>
         </div>
     </div>
+
 <jsp:include page="_default_footer.jsp"/>
+
 </body>
 </html>
