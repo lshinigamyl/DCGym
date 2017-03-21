@@ -14,6 +14,7 @@ import java.util.Map;
  */
 public class CompanyAction extends ActionSupport implements SessionAware {
     private Map<String,Object> session;
+    private String menuOption="";
     private List<CustomerMembership> customerMemberships;
     private List<Customer> customers;
     @Override
@@ -23,6 +24,7 @@ public class CompanyAction extends ActionSupport implements SessionAware {
 
     @Override
     public String execute() throws Exception {
+        menuOption="index";
         String typeSession = (String) session.get("typeSession");
         switch (typeSession){
             case "company":
@@ -35,6 +37,7 @@ public class CompanyAction extends ActionSupport implements SessionAware {
     }
 
     public String usuarios() throws Exception{
+        menuOption="usuario";
         CompanyService service = new CompanyService();
         setCustomerMemberships(service.findAllCustomerMembership());
         return SUCCESS;
@@ -49,11 +52,11 @@ public class CompanyAction extends ActionSupport implements SessionAware {
     }
 
     public String membresia() throws Exception{
-
+        menuOption="membresia";
         return SUCCESS;
     }
     public String entrenadores() throws Exception{
-
+        menuOption="entrenador";
         return SUCCESS;
     }
 
