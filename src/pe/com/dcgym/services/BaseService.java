@@ -1,9 +1,8 @@
 package pe.com.dcgym.services;
 
-import pe.com.dcgym.models.DTO.CustomersEntity;
-import pe.com.dcgym.models.DTO.CustomersMembershipsEntity;
-import pe.com.dcgym.models.DTO.MembershipsTypeEntity;
-import pe.com.dcgym.models.DTO.PeopleEntity;
+import pe.com.dcgym.models.DAO.CustomerRoutine;
+import pe.com.dcgym.models.DAO.Employee;
+import pe.com.dcgym.models.DTO.*;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -14,10 +13,22 @@ import java.sql.SQLException;
 
 public abstract class BaseService {
     private Connection connection;
-    private CustomersMembershipsEntity customersMembershipsEntity;
     private CustomersEntity customersEntity;
-    private PeopleEntity peopleEntity;
+    private CustomersMembershipsEntity customersMembershipsEntity;
+    private CustomersRoutinesEntity customersRoutinesEntity;
+    private EmployeesEntity employeesEntity;
+    private EmployeeTypesEntity employeeTypesEntity;
+    private ExercisesEntity exercisesEntity;
+    private ExercisesRoutinesEntity exercisesRoutinesEntity;
     private MembershipsTypeEntity membershipsTypeEntity;
+    private PeopleEntity peopleEntity;
+    private RecordsEntity recordsEntity;
+    private RoutinesEntity routinesEntity;
+    private TrainingCentersEntity trainingCentersEntity;
+    private TrainingCentersMembershipsEntity trainingCentersMembershipsEntity;
+
+
+
     public BaseService() {
 
     }
@@ -90,6 +101,18 @@ public abstract class BaseService {
 
     protected void setCustomersMembershipsEntity(CustomersMembershipsEntity customersMembershipsEntity) {
         this.customersMembershipsEntity = customersMembershipsEntity;
+    }
+
+    protected TrainingCentersEntity getTrainingCentersEntity() {
+        if(trainingCentersEntity == null) {
+            trainingCentersEntity = new TrainingCentersEntity();
+            trainingCentersEntity.setConnection(getConnection());
+        }
+        return trainingCentersEntity;
+    }
+
+    protected void setTrainingCentersEntity(TrainingCentersEntity trainingCentersEntity) {
+        this.trainingCentersEntity = trainingCentersEntity;
     }
 }
 
