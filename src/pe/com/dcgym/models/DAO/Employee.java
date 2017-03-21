@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * Soy un Gato xD
+
  */
 public class Employee {
     int id;

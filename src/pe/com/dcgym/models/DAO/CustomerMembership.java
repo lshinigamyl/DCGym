@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
+
 public class CustomerMembership {
     private int id;
     private String state;

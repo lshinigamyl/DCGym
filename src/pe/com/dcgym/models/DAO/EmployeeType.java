@@ -1,8 +1,6 @@
 package pe.com.dcgym.models.DAO;
 
-/**
- * 
- */
+
 public class EmployeeType {
     int id;
     String name;

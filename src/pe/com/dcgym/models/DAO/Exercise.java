@@ -1,8 +1,6 @@
 package pe.com.dcgym.models.DAO;
 
-/**
- * Created by Fjorsvartnir on 23/02/2017.
- */
+
 public class Exercise {
     private int id;
     private String name;
