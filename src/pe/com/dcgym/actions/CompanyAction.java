@@ -24,7 +24,7 @@ public class CompanyAction extends ActionSupport implements SessionAware {
 
     @Override
     public String execute() throws Exception {
-        menuOption="index";
+        setMenuOption("index");
         String typeSession = (String) session.get("typeSession");
         switch (typeSession){
             case "company":
@@ -36,8 +36,10 @@ public class CompanyAction extends ActionSupport implements SessionAware {
         }
     }
 
+
+
     public String usuarios() throws Exception{
-        menuOption="usuario";
+        setMenuOption("usuario");
         CompanyService service = new CompanyService();
         setCustomerMemberships(service.findAllCustomerMembership());
         return SUCCESS;
@@ -52,14 +54,20 @@ public class CompanyAction extends ActionSupport implements SessionAware {
     }
 
     public String membresia() throws Exception{
-        menuOption="membresia";
+        setMenuOption("membresia");
         return SUCCESS;
     }
     public String entrenadores() throws Exception{
-        menuOption="entrenador";
+        setMenuOption("entrenador");
         return SUCCESS;
     }
+    public String getMenuOption() {
+        return menuOption;
+    }
 
+    public void setMenuOption(String menuOption) {
+        this.menuOption = menuOption;
+    }
     public List<CustomerMembership> getCustomerMemberships() {
         return customerMemberships;
     }
