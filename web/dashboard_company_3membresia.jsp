@@ -30,20 +30,18 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Nº</th>
-                    <th>Canción</th>
-                    <th>+ (Array)</th>
-                    <th>Reproducir</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Descripcion</th>
+                    <th>Acciones</th>
                 </tr>
                 </thead>
                 <tbody class="buscar">
-                <s:iterator value="customerMemberships">
+                <s:iterator value="membershipTypes">
                     <tr>
-                        <td><s:property value="customer.people.name"/> <s:property value="customer.people.surName"/></td>
-                        <td><s:property value="membershipType.name"/></td>
-                        <td><s:property value="customer.comment"/></td>
-                        <td><s:property value="membershipType.description"/></td>
+                        <td><s:property value="name"/></td>
+                        <td><s:property value="cost"/></td>
+                        <td><s:property value="description"/></td>
                         <td><a class="btn btn-info" href="">Modificar</a><br><a class="btn btn-danger" href="">Eliminar</a></td>
                     </tr>
 

@@ -4,6 +4,8 @@ import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.SessionAware;
 import pe.com.dcgym.models.DAO.Customer;
 import pe.com.dcgym.models.DAO.CustomerMembership;
+import pe.com.dcgym.models.DAO.Employee;
+import pe.com.dcgym.models.DAO.MembershipType;
 import pe.com.dcgym.services.CompanyService;
 
 import java.util.List;
@@ -16,7 +18,9 @@ public class CompanyAction extends ActionSupport implements SessionAware {
     private Map<String,Object> session;
     private String menuOption="";
     private List<CustomerMembership> customerMemberships;
-    private List<Customer> customers;
+    private List<MembershipType> membershipTypes;
+    private List<Employee> employees;
+
     @Override
     public void setSession(Map<String, Object> map) {
         this.session=map;
@@ -45,20 +49,17 @@ public class CompanyAction extends ActionSupport implements SessionAware {
         return SUCCESS;
     }
 
-    public List<Customer> getCustomers() {
-        return customers;
-    }
-
-    public void setCustomers(List<Customer> customers) {
-        this.customers = customers;
-    }
 
     public String membresia() throws Exception{
+        CompanyService service = new CompanyService();
+        setMembershipTypes(service.findAllMembershipsType());
         setMenuOption("membresia");
         return SUCCESS;
     }
     public String entrenadores() throws Exception{
         setMenuOption("entrenador");
+        CompanyService service = new CompanyService();
+        setEmployees(service.findAllEmployee());
         return SUCCESS;
     }
     public String getMenuOption() {
@@ -76,4 +77,19 @@ public class CompanyAction extends ActionSupport implements SessionAware {
         this.customerMemberships = customerMemberships;
     }
 
+    public List<MembershipType> getMembershipTypes() {
+        return membershipTypes;
+    }
+
+    public void setMembershipTypes(List<MembershipType> membershipTypes) {
+        this.membershipTypes = membershipTypes;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
 }

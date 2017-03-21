@@ -38,12 +38,13 @@
                 </tr>
                 </thead>
                 <tbody class="buscar">
-                <s:iterator value="customerMemberships">
+                <s:iterator value="employees">
                     <tr>
-                        <td><s:property value="customer.people.name"/> <s:property value="customer.people.surName"/></td>
-                        <td><s:property value="membershipType.name"/></td>
-                        <td><s:property value="customer.comment"/></td>
-                        <td><s:property value="membershipType.description"/></td>
+                        <td><s:property value="people.name"/> <s:property value="people.surName"/></td>
+                        <td><s:property value="people.cellphone"/></td>
+                        <td><s:property value="employeeType.name"/></td>
+                        <td><s:property value="trainingCenters.name"/></td>
+
                         <td><a class="btn btn-info" href="">Modificar</a><br><a class="btn btn-danger" href="">Eliminar</a></td>
                     </tr>
 
