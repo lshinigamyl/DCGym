@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a rel="nofollow" class="navbar-brand" href="http://disputebills.com"><img style=" height: 70px; " src="image/logogym.png" alt="Dispute Bills"><h1 >TEAM DC</h1>
+            <a rel="nofollow" class="navbar-brand" href="http://disputebills.com"><img style=" height: 70px; " src="image/logogym.png" alt="Dispute Bills"><h1 style="width:200px">TEAM DC</h1>
             </a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
