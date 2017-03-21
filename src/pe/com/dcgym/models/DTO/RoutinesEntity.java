@@ -8,8 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by miku_ on 04/03/2017.
+/*
  */
 public class RoutinesEntity extends BaseEntity {
     private static String TABLE="routines";

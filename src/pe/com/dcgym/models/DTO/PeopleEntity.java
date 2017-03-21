@@ -1,7 +1,6 @@
 package pe.com.dcgym.models.DTO;
 
 /**
-
  */
 import pe.com.dcgym.models.DAO.People;
 

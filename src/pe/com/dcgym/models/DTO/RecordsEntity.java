@@ -9,7 +9,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/*
+ */
 public class RecordsEntity extends BaseEntity{
     private static String TABLE="records";
     private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;

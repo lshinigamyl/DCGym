@@ -8,8 +8,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Fjorsvartnir on 25/02/2017.
+/*
+
  */
 public class TrainingCentersEntity extends BaseEntity {
     private static String TABLE="training_centers";

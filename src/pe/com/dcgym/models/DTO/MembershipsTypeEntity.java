@@ -8,8 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Fjorsvartnir on 26/02/2017.
+/*
  */
 public class MembershipsTypeEntity extends BaseEntity{
     private static String TABLE="membership_types";
