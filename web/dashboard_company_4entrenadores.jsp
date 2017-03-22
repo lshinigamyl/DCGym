@@ -30,11 +30,12 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Nº</th>
-                    <th>Canción</th>
-                    <th>+ (Array)</th>
-                    <th>Reproducir</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Telefono</th>
+                    <th>Direccion</th>
+                    <th>DNI</th>
+                    <th>Acciones</th>
                 </tr>
                 </thead>
                 <tbody class="buscar">
@@ -44,7 +45,7 @@
                         <td><s:property value="people.cellphone"/></td>
                         <td><s:property value="employeeType.name"/></td>
                         <td><s:property value="trainingCenters.name"/></td>
-
+                        <td><s:property value="employeeType.name"/></td>
                         <td><a class="btn btn-info" href="">Modificar</a><br><a class="btn btn-danger" href="">Eliminar</a></td>
                     </tr>
 

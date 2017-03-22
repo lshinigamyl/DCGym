@@ -30,11 +30,11 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Nº</th>
-                    <th>Canción</th>
-                    <th>+ (Array)</th>
-                    <th>Reproducir</th>
+                    <th>Nombre</th>
+                    <th>Membresia</th>
+                    <th>Acciones</th>
+                    <th>Finalizacion</th>
+                    <th>Añadir</th>
                 </tr>
                 </thead>
                 <tbody class="buscar">
@@ -42,15 +42,13 @@
                     <tr>
                         <td><s:property value="customer.people.name"/> <s:property value="customer.people.surName"/></td>
                         <td><s:property value="membershipType.name"/></td>
-                        <td><s:property value="customer.comment"/></td>
-                        <td><s:property value="membershipType.description"/></td>
                         <td><a class="btn btn-info" href="">Modificar</a><br><a class="btn btn-danger" href="">Eliminar</a></td>
+                        <td><s:property value="customer.comment"/></td>
+                        <td><a class="btn btn-info" href=""><span class="glyphicon glyphicon-plus" aria-hidden="true"/>1 mes</a></td>
                     </tr>
-
                 </s:iterator>
                 </tbody>
             </table>
-
         </div>
     </div>
 <jsp:include page="_default_footer.jsp"/>

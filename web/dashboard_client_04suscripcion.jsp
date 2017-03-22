@@ -30,11 +30,10 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Nº</th>
-                    <th>Canción</th>
-                    <th>+ (Array)</th>
-                    <th>Reproducir</th>
+                    <th>Nombre</th>
+                    <th>Costo</th>
+                    <th>F. Inicio</th>
+                    <th>F. Finalizacion</th>
                 </tr>
                 </thead>
                 <tbody class="buscar">
@@ -44,7 +43,6 @@
                         <td><s:property value="membershipType.name"/></td>
                         <td><s:property value="customer.comment"/></td>
                         <td><s:property value="membershipType.description"/></td>
-                        <td><a class="btn btn-info" href="">Modificar</a><br><a class="btn btn-danger" href="">Eliminar</a></td>
                     </tr>
 
                 </s:iterator>
