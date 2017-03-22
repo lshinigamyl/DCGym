@@ -74,3 +74,9 @@ code {
 .searchhere{
 
 }
+@media screen and (max-height: 480px){
+    footer{display:none;}
+
+}
+
+
