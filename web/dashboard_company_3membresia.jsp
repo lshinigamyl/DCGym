@@ -12,13 +12,14 @@
     <title>Title</title>
     <jsp:include page="_default_head.jsp"/>
 </head>
-<body>
+<body style="background: url(image/fondo3.png); background-position: center center; background-repeat: no-repeat;
+ background-attachment: fixed;background-size: cover;">
 <jsp:include page="_default_navbar.jsp"/>
     <div class="container">
         <jsp:include page="_default_navbar_left_company.jsp"/>
         <div class="col-sm-9">
-            <h1 class="text-center"><s:property value="#session.user"/></h1>
-            <h2 class="text-center">Soy un negocio</h2>
+
+
             <button class="btn btn-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Entrenador</button>
             <div class="row"><br></div>
             <div class="input-group">

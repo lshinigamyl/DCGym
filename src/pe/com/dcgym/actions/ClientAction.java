@@ -21,6 +21,7 @@ public class ClientAction extends ActionSupport implements SessionAware {
 
     @Override
     public String execute() throws Exception {
+
         String typeSession = (String) session.get("typeSession");
         switch (typeSession){
             case "client":

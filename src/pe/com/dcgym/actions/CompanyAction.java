@@ -15,6 +15,8 @@ import java.util.Map;
  * Created by Fjorsvartnir on 19/03/2017.
  */
 public class CompanyAction extends ActionSupport implements SessionAware {
+
+
     private Map<String,Object> session;
     private String menuOption="";
     private List<CustomerMembership> customerMemberships;

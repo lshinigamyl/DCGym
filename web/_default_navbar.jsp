@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!-- Static navbar -->
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container ">
@@ -16,8 +17,14 @@
             <ul class="nav navbar-nav navbar-right">
                 <!--            <li><a href="../navbar/">Default</a></li>-->
                 <li class="active">
+
                     <a href="login.action" style="    display: table-row-group  !important;">
-                        Login
+
+
+                        <s:if test="%{#session.user != null}">
+                            <s:property value="#session.user"/>
+                        </s:if>
+                        <s:else>Login  </s:else>
                         <span class="sr-only">Inicia sesion</span>
                         <img style=" height: 50px; " src="image/DefaulUser.png" alt="logo">
                     </a>

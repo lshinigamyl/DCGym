@@ -79,4 +79,13 @@ code {
 
 }
 
+.well {
+    border-radius: 0px 300px 300px 0px;
+    border: 2px white   ;
+    color: white;
+    background:  black;
+}
+.table{
+    background-color: white;
 
+}

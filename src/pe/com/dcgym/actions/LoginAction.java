@@ -1,6 +1,5 @@
 package pe.com.dcgym.actions;
 
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.SessionAware;
@@ -36,6 +35,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
     @Override
     public String execute() throws Exception {
+
+        session.put("user",null);
         SessionService service= new SessionService();
         if (service.findPeopleByUser(getUserName())!=null){
             session.put("user",getUserName());
