@@ -17,7 +17,8 @@
     <sb:head/>
     <jsp:include page="_default_head.jsp"/>
 </head>
-<body>
+<body style="background: url(image/fondo2.png); background-position: center center; background-repeat: no-repeat;
+ background-attachment: fixed;background-size: cover;">
     <%--<s:actionerror theme="bootstrap"/>--%>
     <%--<s:actionmessage theme="bootstrap"/>--%>
     <%--<s:fielderror theme="bootstrap"/>--%>

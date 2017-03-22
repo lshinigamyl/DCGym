@@ -233,10 +233,12 @@ th {
   h3 {
     orphans: 3;
     widows: 3;
+
   }
   h2,
   h3 {
     page-break-after: avoid;
+
   }
   .navbar {
     display: none;
@@ -1269,6 +1271,8 @@ h1,
 h2,
 .h2 {
   font-size: 30px;
+
+
 }
 h3,
 .h3 {

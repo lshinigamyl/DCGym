@@ -1,4 +1,5 @@
-<nav class="navbar navbar-default navbar-fixed-bottom">
+
+<footer class="navbar navbar-inverse navbar-fixed-bottom" style="color: white">
     <div class="container-fluid">
 
         <div class="col-sm-3 text-center">
@@ -6,7 +7,7 @@
                 <br>
             </div>
 
-            <button class="btn btn-success vcenter" >Conocenos</button>
+            <button class="btn btn-success vcenter" style="background:transparent; border: 2px solid white;border-radius: 30px 30px 30px 30px;">Conocenos</button>
             <div class="row">
                 <br>
             </div>
@@ -23,7 +24,7 @@
                 <br>
             </div>
 
-            <button class="btn btn-success vcenter" >Contactanos</button>
+            <button class="btn btn-success vcenter" style="background:transparent; border: 2px solid white;border-radius: 30px 30px 30px 30px;">Contactanos</button>
             <div class="row">
                 <br>
             </div>
@@ -31,7 +32,7 @@
         </div>
 
     </div>
-</nav>
+</footer>
 <script src="js/jquery.js" type="text/javascript"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script>
