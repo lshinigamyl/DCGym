@@ -134,9 +134,11 @@ public abstract class BaseService {
     }
 
     protected TrainingCentersMembershipsEntity getTrainingCentersMembershipsEntity() {
-        if(trainingCentersEntity==null){
-            trainingCentersEntity = new TrainingCentersEntity();
-            trainingCentersEntity.setConnection(getConnection());
+        if(trainingCentersMembershipsEntity==null){
+            trainingCentersMembershipsEntity = new TrainingCentersMembershipsEntity();
+            trainingCentersMembershipsEntity.setConnection(getConnection());
+            trainingCentersMembershipsEntity.setTrainingCentersEntity(getTrainingCentersEntity());
+            trainingCentersMembershipsEntity.setMembershipsTypeEntity(getMembershipsTypeEntity());
         }
         return trainingCentersMembershipsEntity;
     }

@@ -30,7 +30,6 @@ public class CompanyAction extends ActionSupport implements SessionAware {
 
     @Override
     public String execute() throws Exception {
-
         String typeSession = (String) session.get("typeSession");
         switch (typeSession){
             case "company":
@@ -51,7 +50,7 @@ public class CompanyAction extends ActionSupport implements SessionAware {
             case "company":
                 setMenuOption("usuario");
                 CompanyService service = new CompanyService();
-                setCustomerMemberships(service.findCustomerMembershipsByUserTrainingCenter(getSession().get("user").toString()));
+                setCustomerMemberships(service.findCustomerMembershipsByUserTrainingCenter("t_goldencamacho"));
                 return SUCCESS;
             case "client":
                 return ERROR;
