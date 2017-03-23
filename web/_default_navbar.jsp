@@ -1,6 +1,7 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!-- Static navbar -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" style="background: url(image/Baner.jpg);
+background-position: center center;">
     <div class="container ">
         <div class="navbar-header example5" >
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -16,9 +17,9 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <!--            <li><a href="../navbar/">Default</a></li>-->
-                <li class="active">
+                <li class="active" >
 
-                    <a href="login.action" style="    display: table-row-group  !important;">
+                    <a href="login.action" style="    display: table-row-group  !important;background: transparent">
 
 
                         <s:if test="%{#session.user != null}">

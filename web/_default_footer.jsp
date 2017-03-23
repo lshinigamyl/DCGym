@@ -17,7 +17,8 @@
                 <p id="copyright"></p>
             </footer>
             Telefonos: 991935770 - 2937353<br>
-            Email: teamdcgym@gmail.com
+            Email: teamdcgym@gmail.com<br>
+            Av. Lima 1994  V.M.T
         </div>
         <div class="col-sm-3 text-center">
             <div class="row">
