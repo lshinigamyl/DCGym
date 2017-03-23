@@ -20,7 +20,7 @@ public class PeopleEntity extends BaseEntity{
 
     public People findById(int id) {
         List<People> peoples = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
-        return peoples != null ? peoples.get(0) : null;
+        return peoples.isEmpty() ? null : peoples.get(0);
     }
 
     public People findByUser(String user) {
