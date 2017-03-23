@@ -1,5 +1,6 @@
 package pe.com.dcgym.services;
 
+import pe.com.dcgym.models.DAO.Customer;
 import pe.com.dcgym.models.DAO.People;
 import pe.com.dcgym.models.DTO.PeopleEntity;
 import pe.com.dcgym.models.DAO.TrainingCenter;
@@ -16,5 +17,7 @@ public class SessionService extends BaseService {
     public TrainingCenter findTrainingByUser(String userName){
         return getTrainingCentersEntity().findByUser(userName);
     }
-
+    public Customer findByCustomerUser(String userName){
+        return getCustomersEntity().findByCustomerUser(userName);
+    }
 }

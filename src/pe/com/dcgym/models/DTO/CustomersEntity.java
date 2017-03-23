@@ -23,7 +23,15 @@ public class CustomersEntity extends BaseEntity {
         List<Customer> customers = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id)+";");
         return customers.isEmpty() ?  null : customers.get(0);
     }
-/*
+
+    public Customer findByCustomerUser(String user) {
+        List<Customer> peoples = this.findByCriteria(DEFAULT_SQL + " inner join people \n" +
+                "on customers.people_id = people.id WHERE user = '" +user+ "'");
+        return peoples.isEmpty() ? null : peoples.get(0);
+    }
+
+
+    /*
     public Customer findByName(String name) {
         List<Customer> customers = this.findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
         return customers.isEmpty() ? null : customers.get(0);

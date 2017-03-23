@@ -3,6 +3,7 @@ package pe.com.dcgym.actions;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.SessionAware;
+import pe.com.dcgym.models.DAO.Customer;
 import pe.com.dcgym.models.DAO.People;
 import pe.com.dcgym.models.DAO.TrainingCenter;
 import pe.com.dcgym.services.SessionService;
@@ -18,6 +19,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
     private String password="";
     private String url;
     private List<People> peoples;
+    private List<Customer> customers;
     private List<TrainingCenter> trainingCenters;
     private Map<String,Object> session;
 //    @Override
@@ -38,7 +40,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
         session.put("user",null);
         SessionService service= new SessionService();
-        if (service.findPeopleByUser(getUserName())!=null){
+        if (service.findByCustomerUser(getUserName())!=null){
             session.put("user",getUserName());
             session.put("typeSession","client");
             setUrl("client.action");
