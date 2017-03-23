@@ -32,20 +32,20 @@
                 <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Membresia</th>
+                    <th>Comentarios</th>
                     <th>Acciones</th>
-                    <th>Finalizacion</th>
+                    <th>Membresia</th>
                     <th>Añadir</th>
                 </tr>
                 </thead>
                 <tbody class="buscar">
                 <s:iterator value="customerMemberships">
                     <tr>
-                        <td><s:property value="state"/> <s:property value="state"/></td>
-                        <td><s:property value="state"/></td>
+                        <td><s:property value="customer.people.name"/> <s:property value="customer.people.surName"/></td>
+                        <td><s:property value="customer.comment"/></td>
                         <td><a class="btn btn-info" href="">Modificar</a><br><a class="btn btn-danger" href="">Eliminar</a></td>
-                        <td><s:property value="state"/></td>
-                        <td><a class="btn btn-info" href=""><span class="glyphicon glyphicon-plus" aria-hidden="true"/>1 mes</a></td>
+                        <td><s:property value="trainingCenterMembership.membershipType.name"/></td>
+                        <td><a class="btn btn-info" href=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>1 mes</a></td>
                     </tr>
                 </s:iterator>
                 </tbody>
