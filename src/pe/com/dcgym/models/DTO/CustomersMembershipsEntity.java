@@ -27,7 +27,7 @@ public class CustomersMembershipsEntity extends BaseEntity{
         return customerMemberships != null ? customerMemberships.get(0) : null;
     }
     public List<CustomerMembership> findByTrainingCenterUser(String trainingCenterUser){
-        return this.findByCriteria("SELECT c.id, c.state ,c.customers_id,c.training_center_memberships_id " +
+        return this.findByCriteria("SELECT c.id, c.state ,c.customers_id , c.training_center_memberships_id " +
                 "FROM " +
                 "customers_memberships as c " +
                 "INNER JOIN training_center_memberships ON c.training_center_memberships_id = training_center_memberships.id " +

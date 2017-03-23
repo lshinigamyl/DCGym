@@ -25,7 +25,7 @@ public class TrainingCentersMembershipsEntity extends BaseEntity{
 
     public TrainingCenterMembership findById(int id) {
         List<TrainingCenterMembership> trainingCenterMemberships = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
-        return trainingCenterMemberships != null ? trainingCenterMemberships.get(0) : null;
+        return trainingCenterMemberships.isEmpty() ? null : trainingCenterMemberships.get(0);
     }
 
     public TrainingCenterMembership findByName(String name) {
