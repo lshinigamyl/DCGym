@@ -29,5 +29,8 @@ public class CompanyService extends BaseService {
     public List<Employee> findAllEmployee(){
         return getEmployeesEntity().findAll();
     }
+    public List<CustomerMembership> findCustomerMembershipsByUserTrainingCenter(String user){
+        return  getCustomersMembershipsEntity().findByTrainingCenterUser(user);
+    }
 
 }

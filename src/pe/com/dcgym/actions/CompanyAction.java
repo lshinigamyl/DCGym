@@ -51,7 +51,7 @@ public class CompanyAction extends ActionSupport implements SessionAware {
             case "company":
                 setMenuOption("usuario");
                 CompanyService service = new CompanyService();
-                setCustomerMemberships(service.findAllCustomerMembership());
+                setCustomerMemberships(service.findCustomerMembershipsByUserTrainingCenter((String)getSession().get("user")));
                 return SUCCESS;
             case "client":
                 return ERROR;
@@ -119,5 +119,9 @@ public class CompanyAction extends ActionSupport implements SessionAware {
 
     public void setEmployees(List<Employee> employees) {
         this.employees = employees;
+    }
+
+    public Map<String, Object> getSession() {
+        return session;
     }
 }

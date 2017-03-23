@@ -63,7 +63,7 @@ public abstract class BaseService {
             customersMembershipsEntity = new CustomersMembershipsEntity();
             customersMembershipsEntity.setConnection(getConnection());
             customersMembershipsEntity.setCustomersEntity(getCustomersEntity());
-            customersMembershipsEntity.setMembershipsTypeEntity(getMembershipsTypeEntity());
+            customersMembershipsEntity.setTrainingCentersMembershipsEntity(getTrainingCentersMembershipsEntity());
         }
         return customersMembershipsEntity;
     }
