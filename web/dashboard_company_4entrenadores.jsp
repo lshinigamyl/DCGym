@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>DCGym - Company - Personal</title>
     <jsp:include page="_default_head.jsp"/>
 </head>
 <body style="background: url(image/fondo3.png); background-position: center center; background-repeat: no-repeat;
@@ -18,7 +18,7 @@
     <div class="container">
         <jsp:include page="_default_navbar_left_company.jsp"/>
         <div class="col-sm-9">
-            <button class="btn btn-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Entrenador</button>
+            <button class="btn btn-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Personal</button>
             <div class="row"><br></div>
             <div class="input-group">
 

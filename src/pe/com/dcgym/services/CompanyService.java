@@ -23,8 +23,8 @@ public class CompanyService extends BaseService {
         return getMembershipsTypeEntity().findAll();
     }
 
-    public List<Employee> findAllEmployee(){
-        return getEmployeesEntity().findAll();
+    public List<Employee> findAllEmployee(String id){
+        return getEmployeesEntity().findByTraininCenterID(id);
     }
     public List<CustomerMembership> findCustomerMembershipsByUserTrainingCenter(String user){
         return  getCustomersMembershipsEntity().findByTrainingCenterUser(user);

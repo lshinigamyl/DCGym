@@ -20,7 +20,7 @@
         <div class="col-sm-9">
 
 
-            <button class="btn btn-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Entrenador</button>
+            <button class="btn btn-info"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Membresia</button>
             <div class="row"><br></div>
             <div class="input-group">
 

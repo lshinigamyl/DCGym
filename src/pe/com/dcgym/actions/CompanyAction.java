@@ -77,8 +77,9 @@ public class CompanyAction extends ActionSupport implements SessionAware {
         switch (typeSession){
             case "company":
                 setMenuOption("entrenador");
+                TrainingCenter obj = (TrainingCenter)getSession().get("objsession");
                 CompanyService service = new CompanyService();
-                setEmployees(service.findAllEmployee());
+                setEmployees(service.findAllEmployee(String.valueOf(obj.getId())));
                 return SUCCESS;
             case "client":
                 return ERROR;

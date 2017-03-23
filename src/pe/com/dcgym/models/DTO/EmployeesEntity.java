@@ -5,6 +5,7 @@ import pe.com.dcgym.models.DAO.EmployeeType;
 import pe.com.dcgym.models.DAO.People;
 import pe.com.dcgym.models.DAO.TrainingCenter;
 
+import java.security.PublicKey;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,6 +26,14 @@ public class EmployeesEntity extends BaseEntity {
     public Employee findById(int id) {
         List<Employee> customers = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
         return customers != null ? customers.get(0) : null;
+    }
+    public List<Employee> findByTraininCenterID(String id){
+        return this.findByCriteria("SELECT " +
+                "* " +
+                "FROM " +
+                "employees " +
+                "WHERE " +
+                "employees.training_centers_id = "+id);
     }
 /*
 
