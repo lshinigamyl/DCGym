@@ -12,7 +12,8 @@
     <title>Title</title>
     <jsp:include page="_default_head.jsp"/>
 </head>
-<body>
+<body style="background: url(image/fondo4.png); background-position: center center; background-repeat: no-repeat;
+ background-attachment: fixed;background-size: cover;">
     <jsp:include page="_default_navbar.jsp"/>
     <div class="container">
         <jsp:include page="_default_navbar_left_client.jsp"/>
