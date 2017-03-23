@@ -46,12 +46,12 @@ public class CompanyAction extends ActionSupport implements SessionAware {
 
 
     public String usuarios() throws Exception{
-        String typeSession = (String) session.get("typeSession");
+        String typeSession = session.get("typeSession").toString() ==null ? "" :(String) session.get("typeSession").toString();
         switch (typeSession){
             case "company":
                 setMenuOption("usuario");
                 CompanyService service = new CompanyService();
-                setCustomerMemberships(service.findCustomerMembershipsByUserTrainingCenter((String)getSession().get("user")));
+                setCustomerMemberships(service.findCustomerMembershipsByUserTrainingCenter(getSession().get("user").toString()));
                 return SUCCESS;
             case "client":
                 return ERROR;
