@@ -11,6 +11,9 @@ import pe.com.dcgym.models.DTO.TrainingCentersEntity;
  */
 public class SessionService extends BaseService {
 
+    /*
+    * Distingue el inicio de session entre gymnasio y persona  con consulta sql ., deberian haber solo dos emtodos
+    * */
     public People findPeopleByUser(String userName){
         return getPeopleEntity().findByUser(userName);
     }
