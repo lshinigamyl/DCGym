@@ -28,6 +28,15 @@ public class TrainingCentersMembershipsEntity extends BaseEntity{
         return trainingCenterMemberships.isEmpty() ? null : trainingCenterMemberships.get(0);
     }
 
+    public List<TrainingCenterMembership> findByTrainingCenter(String id){
+        return this.findByCriteria("SELECT " +
+                "* " +
+                "FROM " +
+                "training_center_memberships " +
+                "WHERE " +
+                "training_center_memberships.training_centers_id = "+id);
+    }
+
     public TrainingCenterMembership findByName(String name) {
         List<TrainingCenterMembership> trainingCenterMemberships = this.findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
         return trainingCenterMemberships.isEmpty() ? null : trainingCenterMemberships.get(0);

@@ -2,10 +2,7 @@ package pe.com.dcgym.actions;
 
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.SessionAware;
-import pe.com.dcgym.models.DAO.Customer;
-import pe.com.dcgym.models.DAO.CustomerMembership;
-import pe.com.dcgym.models.DAO.Employee;
-import pe.com.dcgym.models.DAO.MembershipType;
+import pe.com.dcgym.models.DAO.*;
 import pe.com.dcgym.services.CompanyService;
 
 import java.util.List;
@@ -22,7 +19,7 @@ public class CompanyAction extends ActionSupport implements SessionAware {
     private List<CustomerMembership> customerMemberships;
     private List<MembershipType> membershipTypes;
     private List<Employee> employees;
-
+    private List<TrainingCenterMembership> trainingCenterMemberships;
     @Override
     public void setSession(Map<String, Object> map) {
         this.session=map;
@@ -50,7 +47,7 @@ public class CompanyAction extends ActionSupport implements SessionAware {
             case "company":
                 setMenuOption("usuario");
                 CompanyService service = new CompanyService();
-                setCustomerMemberships(service.findCustomerMembershipsByUserTrainingCenter("t_goldencamacho"));
+                setCustomerMemberships(service.findCustomerMembershipsByUserTrainingCenter((String)getSession().get("user")));
                 return SUCCESS;
             case "client":
                 return ERROR;
@@ -64,8 +61,9 @@ public class CompanyAction extends ActionSupport implements SessionAware {
         String typeSession = (String) session.get("typeSession");
         switch (typeSession){
             case "company":
+                TrainingCenter obj = (TrainingCenter)getSession().get("objsession");
                 CompanyService service = new CompanyService();
-                setMembershipTypes(service.findAllMembershipsType());
+                setTrainingCenterMemberships(service.findTrainingCenterMembership(String.valueOf(obj.getId())));
                 setMenuOption("membresia");
                 return SUCCESS;
             case "client":
@@ -122,5 +120,13 @@ public class CompanyAction extends ActionSupport implements SessionAware {
 
     public Map<String, Object> getSession() {
         return session;
+    }
+
+    public List<TrainingCenterMembership> getTrainingCenterMemberships() {
+        return trainingCenterMemberships;
+    }
+
+    public void setTrainingCenterMemberships(List<TrainingCenterMembership> trainingCenterMemberships) {
+        this.trainingCenterMemberships = trainingCenterMemberships;
     }
 }

@@ -1,10 +1,7 @@
 package pe.com.dcgym.services;
 
 
-import pe.com.dcgym.models.DAO.Customer;
-import pe.com.dcgym.models.DAO.CustomerMembership;
-import pe.com.dcgym.models.DAO.Employee;
-import pe.com.dcgym.models.DAO.MembershipType;
+import pe.com.dcgym.models.DAO.*;
 import pe.com.dcgym.models.DTO.CustomersEntity;
 import pe.com.dcgym.models.DTO.CustomersMembershipsEntity;
 import pe.com.dcgym.models.DTO.MembershipsTypeEntity;
@@ -31,6 +28,9 @@ public class CompanyService extends BaseService {
     }
     public List<CustomerMembership> findCustomerMembershipsByUserTrainingCenter(String user){
         return  getCustomersMembershipsEntity().findByTrainingCenterUser(user);
+    }
+    public List<TrainingCenterMembership> findTrainingCenterMembership(String id){
+        return getTrainingCentersMembershipsEntity().findByTrainingCenter(id);
     }
 
 }

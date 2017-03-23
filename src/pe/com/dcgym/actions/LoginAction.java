@@ -48,6 +48,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
         }else {
             if (service.findTrainingByUser(getUserName())!=null){
                 session.put("user",getUserName());
+
+                session.put("objsession",service.findTrainingByUser(getUserName()));
                 session.put("typeSession","company");
                 setUrl("company.action");
                 return "success";

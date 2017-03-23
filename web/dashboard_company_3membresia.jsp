@@ -38,11 +38,11 @@
                 </tr>
                 </thead>
                 <tbody class="buscar">
-                <s:iterator value="membershipTypes">
+                <s:iterator value="trainingCenterMemberships">
                     <tr>
-                        <td><s:property value="name"/></td>
-                        <td><s:property value="cost"/></td>
-                        <td><s:property value="description"/></td>
+                        <td><s:property value="membershipType.name"/></td>
+                        <td><s:property value="membershipType.cost"/></td>
+                        <td><s:property value="membershipType.description"/></td>
                         <td><a class="btn btn-info" href="">Modificar</a><br><a class="btn btn-danger" href="">Eliminar</a></td>
                     </tr>
 
