@@ -17,7 +17,9 @@ public class CompanyAction extends ActionSupport implements SessionAware {
     private List<CustomerMembership> customerMemberships;
     private List<MembershipType> membershipTypes;
     private List<Employee> employees;
+    private List<EmployeeType> employeeTypes;
     private List<TrainingCenterMembership> trainingCenterMemberships;
+    private List<ExerciseRoutine> exerciseRoutines;
     @Override
     public void setSession(Map<String, Object> map) {
         this.session=map;
@@ -46,6 +48,8 @@ public class CompanyAction extends ActionSupport implements SessionAware {
                 setMenuOption("usuario");
                 CompanyService service = new CompanyService();
                 setCustomerMemberships(service.findCustomerMembershipsByUserTrainingCenter((String)getSession().get("user")));
+                TrainingCenter obj = (TrainingCenter)getSession().get("objsession");
+                setTrainingCenterMemberships(service.findTrainingCenterMembership(String.valueOf(obj.getId())));
                 return SUCCESS;
             case "client":
                 return ERROR;
@@ -78,6 +82,7 @@ public class CompanyAction extends ActionSupport implements SessionAware {
                 TrainingCenter obj = (TrainingCenter)getSession().get("objsession");
                 CompanyService service = new CompanyService();
                 setEmployees(service.findAllEmployee(String.valueOf(obj.getId())));
+                setEmployeeTypes(service.findAllEmployeeTypes());
                 return SUCCESS;
             case "client":
                 return ERROR;
@@ -85,6 +90,21 @@ public class CompanyAction extends ActionSupport implements SessionAware {
                 return ERROR;
         }
 
+    }
+    public String rutinas() throws Exception{
+        String typeSession = (String) session.get("typeSession");
+        switch (typeSession){
+            case "company":
+                setMenuOption("rutina");
+                TrainingCenter obj = (TrainingCenter)getSession().get("objsession");
+                CompanyService service = new CompanyService();
+                setExerciseRoutines(service.findAllRoutines());
+                return SUCCESS;
+            case "client":
+                return ERROR;
+            default:
+                return ERROR;
+        }
     }
     public String getMenuOption() {
         return menuOption;
@@ -127,5 +147,21 @@ public class CompanyAction extends ActionSupport implements SessionAware {
 
     public void setTrainingCenterMemberships(List<TrainingCenterMembership> trainingCenterMemberships) {
         this.trainingCenterMemberships = trainingCenterMemberships;
+    }
+
+    public List<EmployeeType> getEmployeeTypes() {
+        return employeeTypes;
+    }
+
+    public void setEmployeeTypes(List<EmployeeType> employeeTypes) {
+        this.employeeTypes = employeeTypes;
+    }
+
+    public List<ExerciseRoutine> getExerciseRoutines() {
+        return exerciseRoutines;
+    }
+
+    public void setExerciseRoutines(List<ExerciseRoutine> exerciseRoutines) {
+        this.exerciseRoutines = exerciseRoutines;
     }
 }

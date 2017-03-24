@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>DCGym - Company - Personal</title>
+    <title>DCGym - Company - Rutinas</title>
     <jsp:include page="_default_head.jsp"/>
 </head>
 <body style="background: url(image/fondo3.png); background-position: center center; background-repeat: no-repeat;
@@ -31,13 +31,24 @@
                 </tr>
                 </thead>
                 <tbody class="buscar">
-                <s:iterator value="employees">
+                <s:set name="id" value="exerciseRoutines[0].routine.id"/>
+                <tr >
+                    <td colspan="4"><s:property value="exerciseRoutines[0].routine.name"></td>
+                </tr>
+                <s:iterator value="exerciseRoutines" var="exe">
+                    <s:if test="#id!=#exe.routine.id">
+                        <tr >
+                            <td colspan="4"><s:property value="#exe.routine.name"/></td>
+                        </tr>
+                        <s:set name="id" value="#exe.routine.id"/>
+                    </s:if>
+
                     <tr>
-                        <td><s:property value="people.name"/> <s:property value="people.surName"/></td>
-                        <td><s:property value="people.cellphone"/></td>
-                        <td><s:property value="employeeType.name"/></td>
-                        <td><s:property value="trainingCenters.name"/></td>
-                        <td><s:property value="employeeType.name"/></td>
+
+                        <td><s:property value="range"/></td>
+                        <td><s:property value="range"/></td>
+                        <td><s:property value="range"/></td>
+                        <td><s:property value="range"/></td>
                         <td><a class="btn btn-info" href="">Modificar</a><br><a class="btn btn-danger" href="">Eliminar</a></td>
                     </tr>
 

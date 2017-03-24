@@ -19,7 +19,7 @@ public class ExercisesRoutinesEntity extends BaseEntity {
 
 
     public List<ExerciseRoutine> findAll() {
-        return this.findByCriteria(DEFAULT_SQL);
+        return this.findByCriteria(DEFAULT_SQL +" ORDER BY `routines_id`");
     }
 /*
     public ExerciseRoutine findById(int id) {

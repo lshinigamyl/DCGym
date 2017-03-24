@@ -49,5 +49,9 @@
             <result name="success">dashboard_company_4entrenadores.jsp</result>
             <result name="error">_error.jsp</result>
         </action>
+        <action name="companyrutina" class="pe.com.dcgym.actions.CompanyAction" method="rutinas">
+            <result name="success">dashboard_company_5rutinas.jsp</result>
+            <result name="error">_error.jsp</result>
+        </action>
     </package>
 </struts>
