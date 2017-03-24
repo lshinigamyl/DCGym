@@ -1,29 +1,4 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Fjorsvartnir
-  Date: 18/03/2017
-  Time: 19:11
-  To change this template use File | Settings | File Templates.
---%>
-<!-- public class UserInfoBean implements java.io.Serializable
-{
-private String firstName;
-private boolean registered;
-
-public String getFirstName() {
-return firstName;
-}
-public void setFirstName(String firstName) {
-this.firstName = firstName;
-}
-public boolean isRegistered() {
-return registered;
-}
-public void setRegistered(boolean registered) {
-this.registered = registered;
-}
-}-->
 <s:iterator value="trainingCenters">
 <div class="row searchhere" style="display: none;">
     <div class="col-sm-8 col-sm-offset-2 thumbnail">

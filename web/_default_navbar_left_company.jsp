@@ -6,21 +6,3 @@
         <a href="<s:url value="companymembresia.action"/>"><div <s:if test="%{#option=='membresia'}">style="background-color: #d58512"</s:if> class="well"><strong>MEMBRESIA</strong> </div></a>
         <a href="<s:url value="companyentrenadores.action"/>"><div <s:if test="%{#option=='entrenador'}">style="background-color: #d58512"</s:if> class="well"><strong>PERSONAL</strong> </div></a>
     </div>
-<!-- public class UserInfoBean implements java.io.Serializable
-{
-private String firstName;
-private boolean registered;
-
-public String getFirstName() {
-return firstName;
-}
-public void setFirstName(String firstName) {
-this.firstName = firstName;
-}
-public boolean isRegistered() {
-return registered;
-}
-public void setRegistered(boolean registered) {
-this.registered = registered;
-}
-}-->

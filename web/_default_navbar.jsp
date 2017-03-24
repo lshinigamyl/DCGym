@@ -1,22 +1,5 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<!-- public class UserInfoBean implements java.io.Serializable
-{
-private String firstName;
-private boolean registered;
 
-public String getFirstName() {
-return firstName;
-}
-public void setFirstName(String firstName) {
-this.firstName = firstName;
-}
-public boolean isRegistered() {
-return registered;
-}
-public void setRegistered(boolean registered) {
-this.registered = registered;
-}
-}-->
 <nav class="navbar navbar-default navbar-fixed-top" style="background: url(image/Baner.jpg);
 background-position: center center;">
     <div class="container ">

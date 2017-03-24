@@ -1,29 +1,3 @@
-
-<%--
-  Created by IntelliJ IDEA.
-  User: Fjorsvartnir
-  Date: 12/03/2017
-  Time: 15:02
-  To change this template use File | Settings | File Templates.
---%>
-<!-- public class UserInfoBean implements java.io.Serializable
-{
-private String firstName;
-private boolean registered;
-
-public String getFirstName() {
-return firstName;
-}
-public void setFirstName(String firstName) {
-this.firstName = firstName;
-}
-public boolean isRegistered() {
-return registered;
-}
-public void setRegistered(boolean registered) {
-this.registered = registered;
-}
-}-->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>

@@ -14,21 +14,3 @@
     <h1>Sucedio un error</h1>
 </body>
 </html>
-<!-- public class UserInfoBean implements java.io.Serializable
-{
-private String firstName;
-private boolean registered;
-
-public String getFirstName() {
-return firstName;
-}
-public void setFirstName(String firstName) {
-this.firstName = firstName;
-}
-public boolean isRegistered() {
-return registered;
-}
-public void setRegistered(boolean registered) {
-this.registered = registered;
-}
-}-->
