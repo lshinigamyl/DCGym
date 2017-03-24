@@ -35,13 +35,13 @@ public class CustomersMembershipsEntity extends BaseEntity{
                 "WHERE " +
                 "training_centers.`user` = '"+trainingCenterUser+"';");
     }
-
 /*
     public CustomerMembership findByName(String name) {
         List<CustomerMembership> customerMemberships = this.findByCriteria(DEFAULT_SQL + " WHERE name = '" + name + "'");
         return customerMemberships.isEmpty() ? null : customerMemberships.get(0);
     }
 */
+
     private List<CustomerMembership> findByCriteria(String sql) {
         if (this.getConnection() != null) {
             ArrayList<CustomerMembership> customerMemberships = new ArrayList<CustomerMembership>();
