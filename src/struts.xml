@@ -5,8 +5,9 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+    <constant name="struts.action.excludePattern" value="/EmailSendingServlet" />
     <constant name="struts.devMode" value="true" />
-    <package name="default" extends="struts-default">
+    <package name="default" namespace="/" extends="struts-default">
         <action name="show" class="pe.com.dcgym.actions.ShowAction">
             <result name="success">/showTrainingCenters.jsp</result>
         </action>
@@ -19,12 +20,14 @@
         <action name="conocenos" >
             <result >conocenos.jsp</result>
         </action>
+
         <action name="contactanos" >
-            <result >contactanos.jsp</result>
+            <result>contactanos.jsp</result>
         </action>
         <action name="inicio" >
-            <result >index.jsp</result>
+            <result>index.jsp</result>
         </action>
+
         <action name="client" class="pe.com.dcgym.actions.ClientAction">
             <result name="success">dashboard_client.jsp</result>
             <result name="error">_error.jsp</result>
