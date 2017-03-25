@@ -1,4 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <footer class="navbar navbar-inverse navbar-fixed-bottom" style="color: white">
+
     <div class="container-fluid">
 
         <div class="col-sm-3 text-center">
@@ -6,7 +8,7 @@
                 <br>
             </div>
 
-            <button class="btn btn-success vcenter" style="background:transparent; border: 2px solid white;border-radius: 30px 30px 30px 30px;">Conocenos</button>
+            <button class="btn btn-success vcenter" style="background:transparent; border: 2px solid white;border-radius: 30px 30px 30px 30px;">Conócenos</button>
             <div class="row">
                 <br>
             </div>
@@ -15,16 +17,16 @@
             <footer id="pagefooter">
                 <p id="copyright"></p>
             </footer>
-            Telefonos: 991935770 - 2937353<br>
+            Teléfonos: 991935770 - 2937353<br>
             Email: teamdcgym@gmail.com<br>
-            Av. Lima 1994  V.M.T
+            Av. Lima 1994 José Gálvez V.M.T
         </div>
         <div class="col-sm-3 text-center">
             <div class="row">
                 <br>
             </div>
 
-            <button class="btn btn-success vcenter" style="background:transparent; border: 2px solid white;border-radius: 30px 30px 30px 30px;">Contactanos</button>
+            <button class="btn btn-success vcenter" style="background:transparent; border: 2px solid white;border-radius: 30px 30px 30px 30px;">Contáctanos</button>
             <div class="row">
                 <br>
             </div>
