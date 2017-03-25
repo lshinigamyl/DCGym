@@ -1,5 +1,5 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<s:iterator value="trainingCenters">
+<s:iterator value="gyms">
 <div class="row searchhere" style="display: none;">
     <div class="col-sm-8 col-sm-offset-2 thumbnail">
 

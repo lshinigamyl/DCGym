@@ -9,23 +9,22 @@ import java.util.Map;
 
 
 public class ShowAction extends ActionSupport {
-    private List<Gym> Gyms;
-    private TrainingCenterServices service;
-    private Map<String,Object> session;
+    private List<Gym> gyms;
+    TrainingCenterServices service;
 
     @Override
     public String execute() throws Exception {
 
-        service= new TrainingCenterServices();
+        TrainingCenterServices service = new TrainingCenterServices();
         setGyms(service.findAllTrainingCenters());
         return super.execute();
     }
 
     public List<Gym> getGyms() {
-        return Gyms;
+        return gyms;
     }
 
-    public void setGyms(List<Gym> Gyms) {
-        this.Gyms = Gyms;
+    public void setGyms(List<Gym> gyms) {
+        this.gyms = gyms;
     }
 }
