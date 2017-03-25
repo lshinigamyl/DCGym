@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class EmployeeTypesEntity  extends BaseEntity{
+public class EmployeeTypesEntity  extends BaseEntity {
     private static String TABLE="employee_types";
     private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;
 
@@ -34,9 +34,9 @@ public class EmployeeTypesEntity  extends BaseEntity{
                 ResultSet resultSet = this.getConnection().createStatement().executeQuery(sql);
                 while (resultSet.next()) {
                     EmployeeType employeeType = new EmployeeType() ;
-                    employeeType.setId(resultSet.getInt(1));
-                    employeeType.setName(resultSet.getString(2));
-                    employeeType.setState(resultSet.getString(3));
+                    employeeType.setId(resultSet.getInt("id"));
+                    employeeType.setName(resultSet.getString("name"));
+                    employeeType.setState(resultSet.getString("state"));
                     employeesTypes.add(employeeType);
                 }
                 return employeesTypes;
@@ -50,19 +50,18 @@ public class EmployeeTypesEntity  extends BaseEntity{
 
 
 
-    public EmployeeType create(String nane, String state) {
+    public EmployeeType create(EmployeeType employeeType) {
         //if (this.findByName(id) == null && this.getConnection() != null) {
-        String sql = "INSERT INTO "+TABLE+"(id, nane, state) VALUES(?,?,?)";
+        String sql = "INSERT INTO `employee_types` (`name`) VALUES (?)";
         try {
             PreparedStatement preparedStatement =  this.getConnection().prepareStatement(sql);
 
-            preparedStatement.setInt   (1, (getMaxId(TABLE)+1));
-            preparedStatement.setString(2, nane);
-            preparedStatement.setString(3, state);
+            preparedStatement.setString(1, employeeType.getName());
 
             int results = preparedStatement.executeUpdate(sql);
             if (results > 0) {
-                EmployeeType employeeType = new EmployeeType(getMaxId(TABLE),nane, state);
+                employeeType.setId(super.getMaxId(TABLE));
+                employeeType.setState("H");
                 return employeeType;
             }
         }

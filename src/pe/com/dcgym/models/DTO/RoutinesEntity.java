@@ -13,7 +13,7 @@ import java.util.List;
 public class RoutinesEntity extends BaseEntity {
     private static String TABLE="routines";
     private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;
-    private PeopleEntity peopleEntity;
+    private GymEntity gymEntity;
 
     public List<Routine> findAll() {
         return this.findByCriteria(DEFAULT_SQL);
@@ -35,12 +35,7 @@ public class RoutinesEntity extends BaseEntity {
             try {
                 ResultSet resultSet = this.getConnection().createStatement().executeQuery(sql);
                 while (resultSet.next()) {
-                    Routine routine = new Routine();
-                    routine.setId(resultSet.getInt("id"));
-                    routine.setName(resultSet.getString("name"));
-                    routine.setDescription(resultSet.getString("description"));
-                    routine.setState(resultSet.getString("state"));
-                    routines.add(routine);
+                    Routine routine = Routine.build(resultSet,getGymEntity());
                 }
                 return routines;
             }
@@ -53,21 +48,20 @@ public class RoutinesEntity extends BaseEntity {
 
 
 
-    public Routine create(String name,  String description, String state) {
+    public Routine create(Routine routine) {
         //if (this.findByName(id) == null && this.getConnection() != null) {
-        String sql = "INSERT INTO "+TABLE+"(id, name, description, state) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO `routines` (`name`, `description`, `gym_id`) VALUES (?,?,?)";
         try {
             PreparedStatement obj =  this.getConnection().prepareStatement(sql);
 
-            obj.setInt   (1, (getMaxId(TABLE)+1));
-            obj.setString(2, name);
-            obj.setString(3, description);
-            obj.setString(4, state);
+            obj.setString(1, routine.getName());
+            obj.setString(2, routine.getDescription());
+            obj.setInt   (3, routine.getGym().getId());
 
             int results = obj.executeUpdate(sql);
             if (results > 0) {
-                Routine customer = new Routine(getMaxId(TABLE), name,description, state);
-                return customer;
+                routine.setId(getMaxId(TABLE));
+                return routine;
             }
         }
         catch (SQLException e) {
@@ -97,11 +91,11 @@ public class RoutinesEntity extends BaseEntity {
         return this.updateByCriteria("UPDATE "+TABLE+" SET name = '" + routine.getName() + "', description ='"+routine.getDescription()+"', state='"+ routine.getState()+"'  WHERE id = " + String.valueOf(routine.getId())) > 0;
     }
 
-    public PeopleEntity getPeopleEntity() {
-        return peopleEntity;
+    public GymEntity getGymEntity() {
+        return gymEntity;
     }
 
-    public void setPeopleEntity(PeopleEntity peopleEntity) {
-        this.peopleEntity = peopleEntity;
+    public void setGymEntity(GymEntity gymEntity) {
+        this.gymEntity = gymEntity;
     }
 }

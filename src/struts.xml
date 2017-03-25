@@ -13,7 +13,6 @@
         </action>
         <action name="login" class="pe.com.dcgym.actions.LoginAction">
             <result name="success" type="redirect">${url}</result>
-
             <result name="error" >_error.jsp</result>
             <result name="input" >login.jsp</result>
         </action>
@@ -44,12 +43,25 @@
             <result name="success">dashboard_client_04suscripcion.jsp</result>
             <result name="error">_error.jsp</result>
         </action>
-        <action name="company" class="pe.com.dcgym.actions.CompanyAction">
+
+        <action name="company" class="pe.com.dcgym.actions.CompanyAction" >
             <result name="success">dashboard_company.jsp</result>
             <result name="error" >_error.jsp</result>
         </action>
         <action name="companyusuarios" class="pe.com.dcgym.actions.CompanyAction" method="usuarios">
             <result name="success">dashboard_company_2usuarios.jsp</result>
+            <result name="error">_error.jsp</result>
+        </action>
+        <action name="companynewgymmembershiptype" class="pe.com.dcgym.actions.CompanyMembershipAction">
+            <result name="success" type="redirectAction">companymembresia</result>
+            <result name="error">_error.jsp</result>
+        </action>
+        <action name="companynewgymmembershiptypedelete" class="pe.com.dcgym.actions.CompanyMembershipAction" method="delete">
+            <result name="success" type="redirectAction">companymembresia</result>
+            <result name="error">_error.jsp</result>
+        </action>
+        <action name="companynewgymmembershiptypeedit" class="pe.com.dcgym.actions.CompanyMembershipAction" method="edit">
+            <result name="success" type="redirectAction">companymembresia</result>
             <result name="error">_error.jsp</result>
         </action>
         <action name="companymembresia" class="pe.com.dcgym.actions.CompanyAction" method="membresia">

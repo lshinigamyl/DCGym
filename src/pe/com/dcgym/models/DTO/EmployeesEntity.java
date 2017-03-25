@@ -1,11 +1,7 @@
 package pe.com.dcgym.models.DTO;
 
 import pe.com.dcgym.models.DAO.Employee;
-import pe.com.dcgym.models.DAO.EmployeeType;
-import pe.com.dcgym.models.DAO.People;
-import pe.com.dcgym.models.DAO.TrainingCenter;
 
-import java.security.PublicKey;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,8 +10,9 @@ import java.util.List;
 
 
 public class EmployeesEntity extends BaseEntity {
-    private static String DEFAULT_SQL = "SELECT * FROM employees";
-    private TrainingCentersEntity trainingCentersEntity;
+    private static final String TABLE="employees";
+    private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;
+    private GymEntity gymEntity;
     private PeopleEntity peopleEntity;
     private EmployeeTypesEntity employeeTypesEntity;
 
@@ -29,11 +26,15 @@ public class EmployeesEntity extends BaseEntity {
     }
     public List<Employee> findByTraininCenterID(String id){
         return this.findByCriteria("SELECT " +
-                "* " +
+                "e.id, " +
+                "e.state, " +
+                "e.gym_id, " +
+                "e.people_id, " +
+                "e.employee_type_id " +
                 "FROM " +
-                "employees " +
+                "employees AS e " +
                 "WHERE " +
-                "employees.training_centers_id = "+id);
+                "e.gym_id = '"+id+"'");
     }
 /*
 
@@ -44,7 +45,7 @@ public class EmployeesEntity extends BaseEntity {
             try {
                 ResultSet resultSet = this.getConnection().createStatement().executeQuery(sql);
                 while (resultSet.next()) {
-                    Employee employee = Employee.build(resultSet,getTrainingCentersEntity(),getPeopleEntity(),getEmployeeTypesEntity());
+                    Employee employee = Employee.build(resultSet, getGymEntity(),getPeopleEntity(),getEmployeeTypesEntity());
                     employees.add(employee);
                 }
                 return employees;
@@ -58,21 +59,20 @@ public class EmployeesEntity extends BaseEntity {
 
 
 
-    public Employee create(String state, TrainingCenter trainingCenters, People people, EmployeeType employeeType) {
+    public Employee create(Employee employee) {
         //
-        String sql = "INSERT INTO employees(id, state, training_centers_id, people_id, employee_types_id) VALUES(?,?,?,?,?)";
+        employee.setPeople(getPeopleEntity().create(employee.getPeople()));
+        String sql = "INSERT INTO `employees` (`gym_id`, `people_id`, `employee_type_id`) VALUES (?,?,?)";
         try {
             PreparedStatement preparedStatement =  this.getConnection().prepareStatement(sql);
 
-                preparedStatement.setInt   (1, (getMaxId("employees")+1));
-                preparedStatement.setString(2, state);
-                preparedStatement.setInt   (3, trainingCenters.getId());
-                preparedStatement.setInt   (4, people.getId());
-                preparedStatement.setInt   (3, employeeType.getId());
+                preparedStatement.setInt   (1, employee.getGym().getId());
+                preparedStatement.setInt   (2, employee.getPeople().getId());
+                preparedStatement.setInt   (3, employee.getEmployeeType().getId());
 
             int results = preparedStatement.executeUpdate(sql);
             if (results > 0) {
-                Employee employee = new Employee(getMaxId("employees"),state, trainingCenters,people, employeeType);
+                employee.setId(super.getMaxId(TABLE));
                 return employee;
             }
         }
@@ -100,7 +100,7 @@ public class EmployeesEntity extends BaseEntity {
     }
 
     public boolean update(Employee employee) {
-        return this.updateByCriteria("UPDATE employees SET state ='"+employee.getState()+"', training_centers_id="+employee.getTrainingCenters().getId()+" ,people_id="+employee.getPeople().getId()+" ,employee_types_id="+employee.getEmployeeType().getId()+"  WHERE id = " + String.valueOf(employee.getId())) > 0;
+        return this.updateByCriteria("UPDATE employees SET state ='"+employee.getState()+"', training_centers_id="+employee.getGym().getId()+" ,people_id="+employee.getPeople().getId()+" ,employee_types_id="+employee.getEmployeeType().getId()+"  WHERE id = " + String.valueOf(employee.getId())) > 0;
     }
 
     private PeopleEntity getPeopleEntity() {
@@ -111,12 +111,12 @@ public class EmployeesEntity extends BaseEntity {
         this.peopleEntity = peopleEntity;
     }
 
-    private TrainingCentersEntity getTrainingCentersEntity() {
-        return trainingCentersEntity;
+    private GymEntity getGymEntity() {
+        return gymEntity;
     }
 
-    public void setTrainingCentersEntity(TrainingCentersEntity trainingCentersEntity) {
-        this.trainingCentersEntity = trainingCentersEntity;
+    public void setGymEntity(GymEntity gymEntity) {
+        this.gymEntity = gymEntity;
     }
 
     public EmployeeTypesEntity getEmployeeTypesEntity() {

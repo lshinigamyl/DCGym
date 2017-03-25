@@ -21,7 +21,7 @@
                 <input id="filtrar" type="text" class="form-control" placeholder="Ingresa la canción de este Disco que deseas Buscar...">
             </div>
             </br>
-            <table class="table table-hover">
+            <table class="table table-responsive">
                 <thead>
                 <tr>
                     <th>Nombre</th>
@@ -32,12 +32,12 @@
                 </tr>
                 </thead>
                 <tbody class="buscar">
-                <s:iterator value="customerMemberships">
+                <s:iterator value="customerGymMembershipTypes">
                     <tr>
                         <td><s:property value="customer.people.name"/> <s:property value="customer.people.surName"/></td>
                         <td><s:property value="customer.comment"/></td>
                         <td><a class="btn btn-info" href="">Modificar</a><br><a class="btn btn-danger" href="">Eliminar</a></td>
-                        <td><s:property value="trainingCenterMembership.membershipType.name"/></td>
+                        <td><s:property value="gymMembershipTypes.membershipType.name"/></td>
                         <td><a class="btn btn-info" href=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>1 mes</a></td>
                     </tr>
                 </s:iterator>
@@ -95,7 +95,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <select class="form-control" name="training_id">
-                                <s:iterator value="trainingCenterMemberships">
+                                <s:iterator value="gymMembershipTypes">
                                     <option value="<s:property value="id"/>" > <s:property value="membershipType.name"/></option>
                                 </s:iterator>
                             </select>

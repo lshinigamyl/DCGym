@@ -1,33 +1,33 @@
 package pe.com.dcgym.models.DAO;
 
 
-public class People {
-    int id;
-    String name;
-    String surName;
-    String numDocument;
-    String email;
-    String dateBirth;
-    String address;
-    String cellphone;
-    String telephone;
-    String user;
-    String pass;
-    String state;
+import java.sql.Date;
 
-    public People(int id, String name, String surName, String numDocument, String email, String dateBirth, String address, String cellphone, String telephone, String user, String pass, String state) {
-        this.id = id;
-        this.name = name;
-        this.surName = surName;
-        this.numDocument = numDocument;
-        this.email = email;
-        this.dateBirth = dateBirth;
-        this.address = address;
-        this.cellphone = cellphone;
-        this.telephone = telephone;
-        this.user = user;
-        this.pass = pass;
-        this.state = state;
+public class People {
+    private int id;
+    private String firstName;
+    private String lastName;
+    private String dni;
+    private Date dateBirth;
+    private String email;
+    private String address;
+    private String cellPhone;
+    private String telePhone;
+    private String userName;
+    private String password;
+
+    public People(int id, String firstName, String lastName, String dni, Date dateBirth, String email, String address, String cellPhone, String telePhone, String userName, String password) {
+        this.setId(id);
+        this.setFirstName(firstName);
+        this.setLastName(lastName);
+        this.setDni(dni);
+        this.setDateBirth(dateBirth);
+        this.setEmail(email);
+        this.setAddress(address);
+        this.setCellPhone(cellPhone);
+        this.setTelePhone(telePhone);
+        this.setUserName(userName);
+        this.setPassword(password);
     }
 
     public int getId() {
@@ -38,28 +38,36 @@ public class People {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getSurName() {
-        return surName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setSurName(String surName) {
-        this.surName = surName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getNumDocument() {
-        return numDocument;
+    public String getDni() {
+        return dni;
     }
 
-    public void setNumDocument(String numDocument) {
-        this.numDocument = numDocument;
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public Date getDateBirth() {
+        return dateBirth;
+    }
+
+    public void setDateBirth(Date dateBirth) {
+        this.dateBirth = dateBirth;
     }
 
     public String getEmail() {
@@ -70,14 +78,6 @@ public class People {
         this.email = email;
     }
 
-    public String getDateBirth() {
-        return dateBirth;
-    }
-
-    public void setDateBirth(String dateBirth) {
-        this.dateBirth = dateBirth;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -86,43 +86,35 @@ public class People {
         this.address = address;
     }
 
-    public String getCellphone() {
-        return cellphone;
+    public String getCellPhone() {
+        return cellPhone;
     }
 
-    public void setCellphone(String cellphone) {
-        this.cellphone = cellphone;
+    public void setCellPhone(String cellPhone) {
+        this.cellPhone = cellPhone;
     }
 
-    public String getTelephone() {
-        return telephone;
+    public String getTelePhone() {
+        return telePhone;
     }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
+    public void setTelePhone(String telePhone) {
+        this.telePhone = telePhone;
     }
 
-    public String getUser() {
-        return user;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPass(String pass) {
-        this.pass = pass;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

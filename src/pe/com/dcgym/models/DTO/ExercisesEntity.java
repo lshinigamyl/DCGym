@@ -34,10 +34,9 @@ public class ExercisesEntity extends BaseEntity {
                 ResultSet resultSet = this.getConnection().createStatement().executeQuery(sql);
                 while (resultSet.next()) {
                     Exercise exercise = new Exercise() ;
-                        exercise.setId(resultSet.getInt(1));
-                        exercise.setName(resultSet.getString(2));
-                        exercise.setDescription(resultSet.getString(3));
-                        exercise.setState(resultSet.getString(4));
+                        exercise.setId(resultSet.getInt("id"));
+                        exercise.setName(resultSet.getString("name"));
+                        exercise.setDescription(resultSet.getString("description"));
                     exercises.add(exercise);
                 }
                 return exercises;
@@ -51,20 +50,18 @@ public class ExercisesEntity extends BaseEntity {
 
 
 
-    public Exercise create(String name, String description, String state) {
+    public Exercise create(Exercise exercise) {
        // if (this.findByName(name) == null && this.getConnection() != null) {
-        String sql = "INSERT INTO "+TABLE+"(id, name, description, state) VALUES(?,?,?,?)";
+        String sql = "INSERT INTO `exercises` (`name`, `description`) VALUES (?,?)";
         try {
             PreparedStatement preparedStatement =  this.getConnection().prepareStatement(sql);
 
-            preparedStatement.setInt   (1, (getMaxId(TABLE)+1));
-            preparedStatement.setString(2, name);
-            preparedStatement.setString(3, description);
-            preparedStatement.setString(4, state);
+            preparedStatement.setString(1, exercise.getName());
+            preparedStatement.setString(2, exercise.getDescription());
 
             int results = preparedStatement.executeUpdate(sql);
             if (results > 0) {
-                Exercise exercise = new Exercise( getMaxId(TABLE), name, description, state);
+                exercise.setId(super.getMaxId(TABLE));
                 return exercise;
             }
         }
@@ -92,6 +89,6 @@ public class ExercisesEntity extends BaseEntity {
     }
 
     public boolean update(Exercise exercise) {
-        return this.updateByCriteria("UPDATE exercises SET name ='"+exercise.getName()+"', description='"+exercise.getDescription()+"', state='"+exercise.getState()+"' WHERE id = " + String.valueOf(exercise.getId())) > 0;
+        return this.updateByCriteria("UPDATE exercises SET name ='"+exercise.getName()+"', description='"+exercise.getDescription()+"' WHERE id = " + String.valueOf(exercise.getId())) > 0;
     }
 }

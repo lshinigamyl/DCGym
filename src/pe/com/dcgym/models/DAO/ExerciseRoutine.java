@@ -9,71 +9,104 @@ import java.sql.SQLException;
 
 public class ExerciseRoutine {
      
-    private String sequence;
-    private String range;
-    private String repeat;
-    private String value_percent;
-    private Routine routine;
+    private int id;
+    private String comment;
+    private String state;
+    private int range;
+    private int repeat;
+    private int value_percent;
+    private int sequence;
     private Exercise exercise;
+    private Routine routine;
+
 
 	 
 	public ExerciseRoutine(){
 	}
 
-    public ExerciseRoutine(String sequence, String range, String repeat, String value_percent, Routine routine, Exercise exercise) {
-        this.setSequence(sequence);
-        this.setRange(range);
-        this.setRepeat(repeat);
-        this.setValue_percent(value_percent);
-        this.setRoutine(routine);
-        this.setExercise(exercise);
+    public ExerciseRoutine(int id, String comment, String state, int range, int repeat, int value_percent, int sequence, Exercise exercise, Routine routine) {
+        this.id = id;
+        this.comment = comment;
+        this.state = state;
+        this.range = range;
+        this.repeat = repeat;
+        this.value_percent = value_percent;
+        this.sequence = sequence;
+        this.exercise = exercise;
+        this.routine = routine;
     }
-    public static ExerciseRoutine build(ResultSet resultSet, RoutinesEntity routinesEntity, ExercisesEntity exercisesEntity) {
+
+    public static ExerciseRoutine build(ResultSet resultSet, ExercisesEntity exercisesEntity, RoutinesEntity routinesEntity) {
         try {
-            return new ExerciseRoutine(resultSet.getString("sequence"),resultSet.getString("range"),resultSet.getString("repeat"),resultSet.getString("value_percent"),routinesEntity.findById(resultSet.getInt("routines_id")),exercisesEntity.findById(resultSet.getInt("exercises_id")));
+            return new ExerciseRoutine( resultSet.getInt("id"),
+                                        resultSet.getString("comment"),
+                                        resultSet.getString("state"),
+                                        resultSet.getInt("range"),
+                                        resultSet.getInt("repeat"),
+                                        resultSet.getInt("value_percent"),
+                                        resultSet.getInt("sequence"),
+                                        exercisesEntity.findById(resultSet.getInt("exercises_id")),
+                                        routinesEntity.findById(resultSet.getInt("routines_id")));
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
     }
-    public String getSequence() {
-        return sequence;
+
+    public int getId() {
+        return id;
     }
 
-    public void setSequence(String sequence) {
-        this.sequence = sequence;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getRange() {
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public int getRange() {
         return range;
     }
 
-    public void setRange(String range) {
+    public void setRange(int range) {
         this.range = range;
     }
 
-    public String getRepeat() {
+    public int getRepeat() {
         return repeat;
     }
 
-    public void setRepeat(String repeat) {
+    public void setRepeat(int repeat) {
         this.repeat = repeat;
     }
 
-    public String getValue_percent() {
+    public int getValue_percent() {
         return value_percent;
     }
 
-    public void setValue_percent(String value_percent) {
+    public void setValue_percent(int value_percent) {
         this.value_percent = value_percent;
     }
 
-    public Routine getRoutine() {
-        return routine;
+    public int getSequence() {
+        return sequence;
     }
 
-    public void setRoutine(Routine routine) {
-        this.routine = routine;
+    public void setSequence(int sequence) {
+        this.sequence = sequence;
     }
 
     public Exercise getExercise() {
@@ -82,5 +115,13 @@ public class ExerciseRoutine {
 
     public void setExercise(Exercise exercise) {
         this.exercise = exercise;
+    }
+
+    public Routine getRoutine() {
+        return routine;
+    }
+
+    public void setRoutine(Routine routine) {
+        this.routine = routine;
     }
 }

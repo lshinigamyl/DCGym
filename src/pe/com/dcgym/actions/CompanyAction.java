@@ -14,11 +14,11 @@ public class CompanyAction extends ActionSupport implements SessionAware {
 
     private Map<String,Object> session;
     private String menuOption="";
-    private List<CustomerMembership> customerMemberships;
+    private List<CustomerGymMembershipType> customerGymMembershipTypes;
     private List<MembershipType> membershipTypes;
     private List<Employee> employees;
     private List<EmployeeType> employeeTypes;
-    private List<TrainingCenterMembership> trainingCenterMemberships;
+    private List<GymMembershipTypes> gymMembershipTypes;
     private List<ExerciseRoutine> exerciseRoutines;
     @Override
     public void setSession(Map<String, Object> map) {
@@ -47,9 +47,9 @@ public class CompanyAction extends ActionSupport implements SessionAware {
             case "company":
                 setMenuOption("usuario");
                 CompanyService service = new CompanyService();
-                setCustomerMemberships(service.findCustomerMembershipsByUserTrainingCenter((String)getSession().get("user")));
-                TrainingCenter obj = (TrainingCenter)getSession().get("objsession");
-                setTrainingCenterMemberships(service.findTrainingCenterMembership(String.valueOf(obj.getId())));
+                setCustomerGymMembershipTypes(service.findCustomerMembershipsByUserTrainingCenter((String)getSession().get("user")));
+                Gym obj = (Gym)getSession().get("objsession");
+                setGymMembershipTypes(service.findTrainingCenterMembership(String.valueOf(obj.getId())));
                 return SUCCESS;
             case "client":
                 return ERROR;
@@ -63,9 +63,9 @@ public class CompanyAction extends ActionSupport implements SessionAware {
         String typeSession = (String) session.get("typeSession");
         switch (typeSession){
             case "company":
-                TrainingCenter obj = (TrainingCenter)getSession().get("objsession");
+                Gym obj = (Gym)getSession().get("objsession");
                 CompanyService service = new CompanyService();
-                setTrainingCenterMemberships(service.findTrainingCenterMembership(String.valueOf(obj.getId())));
+                setGymMembershipTypes(service.findTrainingCenterMembership(String.valueOf(obj.getId())));
                 setMenuOption("membresia");
                 return SUCCESS;
             case "client":
@@ -79,7 +79,7 @@ public class CompanyAction extends ActionSupport implements SessionAware {
         switch (typeSession){
             case "company":
                 setMenuOption("entrenador");
-                TrainingCenter obj = (TrainingCenter)getSession().get("objsession");
+                Gym obj = (Gym)getSession().get("objsession");
                 CompanyService service = new CompanyService();
                 setEmployees(service.findAllEmployee(String.valueOf(obj.getId())));
                 setEmployeeTypes(service.findAllEmployeeTypes());
@@ -96,7 +96,7 @@ public class CompanyAction extends ActionSupport implements SessionAware {
         switch (typeSession){
             case "company":
                 setMenuOption("rutina");
-                TrainingCenter obj = (TrainingCenter)getSession().get("objsession");
+                Gym obj = (Gym)getSession().get("objsession");
                 CompanyService service = new CompanyService();
                 setExerciseRoutines(service.findAllRoutines());
                 return SUCCESS;
@@ -113,12 +113,12 @@ public class CompanyAction extends ActionSupport implements SessionAware {
     public void setMenuOption(String menuOption) {
         this.menuOption = menuOption;
     }
-    public List<CustomerMembership> getCustomerMemberships() {
-        return customerMemberships;
+    public List<CustomerGymMembershipType> getCustomerGymMembershipTypes() {
+        return customerGymMembershipTypes;
     }
 
-    public void setCustomerMemberships(List<CustomerMembership> customerMemberships) {
-        this.customerMemberships = customerMemberships;
+    public void setCustomerGymMembershipTypes(List<CustomerGymMembershipType> customerGymMembershipTypes) {
+        this.customerGymMembershipTypes = customerGymMembershipTypes;
     }
 
     public List<MembershipType> getMembershipTypes() {
@@ -141,12 +141,12 @@ public class CompanyAction extends ActionSupport implements SessionAware {
         return session;
     }
 
-    public List<TrainingCenterMembership> getTrainingCenterMemberships() {
-        return trainingCenterMemberships;
+    public List<GymMembershipTypes> getGymMembershipTypes() {
+        return gymMembershipTypes;
     }
 
-    public void setTrainingCenterMemberships(List<TrainingCenterMembership> trainingCenterMemberships) {
-        this.trainingCenterMemberships = trainingCenterMemberships;
+    public void setGymMembershipTypes(List<GymMembershipTypes> gymMembershipTypes) {
+        this.gymMembershipTypes = gymMembershipTypes;
     }
 
     public List<EmployeeType> getEmployeeTypes() {

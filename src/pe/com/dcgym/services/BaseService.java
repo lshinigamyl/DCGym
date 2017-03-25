@@ -1,7 +1,5 @@
 package pe.com.dcgym.services;
 
-import pe.com.dcgym.models.DAO.CustomerRoutine;
-import pe.com.dcgym.models.DAO.Employee;
 import pe.com.dcgym.models.DTO.*;
 
 import javax.naming.InitialContext;
@@ -14,7 +12,7 @@ import java.sql.SQLException;
 public abstract class BaseService {
     private Connection connection;
     private CustomersEntity customersEntity;
-    private CustomersMembershipsEntity customersMembershipsEntity;
+    private CustomerGymMembershipTypesEntity customerGymMembershipTypesEntity;
     private CustomersRoutinesEntity customersRoutinesEntity;
     private EmployeesEntity employeesEntity;
     private EmployeeTypesEntity employeeTypesEntity;
@@ -24,8 +22,8 @@ public abstract class BaseService {
     private PeopleEntity peopleEntity;
     private RecordsEntity recordsEntity;
     private RoutinesEntity routinesEntity;
-    private TrainingCentersEntity trainingCentersEntity;
-    private TrainingCentersMembershipsEntity trainingCentersMembershipsEntity;
+    private GymEntity gymEntity;
+    private GymsMembershipTypesEntity gymsMembershipTypesEntity;
 
 
     public BaseService() {
@@ -58,21 +56,20 @@ public abstract class BaseService {
         }
         return customersEntity;
     }
-    protected CustomersMembershipsEntity getCustomersMembershipsEntity() {
-        if (customersMembershipsEntity == null) {
-            customersMembershipsEntity = new CustomersMembershipsEntity();
-            customersMembershipsEntity.setConnection(getConnection());
-            customersMembershipsEntity.setCustomersEntity(getCustomersEntity());
-            customersMembershipsEntity.setTrainingCentersMembershipsEntity(getTrainingCentersMembershipsEntity());
+    protected CustomerGymMembershipTypesEntity getCustomerGymMembershipTypesEntity() {
+        if (customerGymMembershipTypesEntity == null) {
+            customerGymMembershipTypesEntity = new CustomerGymMembershipTypesEntity();
+            customerGymMembershipTypesEntity.setConnection(getConnection());
+            customerGymMembershipTypesEntity.setCustomersEntity(getCustomersEntity());
+            customerGymMembershipTypesEntity.setGymsMembershipTypesEntity(getGymsMembershipTypesEntity());
         }
-        return customersMembershipsEntity;
+        return customerGymMembershipTypesEntity;
     }
     protected CustomersRoutinesEntity getCustomersRoutinesEntity() {
         if(customersRoutinesEntity==null){
             customersRoutinesEntity= new CustomersRoutinesEntity();
             customersRoutinesEntity.setConnection(getConnection());
             customersRoutinesEntity.setCustomersEntity(getCustomersEntity());
-            customersRoutinesEntity.setEmployeesEntity(getEmployeesEntity());
             customersRoutinesEntity.setRoutinesEntity(getRoutinesEntity());
         }
         return customersRoutinesEntity;
@@ -84,7 +81,7 @@ public abstract class BaseService {
             employeesEntity.setConnection(getConnection());
             employeesEntity.setPeopleEntity(getPeopleEntity());
             employeesEntity.setEmployeeTypesEntity(getEmployeeTypesEntity());
-            employeesEntity.setTrainingCentersEntity(getTrainingCentersEntity());
+            employeesEntity.setGymEntity(getGymEntity());
         }
         return employeesEntity;
     }
@@ -120,6 +117,7 @@ public abstract class BaseService {
             recordsEntity = new RecordsEntity();
             recordsEntity.setConnection(getConnection());
             recordsEntity.setCustomersRoutinesEntity(getCustomersRoutinesEntity());
+            recordsEntity.setEmployeesEntity(getEmployeesEntity());
         }
         return recordsEntity;
     }
@@ -128,19 +126,19 @@ public abstract class BaseService {
         if(routinesEntity==null){
             routinesEntity = new RoutinesEntity();
             routinesEntity.setConnection(getConnection());
-            routinesEntity.setPeopleEntity(getPeopleEntity());
+            routinesEntity.setGymEntity(getGymEntity());
         }
         return routinesEntity;
     }
 
-    protected TrainingCentersMembershipsEntity getTrainingCentersMembershipsEntity() {
-        if(trainingCentersMembershipsEntity==null){
-            trainingCentersMembershipsEntity = new TrainingCentersMembershipsEntity();
-            trainingCentersMembershipsEntity.setConnection(getConnection());
-            trainingCentersMembershipsEntity.setTrainingCentersEntity(getTrainingCentersEntity());
-            trainingCentersMembershipsEntity.setMembershipsTypeEntity(getMembershipsTypeEntity());
+    protected GymsMembershipTypesEntity getGymsMembershipTypesEntity() {
+        if(gymsMembershipTypesEntity ==null){
+            gymsMembershipTypesEntity = new GymsMembershipTypesEntity();
+            gymsMembershipTypesEntity.setConnection(getConnection());
+            gymsMembershipTypesEntity.setGymEntity(getGymEntity());
+            gymsMembershipTypesEntity.setMembershipsTypeEntity(getMembershipsTypeEntity());
         }
-        return trainingCentersMembershipsEntity;
+        return gymsMembershipTypesEntity;
     }
     protected PeopleEntity getPeopleEntity() {
         if (peopleEntity == null) {
@@ -158,17 +156,17 @@ public abstract class BaseService {
         return membershipsTypeEntity;
     }
 
-    protected TrainingCentersEntity getTrainingCentersEntity() {
-        if (trainingCentersEntity == null) {
-            trainingCentersEntity = new TrainingCentersEntity();
-            trainingCentersEntity.setConnection(getConnection());
+    protected GymEntity getGymEntity() {
+        if (gymEntity == null) {
+            gymEntity = new GymEntity();
+            gymEntity.setConnection(getConnection());
         }
-        return trainingCentersEntity;
+        return gymEntity;
     }
 
 
-    protected void setTrainingCentersEntity(TrainingCentersEntity trainingCentersEntity) {
-        this.trainingCentersEntity = trainingCentersEntity;
+    protected void setGymEntity(GymEntity gymEntity) {
+        this.gymEntity = gymEntity;
     }
 
     protected void setCustomersRoutinesEntity(CustomersRoutinesEntity customersRoutinesEntity) {
@@ -199,8 +197,8 @@ public abstract class BaseService {
         this.routinesEntity = routinesEntity;
     }
 
-    protected void setTrainingCentersMembershipsEntity(TrainingCentersMembershipsEntity trainingCentersMembershipsEntity) {
-        this.trainingCentersMembershipsEntity = trainingCentersMembershipsEntity;
+    protected void setGymsMembershipTypesEntity(GymsMembershipTypesEntity gymsMembershipTypesEntity) {
+        this.gymsMembershipTypesEntity = gymsMembershipTypesEntity;
     }
 
     protected void setMembershipsTypeEntity(MembershipsTypeEntity membershipsTypeEntity) {
@@ -215,8 +213,8 @@ public abstract class BaseService {
         this.customersEntity = customersEntity;
     }
 
-    protected void setCustomersMembershipsEntity(CustomersMembershipsEntity customersMembershipsEntity) {
-        this.customersMembershipsEntity = customersMembershipsEntity;
+    protected void setCustomerGymMembershipTypesEntity(CustomerGymMembershipTypesEntity customerGymMembershipTypesEntity) {
+        this.customerGymMembershipTypesEntity = customerGymMembershipTypesEntity;
     }
 
     private void setConnection(Connection connection) {

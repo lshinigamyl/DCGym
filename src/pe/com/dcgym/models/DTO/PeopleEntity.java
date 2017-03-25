@@ -12,7 +12,9 @@ import java.util.List;
 
 
 public class PeopleEntity extends BaseEntity{
-    private static String DEFAULT_SQL = "SELECT * FROM people";
+    private static final String TABLE = "people";
+    private static final String DEFAULT_SQL = "SELECT * FROM "+TABLE;
+
 
     public List<People> findAll() {
         return this.findByCriteria(DEFAULT_SQL);
@@ -24,7 +26,7 @@ public class PeopleEntity extends BaseEntity{
     }
 
     public People findByUser(String user) {
-        List<People> peoples = this.findByCriteria(DEFAULT_SQL + " WHERE user = '" +user+ "'");
+        List<People> peoples = this.findByCriteria(DEFAULT_SQL + " WHERE username = '" +user+ "'");
         return peoples.isEmpty() ? null : peoples.get(0);
     }
 
@@ -34,7 +36,17 @@ public class PeopleEntity extends BaseEntity{
             try {
                 ResultSet resultSet = this.getConnection().createStatement().executeQuery(sql);
                 while (resultSet.next()) {
-                    People people = new People(resultSet.getInt("id"), resultSet.getString("name"),resultSet.getString("surname"),resultSet.getString("document_number"),resultSet.getString("email"),resultSet.getString("date_birth"),resultSet.getString("address"),resultSet.getString("cellphone"),resultSet.getString("telephone"),resultSet.getString("user"),resultSet.getString("password"),resultSet.getString("state"));
+                    People people = new People( resultSet.getInt("id"),
+                                                resultSet.getString("firstname"),
+                                                resultSet.getString("lastname"),
+                                                resultSet.getString("dni"),
+                                                resultSet.getDate("date_birth"),
+                                                resultSet.getString("email"),
+                                                resultSet.getString("address"),
+                                                resultSet.getString("cellphone"),
+                                                resultSet.getString("telephone"),
+                                                resultSet.getString("username"),
+                                                resultSet.getString("password"));
                     peoples.add(people);
                 }
                 return peoples;
@@ -48,28 +60,25 @@ public class PeopleEntity extends BaseEntity{
 
 
 
-    public People create( String name, String surName,  String numDocument, String email, String dateBirth, String address, String cellphone, String telephone, String user, String password, String state ) {
-        if (this.findByUser(user) == null && this.getConnection() != null) {
-            String sql = "INSERT INTO People(id, name, surname, document_number, email, date_birth, address, cellphone, telephone, user, password, state) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)";
+    public People create(People people) {
+        if (this.findByUser(people.getUserName()) == null && this.getConnection() != null) {
+            String sql = "INSERT INTO `people` (`firstname`, `lastname`, `dni`, `date_birth`, `email`, `cellphone`, `telephone`, `address`, `username`, `password`) VALUES (?,?,?,?,?,?,?,?,?,?)";
             try {
                 PreparedStatement obj =  this.getConnection().prepareStatement(sql);
-                obj.setInt(1, getMaxId("people"));
-                obj.setString(2, name);
-                obj.setString(3, surName);
-                obj.setString(4, numDocument);
-                obj.setString(5, email);
-                obj.setString(6, dateBirth);
-                obj.setString(7, address);
-                obj.setString(8, cellphone);
-                obj.setString(9, telephone);
-                obj.setString(10, user);
-                obj.setString(11, password);
-                obj.setString(12, state);
-
+                obj.setString(1, people.getFirstName());
+                obj.setString(2, people.getLastName());
+                obj.setString(3, people.getDni());
+                obj.setDate  (4, people.getDateBirth());
+                obj.setString(5, people.getEmail());
+                obj.setString(6, people.getCellPhone());
+                obj.setString(7, people.getTelePhone());
+                obj.setString(8, people.getAddress());
+                obj.setString(9, people.getUserName());
+                obj.setString(10,people.getPassword());
 
                 int results = obj.executeUpdate(sql);
                 if (results > 0) {
-                    People people = new People(getMaxId("people"), surName, name, numDocument, email, dateBirth, address, cellphone, telephone, user, password, state);
+                    people.setId(getMaxId(TABLE));
                     return people;
                 }
             }
@@ -101,7 +110,7 @@ public class PeopleEntity extends BaseEntity{
     }
 
     public boolean update(People people) {
-        return this.updateByCriteria("UPDATE people SET name = '" + people.getName() + "' WHERE id = " + String.valueOf(people.getId())) > 0;
+        return this.updateByCriteria("UPDATE people SET firstname = '" + people.getFirstName() + "' WHERE id = " + String.valueOf(people.getId())) > 0;
     }
     public boolean validateUser(String username , String password){
         int count=0;

@@ -5,7 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
-public class BaseEntity {
+public abstract class BaseEntity {
     private Connection connection;
 
     public Connection getConnection() {

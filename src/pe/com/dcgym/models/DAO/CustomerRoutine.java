@@ -1,7 +1,6 @@
 package pe.com.dcgym.models.DAO;
 
 import pe.com.dcgym.models.DTO.CustomersEntity;
-import pe.com.dcgym.models.DTO.EmployeesEntity;
 import pe.com.dcgym.models.DTO.RoutinesEntity;
 
 import java.sql.ResultSet;
@@ -15,31 +14,29 @@ public class CustomerRoutine {
     private String state;
     private Customer customer;
     private Routine routine;
-    private Employee employee;
 
-    public CustomerRoutine(int id, String state, Customer customer, Routine routine, Employee employee) {
-        this.setId(id);
-        this.setState(state);
-        this.setCustomer(customer);
-        this.setRoutine(routine);
-        this.setEmployee(employee);
+    public CustomerRoutine(int id, String state, Customer customer, Routine routine) {
+        this.id = id;
+        this.state = state;
+        this.customer = customer;
+        this.routine = routine;
     }
+
     public CustomerRoutine(){
 
     }
-    public static CustomerRoutine build(ResultSet resultSet, CustomersEntity customersEntity, RoutinesEntity routinesEntity, EmployeesEntity employeesEntity) {
+    public static CustomerRoutine build(ResultSet resultSet, CustomersEntity customersEntity, RoutinesEntity routinesEntity) {
         try {
-            return new CustomerRoutine(resultSet.getInt("id"),
-                    resultSet.getString("state"),
-                    customersEntity.findById(resultSet.getInt("customers_id")),
-                    routinesEntity.findById(resultSet.getInt("routines_id")),
-                    employeesEntity.findById(resultSet.getInt("employees_id"))
-                    );
+            return new CustomerRoutine( resultSet.getInt("id"),
+                                        resultSet.getString("state"),
+                                        customersEntity.findById(resultSet.getInt("customer_id")),
+                                        routinesEntity.findById(resultSet.getInt("routine_id")));
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
         }
     }
+
     public int getId() {
         return id;
     }
@@ -70,13 +67,5 @@ public class CustomerRoutine {
 
     public void setRoutine(Routine routine) {
         this.routine = routine;
-    }
-
-    public Employee getEmployee() {
-        return employee;
-    }
-
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
     }
 }

@@ -7,21 +7,19 @@ public class MembershipType {
     private int id;
     private String name;
     private double cost;
+    private int daysDuration;
     private String description;
-    private String type;
-    private String state;
 
     public MembershipType(){
 
     }
 
-    public MembershipType(int id, String name, double cost, String description, String type, String state) {
+    public MembershipType(int id, String name, double cost, int daysDuration, String description) {
         this.id = id;
         this.name = name;
         this.cost = cost;
+        this.daysDuration = daysDuration;
         this.description = description;
-        this.type = type;
-        this.state = state;
     }
 
     public int getId() {
@@ -48,27 +46,19 @@ public class MembershipType {
         this.cost = cost;
     }
 
+    public int getDaysDuration() {
+        return daysDuration;
+    }
+
+    public void setDaysDuration(int daysDuration) {
+        this.daysDuration = daysDuration;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
     }
 }

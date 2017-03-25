@@ -1,6 +1,5 @@
 package pe.com.dcgym.models.DTO;
 
-import pe.com.dcgym.models.DAO.CustomerRoutine;
 import pe.com.dcgym.models.DAO.Record;
 
 import java.sql.PreparedStatement;
@@ -15,6 +14,7 @@ public class RecordsEntity extends BaseEntity{
     private static String TABLE="records";
     private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;
     private CustomersRoutinesEntity customersRoutinesEntity;
+    private EmployeesEntity employeesEntity;
 
     public List<Record> findAll() {
         return this.findByCriteria(DEFAULT_SQL);
@@ -36,7 +36,7 @@ public class RecordsEntity extends BaseEntity{
             try {
                 ResultSet resultSet = this.getConnection().createStatement().executeQuery(sql);
                 while (resultSet.next()) {
-                    Record record = Record.build(resultSet, getCustomersRoutinesEntity());
+                    Record record = Record.build(resultSet, getCustomersRoutinesEntity(),getEmployeesEntity());
                     records.add(record);
                 }
                 return records;
@@ -50,21 +50,21 @@ public class RecordsEntity extends BaseEntity{
 
 
 
-    public Record create(String date,String duration,String advance,String coment, CustomerRoutine customerRoutine) {
+    public Record create(Record record) {
         //if (this.findByName(id) == null && this.getConnection() != null) {
-        String sql = "INSERT INTO "+TABLE+"(id, date, duration, advance, coment, customer_routine_id) VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO `records` (`date`, `duration`, `progress`, `comment`, `customer_routine_id`, `employee_id`) VALUES (?,?,?,?,?,?)";
         try {
             PreparedStatement obj =  this.getConnection().prepareStatement(sql);
 
-            obj.setInt   (1, (getMaxId(TABLE)+1));
-            obj.setString(2, date);
-            obj.setString(3, duration);
-            obj.setString(4, advance);
-            obj.setString(5, coment);
-            obj.setInt   (6, customerRoutine.getId());
+            obj.setDate  (1,record.getDate());
+            obj.setInt   (2, record.getDuration());
+            obj.setInt   (3, record.getProgress());
+            obj.setString(4, record.getComment());
+            obj.setInt   (5, record.getCustomerRoutine().getId());
+            obj.setInt   (6, record.getEmployee().getId());
             int results = obj.executeUpdate(sql);
             if (results > 0) {
-                Record record = new Record(getMaxId(TABLE), date, duration, advance, coment,customerRoutine);
+                record.setId(super.getMaxId(TABLE));
                 return record;
             }
         }
@@ -92,7 +92,7 @@ public class RecordsEntity extends BaseEntity{
     }
 
     public boolean update(Record record) {
-        return this.updateByCriteria("UPDATE "+TABLE+" SET date ='"+record.getDate()+"', duration='"+ record.getDuration()+"' , advance='"+record.getAdvance()+"', coment='"+record.getComent()+"', customer_routine_id="+record.getCustomerRoutine().getId()+" WHERE id = " + String.valueOf(record.getId())) > 0;
+        return this.updateByCriteria("UPDATE "+TABLE+" SET date ='"+record.getDate()+"', duration='"+ record.getDuration()+"' , advance='"+record.getProgress()+"', coment='"+record.getComment()+"', customer_routine_id="+record.getCustomerRoutine().getId()+" WHERE id = " + String.valueOf(record.getId())) > 0;
     }
 
     public CustomersRoutinesEntity getCustomersRoutinesEntity() {
@@ -101,6 +101,14 @@ public class RecordsEntity extends BaseEntity{
 
     public void setCustomersRoutinesEntity(CustomersRoutinesEntity customersRoutinesEntity) {
         this.customersRoutinesEntity = customersRoutinesEntity;
+    }
+
+    public EmployeesEntity getEmployeesEntity() {
+        return employeesEntity;
+    }
+
+    public void setEmployeesEntity(EmployeesEntity employeesEntity) {
+        this.employeesEntity = employeesEntity;
     }
 }
 

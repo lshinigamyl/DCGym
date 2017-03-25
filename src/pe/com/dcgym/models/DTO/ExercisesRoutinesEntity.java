@@ -1,8 +1,6 @@
 package pe.com.dcgym.models.DTO;
 
-import pe.com.dcgym.models.DAO.Exercise;
 import pe.com.dcgym.models.DAO.ExerciseRoutine;
-import pe.com.dcgym.models.DAO.Routine;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -38,7 +36,7 @@ public class ExercisesRoutinesEntity extends BaseEntity {
             try {
                 ResultSet resultSet = this.getConnection().createStatement().executeQuery(sql);
                 while (resultSet.next()) {
-                    ExerciseRoutine exerciseRoutine = ExerciseRoutine.build(resultSet, getRoutinesEntity(),getExercisesEntity());
+                    ExerciseRoutine exerciseRoutine = ExerciseRoutine.build(resultSet, getExercisesEntity(),getRoutinesEntity());
                     exerciseRoutines.add(exerciseRoutine);
                 }
                 return exerciseRoutines;
@@ -52,22 +50,23 @@ public class ExercisesRoutinesEntity extends BaseEntity {
 
 
 
-    public ExerciseRoutine create(String sequence, String range, String repeat, String valuePercent, Routine routine, Exercise exercise) {
+    public ExerciseRoutine create(ExerciseRoutine exerciseRoutine) {
         //if (this.findByName(id) == null && this.getConnection() != null) {
-        String sql = "INSERT INTO "+TABLE+"(sequence, range, repeat, value_percent, routines_id, exercises_id) VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO `exercises_routines` (`comment`, `range`, `repeat`, `value_percent`, `sequence`, `exercise_id`, `routine_id`) VALUES (?,?,?,?,?,?,?)";
         try {
             PreparedStatement obj =  this.getConnection().prepareStatement(sql);
 
-            obj.setString   (1, sequence);
-            obj.setString(2, range);
-            obj.setString   (3, repeat);
-            obj.setString   (4, valuePercent);
-            obj.setInt   (5, routine.getId());
-            obj.setInt   (6, exercise.getId());
+            obj.setString(1, exerciseRoutine.getComment());
+            obj.setInt   (2, exerciseRoutine.getRange());
+            obj.setInt   (3, exerciseRoutine.getRepeat());
+            obj.setInt   (4, exerciseRoutine.getValue_percent());
+            obj.setInt   (5, exerciseRoutine.getSequence());
+            obj.setInt   (6, exerciseRoutine.getExercise().getId());
+            obj.setInt   (7, exerciseRoutine.getExercise().getId());
 
             int results = obj.executeUpdate(sql);
             if (results > 0) {
-                ExerciseRoutine exerciseRoutine = new ExerciseRoutine(sequence, range, repeat, valuePercent, routine, exercise);
+                exerciseRoutine.setId(super.getMaxId(TABLE));
                 return exerciseRoutine;
             }
         }

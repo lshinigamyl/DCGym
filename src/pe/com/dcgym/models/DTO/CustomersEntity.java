@@ -1,7 +1,6 @@
 package pe.com.dcgym.models.DTO;
 
 import pe.com.dcgym.models.DAO.Customer;
-import pe.com.dcgym.models.DAO.People;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,9 +23,17 @@ public class CustomersEntity extends BaseEntity {
         return customers.isEmpty() ?  null : customers.get(0);
     }
 
-    public Customer findByCustomerUser(String user) {
-        List<Customer> peoples = this.findByCriteria(DEFAULT_SQL + " inner join people \n" +
-                "on customers.people_id = people.id WHERE user = '" +user+ "'");
+    public Customer findByCustomerUserName(String userName) {
+        List<Customer> peoples = this.findByCriteria("SELECT " +
+                "c.id, " +
+                "c.`comment`, " +
+                "c.state, " +
+                "c.people_id " +
+                "FROM " +
+                "customers AS c " +
+                "INNER JOIN people AS p ON c.people_id = p.id " +
+                "WHERE " +
+                "p.username = '"+userName+"';");
         return peoples.isEmpty() ? null : peoples.get(0);
     }
 
@@ -57,20 +64,20 @@ public class CustomersEntity extends BaseEntity {
 
 
 
-    public Customer create(String coment, String state, People people) {
+    public Customer create(Customer customer) {
         //if (this.findByName(id) == null && this.getConnection() != null) {
-            String sql = "INSERT INTO customers(id, coment, state, people_id) VALUES(?,?,?,?)";
+            customer.setPeople(getPeopleEntity().create(customer.getPeople()));
+
+            String sql = "INSERT INTO `customers` (`comment`, `people_id`) VALUES (?,?)";
             try {
                 PreparedStatement obj =  this.getConnection().prepareStatement(sql);
 
-                    obj.setInt   (1, (getMaxId(TABLE)+1));
-                    obj.setString(2, coment);
-                    obj.setString(3, state);
-                    obj.setInt   (4, people.getId());
+                    obj.setString(1, customer.getComment());
+                    obj.setInt   (2, customer.getPeople().getId());
 
                 int results = obj.executeUpdate(sql);
                 if (results > 0) {
-                    Customer customer = new Customer(getMaxId(TABLE), coment,state, people);
+                    customer.setId(getMaxId(TABLE));
                     return customer;
                 }
             }

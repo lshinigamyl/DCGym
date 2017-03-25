@@ -1,9 +1,6 @@
 package pe.com.dcgym.models.DTO;
 
-import pe.com.dcgym.models.DAO.Customer;
 import pe.com.dcgym.models.DAO.CustomerRoutine;
-import pe.com.dcgym.models.DAO.Employee;
-import pe.com.dcgym.models.DAO.Routine;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +14,6 @@ public class CustomersRoutinesEntity  extends  BaseEntity{
     private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;
     private CustomersEntity customersEntity;
     private RoutinesEntity routinesEntity;
-    private EmployeesEntity employeesEntity;
 
     public List<CustomerRoutine> findAll() {
         return this.findByCriteria(DEFAULT_SQL);
@@ -39,7 +35,7 @@ public class CustomersRoutinesEntity  extends  BaseEntity{
             try {
                 ResultSet resultSet = this.getConnection().createStatement().executeQuery(sql);
                 while (resultSet.next()) {
-                    CustomerRoutine customerRoutine = CustomerRoutine.build(resultSet, getCustomersEntity(),getRoutinesEntity(),getEmployeesEntity());
+                    CustomerRoutine customerRoutine = CustomerRoutine.build(resultSet, getCustomersEntity(),getRoutinesEntity());
                     customerRoutines.add(customerRoutine);
                 }
                 return customerRoutines;
@@ -53,21 +49,18 @@ public class CustomersRoutinesEntity  extends  BaseEntity{
 
 
 
-    public CustomerRoutine create(String state, Customer customer, Routine routine, Employee employee) {
+    public CustomerRoutine create(CustomerRoutine customerRoutine) {
         //
-        String sql = "INSERT INTO "+TABLE+"(id, state, customers_id, routines_id, employees_id) VALUES(?,?,?,?,?)";
+        String sql = "INSERT INTO `customers_routines` (`customer_id`, `routine_id`) VALUES (?,?)";
         try {
             PreparedStatement obj =  this.getConnection().prepareStatement(sql);
 
-            obj.setInt   (1, (getMaxId(TABLE)+1));
-            obj.setString(2, state);
-            obj.setInt   (3, customer.getId());
-            obj.setInt   (4, routine.getId());
-            obj.setInt   (5, employee.getId());
+            obj.setInt   (1, customerRoutine.getCustomer().getId());
+            obj.setInt   (2, customerRoutine.getRoutine().getId());
 
             int results = obj.executeUpdate(sql);
             if (results > 0) {
-                CustomerRoutine customerRoutine = new CustomerRoutine(getMaxId(TABLE), state, customer, routine, employee);
+                customerRoutine.setId(super.getMaxId(TABLE));
                 return customerRoutine;
             }
         }
@@ -95,7 +88,7 @@ public class CustomersRoutinesEntity  extends  BaseEntity{
     }
 
     public boolean update(CustomerRoutine customerRoutine) {
-        return this.updateByCriteria("UPDATE "+TABLE+" SET state ='"+customerRoutine.getState()+"', customers_id="+ customerRoutine.getCustomer().getId()+" , routines_id="+customerRoutine.getRoutine().getId()+", employees_id="+customerRoutine.getEmployee().getId()+" WHERE id = " + String.valueOf(customerRoutine.getId())) > 0;
+        return this.updateByCriteria("UPDATE `customers_routines` SET `customer_id`='"+customerRoutine.getCustomer().getId()+"', `routine_id`='"+customerRoutine.getRoutine().getId()+"' WHERE (`id`='"+customerRoutine.getId()+"')") > 0;
     }
 
     public CustomersEntity getCustomersEntity() {
@@ -114,11 +107,4 @@ public class CustomersRoutinesEntity  extends  BaseEntity{
         this.routinesEntity = routinesEntity;
     }
 
-    public EmployeesEntity getEmployeesEntity() {
-        return employeesEntity;
-    }
-
-    public void setEmployeesEntity(EmployeesEntity employeesEntity) {
-        this.employeesEntity = employeesEntity;
-    }
 }

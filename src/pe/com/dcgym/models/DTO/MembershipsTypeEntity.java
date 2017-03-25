@@ -10,7 +10,7 @@ import java.util.List;
 
 /*
  */
-public class MembershipsTypeEntity extends BaseEntity{
+public class MembershipsTypeEntity extends BaseEntity {
     private static String TABLE="membership_types";
     private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;
 
@@ -37,10 +37,9 @@ public class MembershipsTypeEntity extends BaseEntity{
                     MembershipType membershipType = new MembershipType();
                     membershipType.setId(resultSet.getInt("id"));
                     membershipType.setName(resultSet.getString("name"));
-                    membershipType.setCost(resultSet.getFloat("cost"));
+                    membershipType.setCost(resultSet.getDouble("cost"));
+                    membershipType.setDaysDuration(resultSet.getInt("days_duration"));
                     membershipType.setDescription(resultSet.getString("description"));
-                    membershipType.setType(resultSet.getString("type"));
-                    membershipType.setState(resultSet.getString("state"));
                     membershipTypes.add(membershipType);
                 }
                 return membershipTypes;
@@ -54,22 +53,20 @@ public class MembershipsTypeEntity extends BaseEntity{
 
 
 
-    public MembershipType create(String name,  float cost, String description,String type,String state) {
+    public MembershipType create(MembershipType membershipType) {
         //if (this.findByName(id) == null && this.getConnection() != null) {
-        String sql = "INSERT INTO "+TABLE+"(id, name, cost, description, type, state) VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO membership_types (name, cost, days_duration, description) VALUES ( ? , ? , ? , ? )";
         try {
             PreparedStatement obj =  this.getConnection().prepareStatement(sql);
 
-            obj.setInt   (1, (getMaxId(TABLE)+1));
-            obj.setString(2, name);
-            obj.setFloat (3, cost);
-            obj.setString(4, description);
-            obj.setString(5, type);
-            obj.setString(6, state);
+            obj.setString(1, membershipType.getName());
+            obj.setDouble(2, membershipType.getCost());
+            obj.setInt   (3, membershipType.getDaysDuration());
+            obj.setString(4, membershipType.getDescription());
 
-            int results = obj.executeUpdate(sql);
+            int results = obj.executeUpdate();
             if (results > 0) {
-                MembershipType membershipType = new MembershipType(getMaxId(TABLE), name, cost, description, type,state);
+                membershipType.setId(super.getMaxId(TABLE));
                 return membershipType;
             }
         }
@@ -97,7 +94,7 @@ public class MembershipsTypeEntity extends BaseEntity{
     }
 
     public boolean update(MembershipType membershipType) {
-        return this.updateByCriteria("UPDATE "+TABLE+" SET name = '" + membershipType.getName() + "', cost ='"+membershipType.getState()+"', description='"+ membershipType.getDescription()+"', type='"+membershipType.getType()+"', state='"+membershipType.getState()+"'  WHERE id = " + String.valueOf(membershipType.getId())) > 0;
+        return this.updateByCriteria("UPDATE `membership_types` SET `name`='"+membershipType.getName()+"', `cost`='"+membershipType.getCost()+"', `days_duration`='"+membershipType.getDaysDuration()+"', `description`='"+membershipType.getDescription()+"' WHERE (`id`='"+membershipType.getId()+"')") > 0;
     }
 
 }

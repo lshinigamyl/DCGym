@@ -1,10 +1,6 @@
 package pe.com.dcgym.services;
 
-import pe.com.dcgym.models.DAO.Customer;
 import pe.com.dcgym.models.DAO.People;
-import pe.com.dcgym.models.DAO.TrainingCenter;
-
-import java.util.List;
 
 public class ClientService extends BaseService {
 

@@ -13,13 +13,16 @@
         <div class="col-sm-9">
             <button class="btn btn-info" data-toggle="modal" data-target="#mymodal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Personal</button>
             <div class="row"><br></div>
+
             <div class="input-group">
 
                 <span class="input-group-addon">Buscar</span>
                 <input id="filtrar" type="text" class="form-control" placeholder="Ingresa la canción de este Disco que deseas Buscar...">
             </div>
             </br>
-            <table class="table table-hover">
+            <div class="row">
+            <div class="col-sm-12">
+            <table class="table table-responsive">
                 <thead>
                 <tr>
                     <th>Nombre</th>
@@ -31,10 +34,6 @@
                 </tr>
                 </thead>
                 <tbody class="buscar">
-                <s:set name="id" value="exerciseRoutines[0].routine.id"/>
-                <tr >
-                    <td colspan="4"><s:property value="exerciseRoutines[0].routine.name"></td>
-                </tr>
                 <s:iterator value="exerciseRoutines" var="exe">
                     <s:if test="#id!=#exe.routine.id">
                         <tr >
@@ -55,7 +54,8 @@
                 </s:iterator>
                 </tbody>
             </table>
-
+            </div>
+            </div>
         </div>
     </div>
 <div id="mymodal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">

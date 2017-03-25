@@ -5,16 +5,14 @@ public class Exercise {
     private int id;
     private String name;
     private String description;
-    private String state;
 
     public Exercise() {
     }
 
-    public Exercise(int id, String name, String description, String state) {
-        this.setId(id);
-        this.setName(name);
-        this.setDescription(description);
-        this.setState(state);
+    public Exercise(int id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
     }
 
     public int getId() {
@@ -39,13 +37,5 @@ public class Exercise {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
     }
 }

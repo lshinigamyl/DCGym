@@ -4,8 +4,8 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.SessionAware;
 import pe.com.dcgym.models.DAO.Customer;
+import pe.com.dcgym.models.DAO.Gym;
 import pe.com.dcgym.models.DAO.People;
-import pe.com.dcgym.models.DAO.TrainingCenter;
 import pe.com.dcgym.services.SessionService;
 
 import java.util.List;
@@ -18,7 +18,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
     private String url;
     private List<People> peoples;
     private List<Customer> customers;
-    private List<TrainingCenter> trainingCenters;
+    private List<Gym> Gyms;
     private Map<String,Object> session;
 
 
@@ -59,7 +59,7 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
         }else {
         SessionService service= new SessionService();
-        if (service.findPeopleByUser(getUserName())!=null){
+        if (service.findByCustomerUser(getUserName())!=null){
         }else {
             if (service.findTrainingByUser(getUserName())!=null){
             }
@@ -99,6 +99,14 @@ public class LoginAction extends ActionSupport implements SessionAware {
 
     public String getUrl() {
         return url;
+    }
+
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
     }
 
     public void setUrl(String url) {

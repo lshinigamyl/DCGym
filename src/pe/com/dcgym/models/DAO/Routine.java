@@ -1,20 +1,40 @@
 package pe.com.dcgym.models.DAO;
 
 
+import pe.com.dcgym.models.DTO.GymEntity;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Routine {
     private int id;
     private String name;
     private String description;
     private String state;
+    private Gym gym;
 
-    public Routine(int id, String name, String description, String state) {
-        this.setId(id);
-        this.setName(name);
-        this.setDescription(description);
-        this.setState(state);
-    }
     public Routine(){
 
+    }
+
+    public Routine(int id, String name, String description, String state, Gym gym) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.state = state;
+        this.gym = gym;
+    }
+    public static Routine build(ResultSet resultSet, GymEntity gymEntity) {
+        try {
+            return new Routine(     resultSet.getInt("id"),
+                                    resultSet.getString("name"),
+                                    resultSet.getString("description"),
+                                    resultSet.getString("state"),
+                                    gymEntity.findById(resultSet.getInt("gym_id")));
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     public int getId() {
@@ -47,6 +67,14 @@ public class Routine {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public Gym getGym() {
+        return gym;
+    }
+
+    public void setGym(Gym gym) {
+        this.gym = gym;
     }
 }
 

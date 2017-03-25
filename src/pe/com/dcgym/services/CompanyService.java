@@ -2,10 +2,6 @@ package pe.com.dcgym.services;
 
 
 import pe.com.dcgym.models.DAO.*;
-import pe.com.dcgym.models.DTO.CustomersEntity;
-import pe.com.dcgym.models.DTO.CustomersMembershipsEntity;
-import pe.com.dcgym.models.DTO.MembershipsTypeEntity;
-import pe.com.dcgym.models.DTO.PeopleEntity;
 
 import java.util.List;
 
@@ -13,8 +9,8 @@ import java.util.List;
 public class CompanyService extends BaseService {
 
 
-    public List<CustomerMembership> findAllCustomerMembership(){
-        return getCustomersMembershipsEntity().findAll();
+    public List<CustomerGymMembershipType> findAllCustomerMembership(){
+        return getCustomerGymMembershipTypesEntity().findAll();
     }
 
     public List<MembershipType> findAllMembershipsType(){
@@ -24,17 +20,26 @@ public class CompanyService extends BaseService {
     public List<Employee> findAllEmployee(String id){
         return getEmployeesEntity().findByTraininCenterID(id);
     }
-    public List<CustomerMembership> findCustomerMembershipsByUserTrainingCenter(String user){
-        return  getCustomersMembershipsEntity().findByTrainingCenterUser(user);
+    public List<CustomerGymMembershipType> findCustomerMembershipsByUserTrainingCenter(String user){
+        return  getCustomerGymMembershipTypesEntity().findByTrainingCenterUser(user);
     }
-    public List<TrainingCenterMembership> findTrainingCenterMembership(String id){
-        return getTrainingCentersMembershipsEntity().findByTrainingCenter(id);
+    public List<GymMembershipTypes> findTrainingCenterMembership(String id){
+        return getGymsMembershipTypesEntity().findByTrainingCenter(id);
     }
     public List<EmployeeType>findAllEmployeeTypes(){
         return getEmployeeTypesEntity().findAll();
     }
     public List<ExerciseRoutine> findAllRoutines(){ return getExercisesRoutinesEntity().findAll();
 
+    }
+    public GymMembershipTypes create(GymMembershipTypes gymMembershipTypes){
+        return getGymsMembershipTypesEntity().create(gymMembershipTypes);
+    }
+    public boolean delete(int id){
+        return getGymsMembershipTypesEntity().delete(id);
+    }
+    public boolean edit(GymMembershipTypes gymMembershipTypes){
+        return getGymsMembershipTypesEntity().getMembershipsTypeEntity().update(gymMembershipTypes.getMembershipType());
     }
 
 }
