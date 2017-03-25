@@ -7,61 +7,30 @@ import pe.com.dcgym.models.DTO.TrainingCentersEntity;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/*
 
-    */
-    public String getNombre() {
-        return nombre;
-    }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getFuerza() {
-        return fuerza;
-    }
-
-    public void setFuerza(int fuerza) {
-        this.fuerza = fuerza;
-    }
-
-    public boolean isHerido() {
-        return herido;
-    }
-
-    public void setHerido(boolean herido) {
-        this.herido = herido;
-    }
-
-    public boolean isMuerto() {
-        return muerto;
-    }
-
-    public void setMuerto(boolean muerto) {
-        this.muerto = muerto;
-    }
-    
    
 
 
 public class Employee {
-    int id;
-    String state;
-    TrainingCenter trainingCenters;
-    People people;
-    EmployeeType employeeType;
+    private int id;
+    private String state;
+    private TrainingCenter trainingCenters;
+    private People people;
+    private EmployeeType employeeType;
 
 
     public Employee() {
     }
 
+
+
     public Employee(int id, String state, TrainingCenter trainingCenters, People people, EmployeeType employeeType) {
-        this.id = id;
-        this.state = state;
-        this.trainingCenters = trainingCenters;
-        this.people = people;
-        this.employeeType = employeeType;
+        this.setId(id);
+        this.setState(state);
+        this.setTrainingCenters(trainingCenters);
+        this.setPeople(people);
+        this.setEmployeeType(employeeType);
     }
 
     public int getId() {
