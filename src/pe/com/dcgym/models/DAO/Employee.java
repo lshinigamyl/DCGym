@@ -7,9 +7,44 @@ import pe.com.dcgym.models.DTO.TrainingCentersEntity;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
+/*
 
- */
+    */
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getFuerza() {
+        return fuerza;
+    }
+
+    public void setFuerza(int fuerza) {
+        this.fuerza = fuerza;
+    }
+
+    public boolean isHerido() {
+        return herido;
+    }
+
+    public void setHerido(boolean herido) {
+        this.herido = herido;
+    }
+
+    public boolean isMuerto() {
+        return muerto;
+    }
+
+    public void setMuerto(boolean muerto) {
+        this.muerto = muerto;
+    }
+    
+   
+
+
 public class Employee {
     int id;
     String state;

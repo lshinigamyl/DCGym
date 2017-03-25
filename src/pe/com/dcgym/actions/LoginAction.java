@@ -20,17 +20,6 @@ public class LoginAction extends ActionSupport implements SessionAware {
     private List<Customer> customers;
     private List<TrainingCenter> trainingCenters;
     private Map<String,Object> session;
-//    @Override
-//    public String execute() throws Exception {
-//        BaseService service = new BaseService();
-//        if(service.validateUser(getUserName(),getPassword())){
-//            Map session = ActionContext.getContext().getSession();
-//            session.put("logged-in","true");
-//            return SUCCESS;
-//        }else {
-//            return ERROR;
-//        }
-//    }
 
 
     @Override
@@ -115,22 +104,5 @@ public class LoginAction extends ActionSupport implements SessionAware {
     public void setUrl(String url) {
         this.url = url;
     }
-//    public String execute() {
-//        return "error";
-//    }
 
-
-//    public String validate() {
-//        BaseService service = new BaseService();
-//        if (service.validateUser(getUserName(), getPassword())) {
-//            if(getUserName()=="user3"){
-//                return "clientconnect";
-//            }else {
-//                return "bussinessconnect";
-//            }
-//        } else {
-//            return "error";
-//
-//        }
-//    }
 }

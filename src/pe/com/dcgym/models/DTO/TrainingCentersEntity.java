@@ -10,7 +10,7 @@ import java.util.List;
 
 /*
 
- */
+*/
 public class TrainingCentersEntity extends BaseEntity {
     private static String TABLE="training_centers";
     private static String DEFAULT_SQL = "SELECT * FROM "+TABLE;

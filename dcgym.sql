@@ -29,6 +29,7 @@ CREATE TABLE `customers` (
   `coment` varchar(100) DEFAULT NULL,
   `state` char(1) DEFAULT NULL,
   `people_id` int(11) unsigned NOT NULL,
+  `employee_id` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `customers_people_people_id` (`people_id`),
   CONSTRAINT `customers_people_people_id` FOREIGN KEY (`people_id`) REFERENCES `people` (`id`)
@@ -41,7 +42,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (6000,'Constante con su entrenamiento','H',2016),(6001,'Llega siempre tarde','H',2017),(6002,'Cliente puntual','H',2018),(6003,'Dejo de asistir','H',2019),(6004,'Impuntal al pagar','H',2020),(6005,'Cliente constante','H',2021),(6006,'Inconstante en asistencias','H',2022),(6007,'Cliente a punto de ser dado de baja','H',2023),(6008,'Le falta pagar la reactivacion de su membresia.','H',2024),(6009,'Cliente predilecto','H',2025);
+INSERT INTO `customers` VALUES (6000,'Constante con su entrenamiento','H',2016),(6001,'Llega siempre tarde','H',2017),(6002,'Cliente puntual','H',2018),(6003,'Dejo de asistir','H',2019),(6004,'Impuntal al pagar','H',2020),(6005,'Cliente constante','H',2021),(6006,'Inconstante en asistencias','H',2022),(6007,'Cliente a punto de ser dado de baja','H',2023),(6008,'Le falta pagar la reactivacion de su membresia.','H',2024),(6009,'Cliente predilecto','H',2025)(6010,'Falta cancelar el 50% de su membresia.','H',2027,10016),(6011,'Cliente predilecto.','H',2028,10017),(6012,'Aun debe el 30% de su membresia.','H',2029,10020),(6013,'Falta poco para renovacion de membresia.','H',2030,10021),(6014,'Puntual en los pagos.','H',2031,10022);
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -71,7 +72,7 @@ CREATE TABLE `customers_memberships` (
 
 LOCK TABLES `customers_memberships` WRITE;
 /*!40000 ALTER TABLE `customers_memberships` DISABLE KEYS */;
-INSERT INTO `customers_memberships` VALUES (8000,'H',6000,7000),(8001,'H',6001,7001),(8002,'H',6002,7002),(8003,'H',6003,7001),(8004,'H',6004,7002),(8005,'H',6005,7000),(8006,'H',6006,7005),(8007,'H',6007,7003),(8008,'H',6008,7008),(8009,'H',6009,7007);
+INSERT INTO `customers_memberships` VALUES (8000,'H',6000,7000),(8001,'H',6001,7001),(8002,'H',6002,7002),(8003,'H',6003,7001),(8004,'H',6004,7002),(8005,'H',6005,7000),(8006,'H',6006,7005),(8007,'H',6007,7003),(8008,'H',6008,7008),(8009,'H',6009,7007),(8010,'2017-03-27','H',6010,13010),(8011,'2017-03-31','H',6011,13011),(8012,'2017-04-18','H',6012,13012),(8013,'2017-03-18','H',6013,13013),(8014,'2017-05-01','H',6014,13014);
 /*!40000 ALTER TABLE `customers_memberships` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,7 +105,7 @@ CREATE TABLE `customers_routines` (
 
 LOCK TABLES `customers_routines` WRITE;
 /*!40000 ALTER TABLE `customers_routines` DISABLE KEYS */;
-INSERT INTO `customers_routines` VALUES (11000,'H',6000,4004,10000),(11001,'H',6001,4001,10000),(11002,'H',6002,4002,10019),(11003,'H',6003,4003,10020),(11004,'H',6004,4005,10004),(11005,'H',6005,4000,10003),(11006,'H',6006,4005,10009),(11007,'H',6007,4002,10008),(11008,'H',6008,4004,10013),(11009,'H',6009,4005,10014);
+INSERT INTO `customers_routines` VALUES (11000,'H',6000,4004,10000),(11001,'H',6001,4001,10000),(11002,'H',6002,4002,10019),(11003,'H',6003,4003,10020),(11004,'H',6004,4005,10004),(11005,'H',6005,4000,10003),(11006,'H',6006,4005,10009),(11007,'H',6007,4002,10008),(11008,'H',6008,4004,10013),(11009,'H',6009,4005,10014),(11010,6010,4000),(11011,6011,4003),(11012,6012,4005),(11013,6013,4000),(11014,6014,4002);
 /*!40000 ALTER TABLE `customers_routines` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -162,7 +163,7 @@ CREATE TABLE `employees` (
 
 LOCK TABLES `employees` WRITE;
 /*!40000 ALTER TABLE `employees` DISABLE KEYS */;
-INSERT INTO `employees` VALUES (10000,'H',1000,2000,9000),(10001,'H',1000,2001,9001),(10002,'H',1000,2002,9002),(10003,'H',1002,2000,9000),(10004,'H',1002,2003,9000),(10005,'H',1002,2004,9001),(10006,'H',1002,2005,9003),(10007,'H',1002,2006,9002),(10008,'H',1003,2007,9000),(10009,'H',1003,2008,9000),(10010,'H',1003,2000,9000),(10011,'H',1003,2009,9002),(10012,'H',1003,2010,9001),(10013,'H',1004,2007,9000),(10014,'H',1004,2003,9000),(10015,'H',1004,2011,9001),(10016,'H',1004,2012,9002),(10018,'H',1004,2013,9003),(10019,'H',1001,2000,9000),(10020,'H',1001,2003,9000),(10021,'H',1001,2014,9002),(10022,'H',1001,2015,9001);
+INSERT INTO `employees` VALUES (10000,'H',1000,2000,9000),(10001,'H',1000,2001,9001),(10002,'H',1000,2002,9002),(10003,'H',1002,2000,9000),(10004,'H',1002,2003,9000),(10005,'H',1002,2004,9001),(10006,'H',1002,2005,9003),(10007,'H',1002,2006,9002),(10008,'H',1003,2007,9000),(10009,'H',1003,2008,9000),(10010,'H',1003,2000,9000),(10011,'H',1003,2009,9002),(10012,'H',1003,2010,9001),(10013,'H',1004,2007,9000),(10014,'H',1004,2003,9000),(10015,'H',1004,2011,9001),(10016,'H',1004,2012,9002),(10018,'H',1004,2013,9003),(10019,'H',1001,2000,9000),(10020,'H',1001,2003,9000),(10021,'H',1001,2014,9002),(10022,'H',1001,2015,9001),(10023,'H',1004,2014,9001),(10024,'H',1004,2015,9002);
 /*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -313,6 +314,7 @@ CREATE TABLE `records` (
 
 LOCK TABLES `records` WRITE;
 /*!40000 ALTER TABLE `records` DISABLE KEYS */;
+INSERT INTO `records` VALUES (12000,'2017-03-09',60,60,'Ligera lesión en el tobillo por el cual no completo el entrenamiento.',11000),(12001,'2017-03-09',60,80,'Se retiro antes de completar su entrenamiento.',11001),(12002,'2017-03-09',90,100,'Entrenamiento sin dificultades.',11002),(12003,'2017-03-09',30,50,'Se sintio mal de salud y se retiro temprano.',11003),(12004,'2017-03-09',40,100,'Completo sin dificultad el entrenamiento.',11004),(12005,'2017-03-09',50,70,'Al ser principiante su cuerpo no pudo resistir el entrenamiento en su totalidad.',11005),(12006,'2017-03-09',90,100,'Dificultad al hacer los ejercicios, pero logro la meta de completarlos.',11006),(12007,'2017-03-09',45,100,'Debe tener cuidado en no realizar los ejercicios de manera acelerada, pues sus musculos podrían dañarse.',11007),(12008,'2017-03-10',60,80,'No completo entrenamiento por la lesión al tobillo.',11000),(12009,'2017-03-10',90,100,'Poca resistencia fisica en las piernas. Se debe trabajar esa zona.',11001),(12010,'2017-03-10',45,90,'Agotamiento le impidio seguir adelante con la rutina.',11002),(12011,'2017-03-10',80,80,'Debilidad al no sentirce del todo bien de salud. No realizo como debia la rutina.',11003),(12012,'2017-03-10',60,100,'Sin complicación alguna en la rutina.',11004),(12013,'2017-03-10',60,90,'Aún tiene complicaciones pero esta mejorando. ',11005),(12014,'2017-03-10',70,100,'Mejor resistencia a los ejercicios.',11006),(12015,'2017-03-10',50,80,'\'No pudo seguir la rutina por un imprevisto.',11007),(12016,'2017-04-11',60,70,'Solo realiza los ejercicios que no comprometen su tobillo.',11000),(12017,'2017-03-11',55,100,'Sin complicaciones.',11001),(12018,'2017-03-11',75,90,'Tuvo que retirarse temprano y no completo la rutina.',11002),(12019,'2017-03-11',30,100,'Completo sin dificultad la rutina del día.',11003),(12020,'2017-03-11',96,90,'Se sentia cansado así que dejo de realizar un ejercicio.',11004),(12021,'2017-03-11',120,100,'Termino satisfactoriamente la rutina.',11005),(12022,'2017-03-11',83,80,'Se esforzo pero no pudo culminar con los dos ultimos ejercicios.',11006),(12023,'2017-03-11',45,100,'Se recomienda más paciencia al realizar los ejercicios.',11007),(12024,'2017-03-12',73,95,'Le falto realizar la mitad del segundo ejercicio.',11000),(12025,'2017-03-12',48,100,'Termino sin complicaciones.',11001),(12026,'2017-03-12',85,93,'No quiso realizar levantamiento de pesas.',11002),(12027,'2017-03-12',59,70,'Se nego a hacer un ejercicio por una dolencia que tenia.',11003),(12028,'2017-03-12',120,100,'Sin complicaciones en la rutina.',11004),(12029,'2017-03-12',30,50,'Se retiro antes de completar su entrenamiento.',11005),(12030,'2017-03-12',90,100,'Completo sin problemas.',11006),(12031,'2017-03-12',56,100,'Completo la rutina sin problemas.',11007);
 /*!40000 ALTER TABLE `records` ENABLE KEYS */;
 UNLOCK TABLES;
 
