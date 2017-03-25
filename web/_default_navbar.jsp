@@ -10,7 +10,7 @@ background-position: center center;">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a rel="nofollow" class="navbar-brand" href="/"><img style=" height: 70px; " src="image/logogym.png" alt="logo">
+            <a rel="nofollow" class="navbar-brand" href="index.jsp"><img style=" height: 70px; " src="image/logogym.png" alt="logo">
                <h1 style="    position: absolute;    top: -10px;    left: 45%;    font-weight: bold;" >Dc Gym</h1>
             </a>
         </div>
