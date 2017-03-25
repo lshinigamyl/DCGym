@@ -7,9 +7,100 @@ import pe.com.dcgym.models.DTO.TrainingCentersEntity;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
+/*
+public abstract class Guerrero {
+    private String nombre;
+    private int edad;
+    
+    private int fuerza;
+    private boolean herido;
 
- */
+    private boolean muerto;
+
+    public Guerrero(int edad) {
+        this.edad = edad;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+boolean comprobarEdad(int e){
+boolean ed;
+ if (e>=15 && e<=60){
+ ed = true;
+}
+        return false;
+}
+
+boolean comprobarFuerza(int f){
+boolean fu;
+ if (f>=1 && f<=10){
+ fu = true;
+}
+        return false;
+}
+    
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public Guerrero(String nombre, int edad, int fuerza) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.fuerza = fuerza;
+    }
+   
+
+    public Guerrero() {
+       this("Guerrero x",15,1);
+    }
+
+    public Guerrero(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public boolean retirarse(){
+        
+        return false;
+    
+    }
+
+    */
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getFuerza() {
+        return fuerza;
+    }
+
+    public void setFuerza(int fuerza) {
+        this.fuerza = fuerza;
+    }
+
+    public boolean isHerido() {
+        return herido;
+    }
+
+    public void setHerido(boolean herido) {
+        this.herido = herido;
+    }
+
+    public boolean isMuerto() {
+        return muerto;
+    }
+
+    public void setMuerto(boolean muerto) {
+        this.muerto = muerto;
+    }
+    
+   
+
+
 public class Employee {
     int id;
     String state;
