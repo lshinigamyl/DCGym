@@ -8,7 +8,7 @@
                 <br>
             </div>
 
-            <button class="btn btn-success vcenter" style="background:transparent; border: 2px solid white;border-radius: 30px 30px 30px 30px;">Conócenos</button>
+            <a href="conocenos"> <button class="btn btn-success vcenter" style="background:transparent; border: 2px solid white;border-radius: 30px 30px 30px 30px;" >Conócenos</button></a>
             <div class="row">
                 <br>
             </div>
@@ -26,7 +26,7 @@
                 <br>
             </div>
 
-            <button class="btn btn-success vcenter" style="background:transparent; border: 2px solid white;border-radius: 30px 30px 30px 30px;">Contáctanos</button>
+            <a href="contactanos">    <button class="btn btn-success vcenter" style="background:transparent; border: 2px solid white;border-radius: 30px 30px 30px 30px;">Contáctanos</button></a>
             <div class="row">
                 <br>
             </div>

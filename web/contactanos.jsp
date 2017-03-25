@@ -2,7 +2,7 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
-    <title>DCGym - Bienvenido</title>
+    <title>DCGym - Contáctanos</title>
     <jsp:include page="_default_head.jsp"/>
 
 </head>
@@ -11,7 +11,7 @@
     <jsp:include page="_default_navbar.jsp"/>
     <%--Resultados--%>
     <div id="searchhere" class="container">
-
+<h1>HOLA contactanos</h1>
     </div>
     <jsp:include page="_default_footer.jsp"/>
     <script type="text/javascript" src="js/search.js"></script>

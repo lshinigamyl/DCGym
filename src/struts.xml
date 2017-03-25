@@ -16,7 +16,15 @@
             <result name="error" >_error.jsp</result>
             <result name="input" >login.jsp</result>
         </action>
-
+        <action name="conocenos" >
+            <result >conocenos.jsp</result>
+        </action>
+        <action name="contactanos" >
+            <result >contactanos.jsp</result>
+        </action>
+        <action name="inicio" >
+            <result >index.jsp</result>
+        </action>
         <action name="client" class="pe.com.dcgym.actions.ClientAction">
             <result name="success">dashboard_client.jsp</result>
             <result name="error">_error.jsp</result>
