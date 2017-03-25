@@ -44,5 +44,31 @@
         document.getElementById("copyright").innerHTML = '<strong>Copyright &copy; TEAMDC ' + y + ' todos los derechos reservados</strong>';
     }
 
-    copyrightYear();
+
+ <div class="container-fluid">
+
+        <div class="col-sm-3 text-center">
+            <div class="row">
+                <br>
+            </div>
+
+            <a href="conocenos"> <button class="btn btn-success vcenter" style="background:transparent; border: 2px solid white;border-radius: 30px 30px 30px 30px;" >Conócenos</button></a>
+            <div class="row">
+                <br>
+            </div>
+        </div>
+        <div class="col-sm-6 text-center">
+            <footer id="pagefooter">
+                <p id="copyright"></p>
+            </footer>
+            Teléfonos: 991935770 - 2937353<br>
+            Email: teamdcgym@gmail.com<br>
+            Av. Lima 1994 José Gálvez V.M.T
+        </div>
+        <div class="col-sm-3 text-center">
+            <div class="row">
+                <br>
+            </div>
+
+         copyrightYear();
 </script>
