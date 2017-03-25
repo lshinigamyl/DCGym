@@ -1,4 +1,4 @@
-import javax.faces.context.FacesContext;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

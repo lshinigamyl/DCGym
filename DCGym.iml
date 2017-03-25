@@ -31,5 +31,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.0" level="application_server_libraries" />
     <orderEntry type="library" name="Struts 2-2.3.20.1" level="project" />
+    <orderEntry type="library" name="mail_1.4" level="project" />
   </component>
 </module>
