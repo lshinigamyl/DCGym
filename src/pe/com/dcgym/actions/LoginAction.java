@@ -20,18 +20,224 @@ public class LoginAction extends ActionSupport implements SessionAware {
     private List<Customer> customers;
     private List<TrainingCenter> trainingCenters;
     private Map<String,Object> session;
-//    @Override
-//    public String execute() throws Exception {
-//        BaseService service = new BaseService();
-//        if(service.validateUser(getUserName(),getPassword())){
+
+    /*
+    //    
+    @Override
+//    
+public String execute() throws Exception {
+//       
+
+BaseService service = new BaseService();
+//       
+if(service.validateUser(getUserName(),getPassword())){
 //            Map session = ActionContext.getContext().getSession();
-//            session.put("logged-in","true");
+//      
+session.put("logged-in","true");
 //            return SUCCESS;
-//        }else {
+//      
+}else {
 //            return ERROR;
 //        }
-//    }
+//  
+}
+public class Empleado {
+    private String dni,nombre, apellidos, domicilio,fecon;
+     private double sb;
 
+    public Empleado(String dni, String nombre, String apellidos, String domicilio, String fecon, double sb) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.domicilio = domicilio;
+        this.fecon = fecon;
+        this.sb = sb;
+    }
+
+    
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(String domicilio) {
+        this.domicilio = domicilio;
+    }
+
+    public String getFecon() {
+        return fecon;
+    }
+
+    public void setFecon(String fecon) {
+        this.fecon = fecon;
+    }
+
+    public double getSb() {
+        return sb;
+    }
+
+    public void setSb(double sb) {
+        this.sb = sb;
+    }
+     
+}
+public class Empleado {
+    private String dni,nombre, apellidos, domicilio,fecon;
+     private double sb;
+
+    public Empleado(String dni, String nombre, String apellidos, String domicilio, String fecon, double sb) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.domicilio = domicilio;
+        this.fecon = fecon;
+        this.sb = sb;
+    }
+
+
+
+    
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(String domicilio) {
+        this.domicilio = domicilio;
+    }
+
+    public String getFecon() {
+        return fecon;
+    }
+
+    public void setFecon(String fecon) {
+        this.fecon = fecon;
+    }
+
+    public double getSb() {
+        return sb;
+    }
+
+    public void setSb(double sb) {
+        this.sb = sb;
+    }
+     
+}public class Empleado {
+    private String dni,nombre, apellidos, domicilio,fecon;
+     private double sb;
+
+    public Empleado(String dni, String nombre, String apellidos, String domicilio, String fecon, double sb) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.domicilio = domicilio;
+        this.fecon = fecon;
+        this.sb = sb;
+    }
+
+    
+    
+    
+    
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(String domicilio) {
+        this.domicilio = domicilio;
+    }
+
+    public String getFecon() {
+        return fecon;
+    }
+
+    public void setFecon(String fecon) {
+        this.fecon = fecon;
+    }
+
+    public double getSb() {
+        return sb;
+    }
+
+    public void setSb(double sb) {
+        this.sb = sb;
+    }
+     
+}
+*/
 
     @Override
     public String execute() throws Exception {
