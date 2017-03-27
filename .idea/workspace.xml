@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e3539ed5-1d8b-4dcd-83a6-c56ec04f112d" name="Default" comment="Merge remote-tracking branch 'origin/master'">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/services/Company00Service.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/services/Company00Service.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/Customer.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/Customer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/dashboard_company_2usuarios.jsp" afterPath="$PROJECT_DIR$/web/dashboard_company_2usuarios.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/dashboard_company_3membresia.jsp" afterPath="$PROJECT_DIR$/web/dashboard_company_3membresia.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/dashboard_company_4entrenadores.jsp" afterPath="$PROJECT_DIR$/web/dashboard_company_4entrenadores.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,55 +39,22 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Company04EmployeeAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/actions/Company04EmployeeAction.java">
+      <file leaf-file-name="dashboard_company_2usuarios.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/dashboard_company_2usuarios.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1249#1250#0" expanded="false" />
-                <element signature="e#1281#1282#0" expanded="false" />
-                <element signature="e#1327#1328#0" expanded="false" />
-                <element signature="e#1358#1359#0" expanded="false" />
-                <element signature="e#1405#1406#0" expanded="false" />
-                <element signature="e#1435#1436#0" expanded="false" />
-                <element signature="e#1472#1473#0" expanded="false" />
-                <element signature="e#1503#1504#0" expanded="false" />
-                <element signature="e#1553#1554#0" expanded="false" />
-                <element signature="e#1593#1594#0" expanded="false" />
-                <element signature="method#getService#0;class#Company04EmployeeAction#0" expanded="false" />
-                <element signature="e#1833#1834#0" expanded="false" />
-                <element signature="e#1871#1872#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Company04EmployeesService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/services/Company04EmployeesService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="612">
+              <caret line="70" column="155" lean-forward="false" selection-start-line="70" selection-start-column="155" selection-end-line="70" selection-end-column="155" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Company00Service.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/services/Company00Service.java">
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="28" column="30" lean-forward="false" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#346#347#0" expanded="false" />
-                <element signature="e#405#406#0" expanded="false" />
-                <element signature="e#460#461#0" expanded="false" />
-                <element signature="e#529#530#0" expanded="false" />
-                <element signature="e#922#923#0" expanded="false" />
-                <element signature="e#979#980#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="-4998">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,152 +62,18 @@
       <file leaf-file-name="Company00Action.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/actions/Company00Action.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="19" column="44" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#792#793#0" expanded="false" />
-                <element signature="e#824#825#0" expanded="false" />
-                <element signature="e#3851#3852#0" expanded="false" />
-                <element signature="e#3884#3885#0" expanded="false" />
-                <element signature="e#3936#3937#0" expanded="false" />
-                <element signature="e#3980#3981#0" expanded="false" />
-                <element signature="e#4057#4058#0" expanded="false" />
-                <element signature="e#4106#4107#0" expanded="false" />
-                <element signature="e#4347#4348#0" expanded="false" />
-                <element signature="e#4385#4386#0" expanded="false" />
-                <element signature="e#4461#4462#0" expanded="false" />
-                <element signature="e#4515#4516#0" expanded="false" />
-                <element signature="e#4559#4560#0" expanded="false" />
-                <element signature="e#4591#4592#0" expanded="false" />
-                <element signature="e#4649#4650#0" expanded="false" />
-                <element signature="e#4691#4692#0" expanded="false" />
-                <element signature="e#4738#4739#0" expanded="false" />
-                <element signature="e#4768#4769#0" expanded="false" />
-                <element signature="e#4831#4832#0" expanded="false" />
-                <element signature="e#4872#4873#0" expanded="false" />
-                <element signature="e#5070#5071#0" expanded="false" />
-                <element signature="e#5106#5107#0" expanded="false" />
-                <element signature="e#5176#5177#0" expanded="false" />
-                <element signature="e#5226#5227#0" expanded="false" />
-                <element signature="e#5284#5285#0" expanded="false" />
-                <element signature="e#5323#5324#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Company02ClientAction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/actions/Company02ClientAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="16" column="63" lean-forward="false" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="method#setCustomerGymMembershipType#0;class#Company02ClientAction#0" expanded="false" />
-                <element signature="e#1514#1515#0" expanded="false" />
-                <element signature="e#1562#1563#0" expanded="false" />
-                <element signature="e#1631#1632#0" expanded="false" />
-                <element signature="e#1663#1664#0" expanded="false" />
-                <element signature="e#1709#1710#0" expanded="false" />
-                <element signature="e#1757#1758#0" expanded="false" />
-                <element signature="e#1804#1805#0" expanded="false" />
-                <element signature="e#1834#1835#0" expanded="false" />
-                <element signature="method#getService#0;class#Company02ClientAction#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomerGymMembershipType.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/CustomerGymMembershipType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1734#1735#0" expanded="false" />
-                <element signature="e#1759#1760#0" expanded="false" />
-                <element signature="e#1792#1793#0" expanded="false" />
-                <element signature="e#1820#1821#0" expanded="false" />
-                <element signature="e#1854#1855#0" expanded="false" />
-                <element signature="e#1886#1887#0" expanded="false" />
-                <element signature="e#1934#1935#0" expanded="false" />
-                <element signature="e#1976#1977#0" expanded="false" />
-                <element signature="e#2008#2009#0" expanded="false" />
-                <element signature="e#2038#2039#0" expanded="false" />
-                <element signature="e#2082#2083#0" expanded="false" />
-                <element signature="e#2120#2121#0" expanded="false" />
-                <element signature="e#2152#2153#0" expanded="false" />
-                <element signature="e#2180#2181#0" expanded="false" />
-                <element signature="e#2222#2223#0" expanded="false" />
-                <element signature="e#2256#2257#0" expanded="false" />
-                <element signature="e#2293#2294#0" expanded="false" />
-                <element signature="e#2324#2325#0" expanded="false" />
-                <element signature="e#2374#2375#0" expanded="false" />
-                <element signature="e#2414#2415#0" expanded="false" />
-                <element signature="e#2471#2472#0" expanded="false" />
-                <element signature="e#2512#2513#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard_company_4entrenadores.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/dashboard_company_4entrenadores.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="96" column="83" lean-forward="false" selection-start-line="96" selection-start-column="83" selection-end-line="96" selection-end-column="83" />
+            <state relative-caret-position="238">
+              <caret line="20" column="55" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard_company_2usuarios.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/dashboard_company_2usuarios.jsp">
+      <file leaf-file-name="GymMembershipTypes.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/GymMembershipTypes.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2669">
-              <caret line="158" column="182" lean-forward="false" selection-start-line="158" selection-start-column="182" selection-end-line="158" selection-end-column="182" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/Employee.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1336#1337#0" expanded="false" />
-                <element signature="e#1361#1362#0" expanded="false" />
-                <element signature="e#1394#1395#0" expanded="false" />
-                <element signature="e#1422#1423#0" expanded="false" />
-                <element signature="e#1454#1455#0" expanded="false" />
-                <element signature="e#1482#1483#0" expanded="false" />
-                <element signature="e#1585#1586#0" expanded="false" />
-                <element signature="e#1611#1612#0" expanded="false" />
-                <element signature="e#1646#1647#0" expanded="false" />
-                <element signature="e#1676#1677#0" expanded="false" />
-                <element signature="e#1709#1710#0" expanded="false" />
-                <element signature="e#1738#1739#0" expanded="false" />
-                <element signature="e#1782#1783#0" expanded="false" />
-                <element signature="e#1818#1819#0" expanded="false" />
-                <element signature="e#1863#1864#0" expanded="false" />
-                <element signature="e#1898#1899#0" expanded="false" />
-                <element signature="e#1960#1961#0" expanded="false" />
-                <element signature="e#2008#2009#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard_company_3membresia.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/dashboard_company_3membresia.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="33" column="53" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="53" />
+            <state relative-caret-position="136">
+              <caret line="12" column="41" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -302,7 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pe/com/dcgym/services/EmailUtility.java" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/services/EmailSendingServlet.java" />
         <option value="$PROJECT_DIR$/web/EmailForm.jsp" />
         <option value="$PROJECT_DIR$/.idea/artifacts/DCGym_ear_exploded.xml" />
@@ -350,9 +180,10 @@
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/actions/Company03MembershipAction.java" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/actions/Company05RoutineAction.java" />
         <option value="$PROJECT_DIR$/web/dashboard_company_3membresia.jsp" />
-        <option value="$PROJECT_DIR$/web/dashboard_company_2usuarios.jsp" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/services/Company00Service.java" />
         <option value="$PROJECT_DIR$/web/dashboard_company_4entrenadores.jsp" />
+        <option value="$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/Customer.java" />
+        <option value="$PROJECT_DIR$/web/dashboard_company_2usuarios.jsp" />
       </list>
     </option>
   </component>
@@ -530,6 +361,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="actions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DCGym" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DCGym" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1087,7 +932,7 @@
       <workItem from="1490481989201" duration="2954000" />
       <workItem from="1490527380496" duration="12871000" />
       <workItem from="1490592537223" duration="2165000" />
-      <workItem from="1490594789740" duration="62000" />
+      <workItem from="1490594789740" duration="2130000" />
     </task>
     <task id="LOCAL-00001" summary="Modifcando Header">
       <created>1490067394004</created>
@@ -1243,14 +1088,22 @@
       <option name="project" value="LOCAL" />
       <updated>1490483594387</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Merge remote-tracking branch 'origin/master'">
+      <created>1490594888745</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1490594888745</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91933000" />
+    <option name="totallyTimeSpent" value="94001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1621" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1266,14 +1119,15 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3266385" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.49154335" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.49199572" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17758985" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21619938" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21619938" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1283,7 +1137,6 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3266385" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11774744" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1355,36 +1208,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/Result.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EmailUtility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/CustomerRoutine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/mail_1_4.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/EmailSendingServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -1406,6 +1229,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1490,6 +1314,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#557#558#0" expanded="false" />
+            <element signature="e#632#633#0" expanded="false" />
+            <element signature="e#4154#4155#0" expanded="false" />
+            <element signature="e#4186#4187#0" expanded="false" />
+            <element signature="e#4239#4240#0" expanded="false" />
+            <element signature="e#4281#4282#0" expanded="false" />
+            <element signature="e#4344#4345#0" expanded="false" />
+            <element signature="e#4388#4389#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1504,6 +1339,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
           <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1720,16 +1556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/services/Company02ClientsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/actions/Company04EmployeeAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -1773,13 +1599,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/People.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1808,46 +1627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/CustomerGymMembershipType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1734#1735#0" expanded="false" />
-            <element signature="e#1759#1760#0" expanded="false" />
-            <element signature="e#1792#1793#0" expanded="false" />
-            <element signature="e#1820#1821#0" expanded="false" />
-            <element signature="e#1854#1855#0" expanded="false" />
-            <element signature="e#1886#1887#0" expanded="false" />
-            <element signature="e#1934#1935#0" expanded="false" />
-            <element signature="e#1976#1977#0" expanded="false" />
-            <element signature="e#2008#2009#0" expanded="false" />
-            <element signature="e#2038#2039#0" expanded="false" />
-            <element signature="e#2082#2083#0" expanded="false" />
-            <element signature="e#2120#2121#0" expanded="false" />
-            <element signature="e#2152#2153#0" expanded="false" />
-            <element signature="e#2180#2181#0" expanded="false" />
-            <element signature="e#2222#2223#0" expanded="false" />
-            <element signature="e#2256#2257#0" expanded="false" />
-            <element signature="e#2293#2294#0" expanded="false" />
-            <element signature="e#2324#2325#0" expanded="false" />
-            <element signature="e#2374#2375#0" expanded="false" />
-            <element signature="e#2414#2415#0" expanded="false" />
-            <element signature="e#2471#2472#0" expanded="false" />
-            <element signature="e#2512#2513#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/dashboard_company_2usuarios.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2669">
-          <caret line="158" column="182" lean-forward="false" selection-start-line="158" selection-start-column="182" selection-end-line="158" selection-end-column="182" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/services/Company00Service.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -1860,42 +1639,6 @@
             <element signature="e#529#530#0" expanded="false" />
             <element signature="e#922#923#0" expanded="false" />
             <element signature="e#979#980#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/actions/Company00Action.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="19" column="44" lean-forward="false" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#792#793#0" expanded="false" />
-            <element signature="e#824#825#0" expanded="false" />
-            <element signature="e#3851#3852#0" expanded="false" />
-            <element signature="e#3884#3885#0" expanded="false" />
-            <element signature="e#3936#3937#0" expanded="false" />
-            <element signature="e#3980#3981#0" expanded="false" />
-            <element signature="e#4057#4058#0" expanded="false" />
-            <element signature="e#4106#4107#0" expanded="false" />
-            <element signature="e#4347#4348#0" expanded="false" />
-            <element signature="e#4385#4386#0" expanded="false" />
-            <element signature="e#4461#4462#0" expanded="false" />
-            <element signature="e#4515#4516#0" expanded="false" />
-            <element signature="e#4559#4560#0" expanded="false" />
-            <element signature="e#4591#4592#0" expanded="false" />
-            <element signature="e#4649#4650#0" expanded="false" />
-            <element signature="e#4691#4692#0" expanded="false" />
-            <element signature="e#4738#4739#0" expanded="false" />
-            <element signature="e#4768#4769#0" expanded="false" />
-            <element signature="e#4831#4832#0" expanded="false" />
-            <element signature="e#4872#4873#0" expanded="false" />
-            <element signature="e#5070#5071#0" expanded="false" />
-            <element signature="e#5106#5107#0" expanded="false" />
-            <element signature="e#5176#5177#0" expanded="false" />
-            <element signature="e#5226#5227#0" expanded="false" />
-            <element signature="e#5284#5285#0" expanded="false" />
-            <element signature="e#5323#5324#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1918,8 +1661,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/dashboard_company_4entrenadores.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
+        <state relative-caret-position="901">
           <caret line="96" column="83" lean-forward="false" selection-start-line="96" selection-start-column="83" selection-end-line="96" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/services/Company02ClientsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/People.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/CustomerGymMembershipType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="49" lean-forward="false" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/CustomersEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-374">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding>
+            <marker date="1490592508564" expanded="true" signature="2374:2435" ph="INSERT INTO `customers`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/GymMembershipTypes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="41" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/actions/Company00Action.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="20" column="55" lean-forward="false" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/dashboard_company_2usuarios.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="70" column="155" lean-forward="false" selection-start-line="70" selection-start-column="155" selection-end-line="70" selection-end-column="155" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4998">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

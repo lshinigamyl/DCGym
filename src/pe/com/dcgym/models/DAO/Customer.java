@@ -30,7 +30,7 @@ public class Customer {
     public static Customer build(ResultSet resultSet, PeopleEntity peopleEntity) {
         try {
             return new Customer(resultSet.getInt("id"),
-                                resultSet.getString("coment"),
+                                resultSet.getString("comment"),
                                 resultSet.getString("state"),
                                 peopleEntity.findById(resultSet.getInt("people_id")));
         } catch (SQLException e) {

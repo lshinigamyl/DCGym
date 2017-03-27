@@ -34,7 +34,7 @@
                 <tbody class="buscar">
                 <s:iterator value="customerGymMembershipTypes">
                     <tr>
-                        <td><s:property value="customer.people.name"/> <s:property value="customer.people.surName"/></td>
+                        <td><s:property value="customer.people.firstName"/> <s:property value="customer.people.lastName"/></td>
                         <td><s:property value="customer.comment"/></td>
                         <td><a class="btn btn-info" href="">Modificar</a><br><a class="btn btn-danger" href="">Eliminar</a></td>
                         <td><s:property value="gymMembershipTypes.membershipType.name"/></td>
@@ -68,7 +68,7 @@
                 </div>
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-6"><input class="form-control" name="customer.people.dateBirth" type="date" /></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.dateBirth" type="date" placeholder="F.Nacimiento DD-MM-AAAA" /></div>
                         <div class="col-md-6"><input class="form-control" name="customer.people.address" type="text" placeholder="Direccion"/></div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-12">
-                            <textarea class="form-control" rows="3"></textarea>
+                            <textarea class="form-control" rows="3" name="customer.comment"></textarea>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                         <div class="col-md-12">
                             <select class="form-control" name="gymMembershipTypes.id">
                                 <s:iterator value="gymMembershipTypes">
-                                    <option value="<s:property value="gymMembershipTypes.id"/>" > <s:property value="gymMembershipTypes.name"/></option>
+                                    <option value="<s:property value="membershipType.id"/>" > <s:property value="membershipType.name"/> ($/.<s:property value="membershipType.cost"/>)</option>
                                 </s:iterator>
                             </select>
                         </div>
