@@ -53,15 +53,15 @@
             <result name="error">_error.jsp</result>
         </action>
                 <action name="companyclientcreate" class="pe.com.dcgym.actions.Company02ClientAction" method="create">
-                    <result name="success" type="redirectAction">companymembresia</result>
+                    <result name="success" type="redirectAction">companyusuarios</result>
                     <result name="error">_error.jsp</result>
                 </action>
                 <action name="companyclientedit" class="pe.com.dcgym.actions.Company02ClientAction" method="edit">
-                    <result name="success">dashboard_company_2usuarios.jsp</result>
+                    <result name="success" type="redirectAction">companyusuarios</result>
                     <result name="error">_error.jsp</result>
                 </action>
                 <action name="companyclientdelete" class="pe.com.dcgym.actions.Company02ClientAction" method="delete">
-                    <result name="success">dashboard_company_2usuarios.jsp</result>
+                    <result name="success" type="redirectAction">companyusuarios</result>
                     <result name="error">_error.jsp</result>
                 </action>
         <action name="companymembresia" class="pe.com.dcgym.actions.Company00Action" method="membresia">

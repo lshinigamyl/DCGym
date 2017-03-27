@@ -64,7 +64,7 @@ public class ExercisesRoutinesEntity extends BaseEntity {
             obj.setInt   (6, exerciseRoutine.getExercise().getId());
             obj.setInt   (7, exerciseRoutine.getExercise().getId());
 
-            int results = obj.executeUpdate(sql);
+            int results = obj.executeUpdate();
             if (results > 0) {
                 exerciseRoutine.setId(super.getMaxId(TABLE));
                 return exerciseRoutine;

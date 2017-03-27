@@ -75,7 +75,7 @@ public class CustomerGymMembershipTypesEntity extends BaseEntity {
             obj.setInt   (3, customerGymMembershipType.getCustomer().getId());
             obj.setInt   (4, customerGymMembershipType.getGymMembershipTypes().getId());
 
-            int results = obj.executeUpdate(sql);
+            int results = obj.executeUpdate();
             if (results > 0) {
                 customerGymMembershipType.setId(super.getMaxId(TABLE));
                 return customerGymMembershipType;

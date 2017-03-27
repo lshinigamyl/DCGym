@@ -62,7 +62,7 @@ public class RecordsEntity extends BaseEntity{
             obj.setString(4, record.getComment());
             obj.setInt   (5, record.getCustomerRoutine().getId());
             obj.setInt   (6, record.getEmployee().getId());
-            int results = obj.executeUpdate(sql);
+            int results = obj.executeUpdate();
             if (results > 0) {
                 record.setId(super.getMaxId(TABLE));
                 return record;

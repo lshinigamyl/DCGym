@@ -62,13 +62,14 @@
                 </div>
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-6"><input class="form-control" name="customer.people.dni" type="number" placeholder="DNI" /></div>
-                        <div class="col-md-6"><input class="form-control" name="customer.people.email" type="email" placeholder="Correo" /></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.dni" type="text" placeholder="DNI" /></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.dateBirth" type="text" placeholder="F.Nacimiento AAAA-MM-DD" /></div>
+
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-6"><input class="form-control" name="customer.people.dateBirth" type="date" placeholder="F.Nacimiento AAAA-MM-DD" /></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.email" type="text" placeholder="Correo" /></div>
                         <div class="col-md-6"><input class="form-control" name="customer.people.address" type="text" placeholder="Direccion"/></div>
                     </div>
                 </div>
@@ -81,7 +82,7 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-6"><input class="form-control" name="customer.people.userName" type="text" placeholder="Usuario" /></div>
-                        <div class="col-md-6"><input class="form-control" name="customer.people.password" type="password" placeholder="Contraseña"/></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.password" type="text" placeholder="Contraseña"/></div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -155,7 +156,7 @@
                     </div>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-6"><input class="form-control" name="customer.people.userName" type="text" value="<s:property value="customer.people.firstName" />"" /></div>
+                            <div class="col-md-6"><input class="form-control" name="customer.people.userName" type="text" value="<s:property value="customer.people.firstName" />"/></div>
                             <div class="col-md-6"><input class="form-control" name="customer.people.password" type="password" value="<s:property value="customer.people.firstName" />"/></div>
                         </div>
                     </div>
@@ -200,5 +201,10 @@
         <%--modal.find('.modal-body input').val(recipient)--%>
     <%--})--%>
 <%--</script>--%>
+<s:form action="companyclientcreate">
+    <s:textfield value="customer.people.firstName"/>
+    <s:textfield value="customer.people.lastName"/>
+    <s:textfield value="customer.people.userName"/>
+</s:form>
 </body>
 </html>

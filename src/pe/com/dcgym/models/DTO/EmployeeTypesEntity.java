@@ -58,7 +58,7 @@ public class EmployeeTypesEntity  extends BaseEntity {
 
             preparedStatement.setString(1, employeeType.getName());
 
-            int results = preparedStatement.executeUpdate(sql);
+            int results = preparedStatement.executeUpdate();
             if (results > 0) {
                 employeeType.setId(super.getMaxId(TABLE));
                 employeeType.setState("H");

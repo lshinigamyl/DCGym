@@ -75,7 +75,7 @@ public class CustomersEntity extends BaseEntity {
                     obj.setString(1, customer.getComment());
                     obj.setInt   (2, customer.getPeople().getId());
 
-                int results = obj.executeUpdate(sql);
+                int results = obj.executeUpdate();
                 if (results > 0) {
                     customer.setId(getMaxId(TABLE));
                     return customer;

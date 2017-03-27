@@ -26,7 +26,12 @@ public class PeopleEntity extends BaseEntity{
     }
 
     public People findByUser(String user) {
-        List<People> peoples = this.findByCriteria(DEFAULT_SQL + " WHERE username = '" +user+ "'");
+        List<People> peoples = this.findByCriteria("SELECT " +
+                "* " +
+                "FROM " +
+                "people AS p " +
+                "WHERE " +
+                "p.username = '"+user+"'");
         return peoples.isEmpty() ? null : peoples.get(0);
     }
 
@@ -40,7 +45,7 @@ public class PeopleEntity extends BaseEntity{
                                                 resultSet.getString("firstname"),
                                                 resultSet.getString("lastname"),
                                                 resultSet.getString("dni"),
-                                                resultSet.getDate("date_birth"),
+                                                resultSet.getString("date_birth"),
                                                 resultSet.getString("email"),
                                                 resultSet.getString("address"),
                                                 resultSet.getString("cellphone"),
@@ -68,7 +73,7 @@ public class PeopleEntity extends BaseEntity{
                 obj.setString(1, people.getFirstName());
                 obj.setString(2, people.getLastName());
                 obj.setString(3, people.getDni());
-                obj.setDate  (4, people.getDateBirth());
+                obj.setString(4, people.getDateBirth());
                 obj.setString(5, people.getEmail());
                 obj.setString(6, people.getCellPhone());
                 obj.setString(7, people.getTelePhone());

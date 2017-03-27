@@ -58,7 +58,7 @@ public class CustomersRoutinesEntity  extends  BaseEntity{
             obj.setInt   (1, customerRoutine.getCustomer().getId());
             obj.setInt   (2, customerRoutine.getRoutine().getId());
 
-            int results = obj.executeUpdate(sql);
+            int results = obj.executeUpdate();
             if (results > 0) {
                 customerRoutine.setId(super.getMaxId(TABLE));
                 return customerRoutine;

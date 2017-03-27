@@ -123,5 +123,6 @@
     </div><!-- /.modal -->
 </s:iterator>
 <jsp:include page="_default_footer.jsp"/>
+
 </body>
 </html>

@@ -59,7 +59,7 @@ public class ExercisesEntity extends BaseEntity {
             preparedStatement.setString(1, exercise.getName());
             preparedStatement.setString(2, exercise.getDescription());
 
-            int results = preparedStatement.executeUpdate(sql);
+            int results = preparedStatement.executeUpdate();
             if (results > 0) {
                 exercise.setId(super.getMaxId(TABLE));
                 return exercise;

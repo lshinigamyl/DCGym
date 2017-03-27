@@ -70,7 +70,7 @@ public class EmployeesEntity extends BaseEntity {
                 preparedStatement.setInt   (2, employee.getPeople().getId());
                 preparedStatement.setInt   (3, employee.getEmployeeType().getId());
 
-            int results = preparedStatement.executeUpdate(sql);
+            int results = preparedStatement.executeUpdate();
             if (results > 0) {
                 employee.setId(super.getMaxId(TABLE));
                 return employee;

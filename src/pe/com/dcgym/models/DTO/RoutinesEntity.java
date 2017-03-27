@@ -58,7 +58,7 @@ public class RoutinesEntity extends BaseEntity {
             obj.setString(2, routine.getDescription());
             obj.setInt   (3, routine.getGym().getId());
 
-            int results = obj.executeUpdate(sql);
+            int results = obj.executeUpdate();
             if (results > 0) {
                 routine.setId(getMaxId(TABLE));
                 return routine;

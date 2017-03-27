@@ -18,14 +18,11 @@ public class Customer {
     }
 
     public Customer(int id, String comment, String state, People people) {
-        this.setId(id);
-        this.setComment(comment);
-        this.setState(state);
-        this.setPeople(people);
+        this.id = id;
+        this.comment = comment;
+        this.state = state;
+        this.people = people;
     }
-
-
-
 
     public static Customer build(ResultSet resultSet, PeopleEntity peopleEntity) {
         try {

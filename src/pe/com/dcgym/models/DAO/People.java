@@ -8,7 +8,7 @@ public class People {
     private String firstName;
     private String lastName;
     private String dni;
-    private Date dateBirth;
+    private String dateBirth;
     private String email;
     private String address;
     private String cellPhone;
@@ -16,18 +16,22 @@ public class People {
     private String userName;
     private String password;
 
-    public People(int id, String firstName, String lastName, String dni, Date dateBirth, String email, String address, String cellPhone, String telePhone, String userName, String password) {
-        this.setId(id);
-        this.setFirstName(firstName);
-        this.setLastName(lastName);
-        this.setDni(dni);
-        this.setDateBirth(dateBirth);
-        this.setEmail(email);
-        this.setAddress(address);
-        this.setCellPhone(cellPhone);
-        this.setTelePhone(telePhone);
-        this.setUserName(userName);
-        this.setPassword(password);
+    public People(){
+
+    }
+
+    public People(int id, String firstName, String lastName, String dni, String dateBirth, String email, String address, String cellPhone, String telePhone, String userName, String password) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dni = dni;
+        this.dateBirth = dateBirth;
+        this.email = email;
+        this.address = address;
+        this.cellPhone = cellPhone;
+        this.telePhone = telePhone;
+        this.userName = userName;
+        this.password = password;
     }
 
     public int getId() {
@@ -62,11 +66,11 @@ public class People {
         this.dni = dni;
     }
 
-    public Date getDateBirth() {
+    public String getDateBirth() {
         return dateBirth;
     }
 
-    public void setDateBirth(Date dateBirth) {
+    public void setDateBirth(String dateBirth) {
         this.dateBirth = dateBirth;
     }
 

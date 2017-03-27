@@ -12,7 +12,7 @@ import java.util.Map;
 /**
  * Created by Fjorsvartnir on 25/03/2017.
  */
-public class Company02ClientAction extends ActionSupport implements ModelDriven,SessionAware {
+public class Company02ClientAction extends ActionSupport implements ModelDriven<CustomerGymMembershipType>,SessionAware {
 
     private CustomerGymMembershipType customerGymMembershipType = new CustomerGymMembershipType();
     private Map<String,Object> session;
@@ -23,9 +23,9 @@ public class Company02ClientAction extends ActionSupport implements ModelDriven,
     public String create() throws Exception {
 
         Gym obj = (Gym)getSession().get("objsession");
-        getCustomerGymMembershipType().getGymMembershipTypes().setGym(obj);
-
-        return (getService().create(getCustomerGymMembershipType())!=null) ?  SUCCESS : ERROR ;
+        customerGymMembershipType.getGymMembershipTypes().setGym(obj);
+        getService().create(customerGymMembershipType);
+        return SUCCESS;
     }
 
     public String delete()throws Exception{
@@ -40,23 +40,28 @@ public class Company02ClientAction extends ActionSupport implements ModelDriven,
         return (getService().edit(getCustomerGymMembershipType())) ? SUCCESS :ERROR ;
     }
 
-    @Override
-    public Object getModel() {
-        return customerGymMembershipType;
-    }
+
 
     public void setCustomerGymMembershipType(CustomerGymMembershipType customerGymMembershipType) {
         this.customerGymMembershipType = customerGymMembershipType;
+    }
+
+    @Override
+    public CustomerGymMembershipType getModel() {
+        return customerGymMembershipType;
+    }
+    @Override
+    public void setSession(Map<String, Object> map) {
+        this.session=map;
     }
 
     public CustomerGymMembershipType getCustomerGymMembershipType() {
         return customerGymMembershipType;
     }
 
-    @Override
-    public void setSession(Map<String, Object> map) {
-        this.session=map;
-    }
+
+
+
 
 
 
@@ -70,4 +75,7 @@ public class Company02ClientAction extends ActionSupport implements ModelDriven,
         }
         return service;
     }
+
+
+
 }
