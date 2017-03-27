@@ -84,20 +84,33 @@
             <result name="success">dashboard_company_4entrenadores.jsp</result>
             <result name="error">_error.jsp</result>
         </action>
-        <action name="companynewentrenadores" class="pe.com.dcgym.actions.Company03MembershipAction">
-            <result name="success" type="redirectAction">companymembresia</result>
-            <result name="error">_error.jsp</result>
-        </action>
-        <action name="companynewentrenadoresdelete" class="pe.com.dcgym.actions.Company03MembershipAction" method="delete">
-            <result name="success" type="redirectAction">companymembresia</result>
-            <result name="error">_error.jsp</result>
-        </action>
-        <action name="companynewentrenadoresedit" class="pe.com.dcgym.actions.Company03MembershipAction" method="edit">
-        <result name="success" type="redirectAction">companymembresia</result>
-        </action>
+                <action name="companyemployeecreate" class="pe.com.dcgym.actions.Company04EmployeeAction" method="create">
+                    <result name="success" type="redirectAction">companyentrenadores</result>
+                    <result name="error">_error.jsp</result>
+                </action>
+                <action name="companyemployeeedit" class="pe.com.dcgym.actions.Company04EmployeeAction" method="edit">
+                    <result name="success" type="redirectAction">companyentrenadores</result>
+                    <result name="error">_error.jsp</result>
+                </action>
+                <action name="companyemployeedelete" class="pe.com.dcgym.actions.Company04EmployeeAction" method="delete">
+                    <result name="success" type="redirectAction">companyentrenadores</result>
+                    <result name="error">_error.jsp</result>
+                </action>
         <action name="companyrutina" class="pe.com.dcgym.actions.Company00Action" method="rutinas">
             <result name="success">dashboard_company_5rutinas.jsp</result>
             <result name="error">_error.jsp</result>
         </action>
+                <action name="companyroutinecreate" class="pe.com.dcgym.actions.Company05RoutineAction" method="create">
+                    <result name="success" type="redirectAction">companyrutina</result>
+                    <result name="error">_error.jsp</result>
+                </action>
+                <action name="companyroutineedit" class="pe.com.dcgym.actions.Company05RoutineAction" method="edit">
+                    <result name="success" type="redirectAction">companyrutina</result>
+                    <result name="error">_error.jsp</result>
+                </action>
+                <action name="companyroutinedelete" class="pe.com.dcgym.actions.Company05RoutineAction" method="delete">
+                    <result name="success" type="redirectAction">companyrutina</result>
+                    <result name="error">_error.jsp</result>
+                </action>
     </package>
 </struts>
