@@ -103,7 +103,7 @@ public class EmployeesEntity extends BaseEntity {
         return this.updateByCriteria("UPDATE employees SET state ='"+employee.getState()+"', training_centers_id="+employee.getGym().getId()+" ,people_id="+employee.getPeople().getId()+" ,employee_types_id="+employee.getEmployeeType().getId()+"  WHERE id = " + String.valueOf(employee.getId())) > 0;
     }
 
-    private PeopleEntity getPeopleEntity() {
+    public PeopleEntity getPeopleEntity() {
         return peopleEntity;
     }
 

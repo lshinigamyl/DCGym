@@ -3,13 +3,13 @@ package pe.com.dcgym.actions;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.SessionAware;
 import pe.com.dcgym.models.DAO.*;
-import pe.com.dcgym.services.CompanyService;
+import pe.com.dcgym.services.Company00Service;
 
 import java.util.List;
 import java.util.Map;
 
 
-public class CompanyAction extends ActionSupport implements SessionAware {
+public class Company00Action extends ActionSupport implements SessionAware {
 
 
     private Map<String,Object> session;
@@ -46,9 +46,9 @@ public class CompanyAction extends ActionSupport implements SessionAware {
         switch (typeSession){
             case "company":
                 setMenuOption("usuario");
-                CompanyService service = new CompanyService();
-                setCustomerGymMembershipTypes(service.findCustomerMembershipsByUserTrainingCenter((String)getSession().get("user")));
+                Company00Service service = new Company00Service();
                 Gym obj = (Gym)getSession().get("objsession");
+                setCustomerGymMembershipTypes(service.findCustomerMembershipsByTrainingCenterId(obj.getId()));
                 setGymMembershipTypes(service.findTrainingCenterMembership(String.valueOf(obj.getId())));
                 return SUCCESS;
             case "client":
@@ -64,7 +64,7 @@ public class CompanyAction extends ActionSupport implements SessionAware {
         switch (typeSession){
             case "company":
                 Gym obj = (Gym)getSession().get("objsession");
-                CompanyService service = new CompanyService();
+                Company00Service service = new Company00Service();
                 setGymMembershipTypes(service.findTrainingCenterMembership(String.valueOf(obj.getId())));
                 setMenuOption("membresia");
                 return SUCCESS;
@@ -80,7 +80,7 @@ public class CompanyAction extends ActionSupport implements SessionAware {
             case "company":
                 setMenuOption("entrenador");
                 Gym obj = (Gym)getSession().get("objsession");
-                CompanyService service = new CompanyService();
+                Company00Service service = new Company00Service();
                 setEmployees(service.findAllEmployee(String.valueOf(obj.getId())));
                 setEmployeeTypes(service.findAllEmployeeTypes());
                 return SUCCESS;
@@ -97,7 +97,7 @@ public class CompanyAction extends ActionSupport implements SessionAware {
             case "company":
                 setMenuOption("rutina");
                 Gym obj = (Gym)getSession().get("objsession");
-                CompanyService service = new CompanyService();
+                Company00Service service = new Company00Service();
                 setExerciseRoutines(service.findAllRoutines());
                 return SUCCESS;
             case "client":

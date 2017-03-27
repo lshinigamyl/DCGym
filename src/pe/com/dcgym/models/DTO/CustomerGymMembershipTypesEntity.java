@@ -23,14 +23,19 @@ public class CustomerGymMembershipTypesEntity extends BaseEntity {
         List<CustomerGymMembershipType> customerGymMembershipTypes = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
         return customerGymMembershipTypes.isEmpty() ? null : customerGymMembershipTypes.get(0);
     }
-    public List<CustomerGymMembershipType> findByTrainingCenterUser(String trainingCenterUser){
-        return this.findByCriteria("SELECT c.id, c.state ,c.customers_id , c.training_center_memberships_id " +
+    public List<CustomerGymMembershipType> findByTrainingCenterUser(int id){
+        return this.findByCriteria("SELECT " +
+                "c.id, " +
+                "c.start_date, " +
+                "c.due_date, " +
+                "c.state, " +
+                "c.customer_id, " +
+                "c.gyms_membership_types_id " +
                 "FROM " +
-                "customers_memberships as c " +
-                "INNER JOIN training_center_memberships ON c.training_center_memberships_id = training_center_memberships.id " +
-                "INNER JOIN training_centers ON training_center_memberships.training_centers_id = training_centers.id " +
+                "customers_gym_membership_types AS c " +
+                "INNER JOIN gyms_membership_types AS g ON c.gyms_membership_types_id = g.id " +
                 "WHERE " +
-                "training_centers.`user` = '"+trainingCenterUser+"';");
+                "g.gym_id = '"+id+"'");
     }
 /*
     public CustomerGymMembershipType findByName(String name) {

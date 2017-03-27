@@ -45,9 +45,10 @@
                     <tr>
 
                         <td><s:property value="range"/></td>
-                        <td><s:property value="range"/></td>
-                        <td><s:property value="range"/></td>
-                        <td><s:property value="range"/></td>
+                        <td><s:property value="repeat"/></td>
+                        <td><s:property value="value_percent"/></td>
+                        <td><s:property value="comment"/></td>
+                        <td><s:property value="sequence"/></td>
                         <td><a class="btn btn-info" href="">Modificar</a><br><a class="btn btn-danger" href="">Eliminar</a></td>
                     </tr>
 

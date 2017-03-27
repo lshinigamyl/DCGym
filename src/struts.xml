@@ -27,52 +27,75 @@
             <result>index.jsp</result>
         </action>
 
-        <action name="client" class="pe.com.dcgym.actions.ClientAction">
+        <action name="client" class="pe.com.dcgym.actions.Client00Action">
             <result name="success">dashboard_client.jsp</result>
             <result name="error">_error.jsp</result>
         </action>
-        <action name="clientejercicios" class="pe.com.dcgym.actions.ClientAction" method="ejercicio">
+        <action name="clientejercicios" class="pe.com.dcgym.actions.Client00Action" method="ejercicio">
             <result name="success">dashboard_client_02ejercicio.jsp</result>
             <result name="error">_error.jsp</result>
         </action>
-        <action name="clienthistorial" class="pe.com.dcgym.actions.ClientAction" method="historial">
+        <action name="clienthistorial" class="pe.com.dcgym.actions.Client00Action" method="historial">
             <result name="success">dashboard_client_03historial.jsp</result>
             <result name="error">_error.jsp</result>
         </action>
-        <action name="clientsuscripcion" class="pe.com.dcgym.actions.ClientAction" method="suscripcion">
+        <action name="clientsuscripcion" class="pe.com.dcgym.actions.Client00Action" method="suscripcion">
             <result name="success">dashboard_client_04suscripcion.jsp</result>
             <result name="error">_error.jsp</result>
         </action>
 
-        <action name="company" class="pe.com.dcgym.actions.CompanyAction" >
+        <action name="company" class="pe.com.dcgym.actions.Company00Action" >
             <result name="success">dashboard_company.jsp</result>
             <result name="error" >_error.jsp</result>
         </action>
-        <action name="companyusuarios" class="pe.com.dcgym.actions.CompanyAction" method="usuarios">
+        <action name="companyusuarios" class="pe.com.dcgym.actions.Company00Action" method="usuarios">
             <result name="success">dashboard_company_2usuarios.jsp</result>
             <result name="error">_error.jsp</result>
         </action>
-        <action name="companynewgymmembershiptype" class="pe.com.dcgym.actions.CompanyMembershipAction">
-            <result name="success" type="redirectAction">companymembresia</result>
-            <result name="error">_error.jsp</result>
-        </action>
-        <action name="companynewgymmembershiptypedelete" class="pe.com.dcgym.actions.CompanyMembershipAction" method="delete">
-            <result name="success" type="redirectAction">companymembresia</result>
-            <result name="error">_error.jsp</result>
-        </action>
-        <action name="companynewgymmembershiptypeedit" class="pe.com.dcgym.actions.CompanyMembershipAction" method="edit">
-            <result name="success" type="redirectAction">companymembresia</result>
-            <result name="error">_error.jsp</result>
-        </action>
-        <action name="companymembresia" class="pe.com.dcgym.actions.CompanyAction" method="membresia">
+                <action name="companyclientcreate" class="pe.com.dcgym.actions.Company02ClientAction" method="create">
+                    <result name="success">dashboard_company_2usuarios.jsp</result>
+                    <result name="error">_error.jsp</result>
+                </action>
+                <action name="companyclientedit" class="pe.com.dcgym.actions.Company02ClientAction" method="edit">
+                    <result name="success">dashboard_company_2usuarios.jsp</result>
+                    <result name="error">_error.jsp</result>
+                </action>
+                <action name="companyclientdelete" class="pe.com.dcgym.actions.Company02ClientAction" method="delete">
+                    <result name="success">dashboard_company_2usuarios.jsp</result>
+                    <result name="error">_error.jsp</result>
+                </action>
+        <action name="companymembresia" class="pe.com.dcgym.actions.Company00Action" method="membresia">
             <result name="success">dashboard_company_3membresia.jsp</result>
             <result name="error">_error.jsp</result>
         </action>
-        <action name="companyentrenadores" class="pe.com.dcgym.actions.CompanyAction" method="entrenadores">
+                <action name="companymembershiptypescreate" class="pe.com.dcgym.actions.Company03MembershipAction" method="create">
+                    <result name="success" type="redirectAction">companymembresia</result>
+                    <result name="error">_error.jsp</result>
+                </action>
+                <action name="companymembershiptypesdelete" class="pe.com.dcgym.actions.Company03MembershipAction" method="delete">
+                    <result name="success" type="redirectAction">companymembresia</result>
+                    <result name="error">_error.jsp</result>
+                </action>
+                <action name="companymembershiptypesedit" class="pe.com.dcgym.actions.Company03MembershipAction" method="edit">
+                    <result name="success" type="redirectAction">companymembresia</result>
+                    <result name="error">_error.jsp</result>
+                </action>
+        <action name="companyentrenadores" class="pe.com.dcgym.actions.Company00Action" method="entrenadores">
             <result name="success">dashboard_company_4entrenadores.jsp</result>
             <result name="error">_error.jsp</result>
         </action>
-        <action name="companyrutina" class="pe.com.dcgym.actions.CompanyAction" method="rutinas">
+        <action name="companynewentrenadores" class="pe.com.dcgym.actions.Company03MembershipAction">
+            <result name="success" type="redirectAction">companymembresia</result>
+            <result name="error">_error.jsp</result>
+        </action>
+        <action name="companynewentrenadoresdelete" class="pe.com.dcgym.actions.Company03MembershipAction" method="delete">
+            <result name="success" type="redirectAction">companymembresia</result>
+            <result name="error">_error.jsp</result>
+        </action>
+        <action name="companynewentrenadoresedit" class="pe.com.dcgym.actions.Company03MembershipAction" method="edit">
+        <result name="success" type="redirectAction">companymembresia</result>
+        </action>
+        <action name="companyrutina" class="pe.com.dcgym.actions.Company00Action" method="rutinas">
             <result name="success">dashboard_company_5rutinas.jsp</result>
             <result name="error">_error.jsp</result>
         </action>

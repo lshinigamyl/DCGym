@@ -11,9 +11,12 @@ public class SessionService extends BaseService {
     * */
 
     public Gym findTrainingByUser(String userName){
+
         return getGymEntity().findByUser(userName);
     }
+
     public Customer findByCustomerUser(String userName){
+
         return getCustomersEntity().findByCustomerUserName(userName);
     }
 }
