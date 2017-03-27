@@ -3,22 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e3539ed5-1d8b-4dcd-83a6-c56ec04f112d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/actions/Company02ClientAction.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/actions/Company02ClientAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/Customer.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/Customer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/People.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/People.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/CustomerGymMembershipType.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/CustomerGymMembershipType.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/CustomerGymMembershipTypesEntity.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/CustomerGymMembershipTypesEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/CustomersEntity.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/CustomersEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/CustomersRoutinesEntity.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/CustomersRoutinesEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/EmployeeTypesEntity.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/EmployeeTypesEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/EmployeesEntity.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/EmployeesEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/ExercisesEntity.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/ExercisesEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/ExercisesRoutinesEntity.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/ExercisesRoutinesEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/PeopleEntity.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/PeopleEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/RecordsEntity.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/RecordsEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/RoutinesEntity.java" afterPath="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/RoutinesEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/dashboard_company_2usuarios.jsp" afterPath="$PROJECT_DIR$/web/dashboard_company_2usuarios.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/dashboard_company_3membresia.jsp" afterPath="$PROJECT_DIR$/web/dashboard_company_3membresia.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,87 +39,34 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GymsMembershipTypesEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/GymsMembershipTypesEntity.java">
+      <file leaf-file-name="CustomerGymMembershipType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/CustomerGymMembershipType.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+            <state relative-caret-position="682">
+              <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
               <folding>
-                <marker date="1490592508568" expanded="true" signature="2653:2735" ph="INSERT INTO gyms_membership_types... " />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1746#1747#0" expanded="true" />
+                <element signature="e#1771#1772#0" expanded="true" />
+                <element signature="e#1900#1901#0" expanded="true" />
+                <element signature="e#1950#1951#0" expanded="true" />
+                <element signature="e#1992#1993#0" expanded="true" />
+                <element signature="e#2026#2027#0" expanded="true" />
+                <element signature="e#2056#2057#0" expanded="true" />
+                <element signature="e#2102#2103#0" expanded="true" />
+                <element signature="e#2140#2141#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomersRoutinesEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/CustomersRoutinesEntity.java">
+      <file leaf-file-name="Company02ClientAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/actions/Company02ClientAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="60" column="44" lean-forward="true" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
+            <state relative-caret-position="298">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding>
-                <marker date="1490608089080" expanded="true" signature="1943:2018" ph="INSERT INTO `customers_routines`... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmployeesEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/EmployeesEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="72" column="58" lean-forward="false" selection-start-line="72" selection-start-column="58" selection-end-line="72" selection-end-column="58" />
-              <folding>
-                <element signature="e#3699#3700#0" expanded="true" />
-                <element signature="e#3734#3735#0" expanded="true" />
-                <marker date="1490608096040" expanded="true" signature="2079:2161" ph="INSERT INTO `employees`... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmployeeTypesEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/EmployeeTypesEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="60" column="58" lean-forward="true" selection-start-line="60" selection-start-column="58" selection-end-line="60" selection-end-column="58" />
-              <folding>
-                <marker date="1490608102975" expanded="true" signature="1997:2045" ph="INSERT INTO `employee_types`... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExercisesEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/ExercisesEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="61" column="58" lean-forward="false" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="58" />
-              <folding>
-                <marker date="1490608110940" expanded="true" signature="1902:1962" ph="INSERT INTO `exercises`... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExercisesRoutinesEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/ExercisesRoutinesEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="66" column="44" lean-forward="false" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
-              <folding>
-                <marker date="1490608118707" expanded="true" signature="2060:2204" ph="INSERT INTO `exercises_routines`... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GymEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/GymEntity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-391">
-              <caret line="13" column="13" lean-forward="false" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding>
-                <marker date="1490592508568" expanded="true" signature="2228:2378" ph="INSERT INTO `gyms`... " />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -163,14 +96,66 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RoutinesEntity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RoutinesEntity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/RoutinesEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="61" column="30" lean-forward="true" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+            <state relative-caret-position="36">
+              <caret line="54" column="27" lean-forward="true" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
               <folding>
                 <marker date="1490608149072" expanded="true" signature="1670:1741" ph="INSERT INTO `routines`... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerGymMembershipTypesEntity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/CustomerGymMembershipTypesEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+              <folding>
+                <marker date="1490609120668" expanded="true" signature="3000:3131" ph="INSERT INTO `customers_gym_membership_types`... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Employee.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/Employee.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerRoutine.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/CustomerRoutine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Customer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/Customer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Company02ClientsService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/services/Company02ClientsService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -266,13 +251,11 @@
         <option value="$PROJECT_DIR$/web/dashboard_company_3membresia.jsp" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/Customer.java" />
         <option value="$PROJECT_DIR$/src/struts.xml" />
-        <option value="$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/CustomerGymMembershipType.java" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/actions/Company02ClientAction.java" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/People.java" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/PeopleEntity.java" />
         <option value="$PROJECT_DIR$/web/dashboard_company_2usuarios.jsp" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/CustomersEntity.java" />
-        <option value="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/CustomerGymMembershipTypesEntity.java" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/CustomersRoutinesEntity.java" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/EmployeesEntity.java" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/EmployeeTypesEntity.java" />
@@ -280,6 +263,8 @@
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/ExercisesRoutinesEntity.java" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/RecordsEntity.java" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/RoutinesEntity.java" />
+        <option value="$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/CustomerGymMembershipTypesEntity.java" />
+        <option value="$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/CustomerGymMembershipType.java" />
       </list>
     </option>
   </component>
@@ -1029,7 +1014,7 @@
       <workItem from="1490481989201" duration="2954000" />
       <workItem from="1490527380496" duration="12871000" />
       <workItem from="1490592537223" duration="2165000" />
-      <workItem from="1490594789740" duration="13233000" />
+      <workItem from="1490594789740" duration="14795000" />
     </task>
     <task id="LOCAL-00001" summary="Modifcando Header">
       <created>1490067394004</created>
@@ -1206,11 +1191,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490599729943</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Dando funcionalidad a las vistas de Usuarios del Gym usando Struts2 y las clases Actions">
+      <created>1490608162413</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1490608162413</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105104000" />
+    <option name="totallyTimeSpent" value="106666000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1467,16 +1459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/services/Company02ClientsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="52" lean-forward="false" selection-start-line="12" selection-start-column="52" selection-end-line="12" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/services/Company03MembershipTypesService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1497,14 +1479,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/CustomerRoutine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1549,30 +1523,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/Employee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/xwork-core.jar!/com/opensymphony/xwork2/ModelDriven.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/Customer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="25" />
-          <folding>
-            <element signature="e#1038#1039#0" expanded="true" />
-            <element signature="e#1063#1064#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1619,37 +1574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/CustomerGymMembershipType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1759#1760#0" expanded="true" />
-            <element signature="e#1792#1793#0" expanded="true" />
-            <element signature="e#1820#1821#0" expanded="true" />
-            <element signature="e#1854#1855#0" expanded="true" />
-            <element signature="e#1886#1887#0" expanded="true" />
-            <element signature="e#1934#1935#0" expanded="true" />
-            <element signature="e#1976#1977#0" expanded="true" />
-            <element signature="e#2008#2009#0" expanded="true" />
-            <element signature="e#2038#2039#0" expanded="true" />
-            <element signature="e#2082#2083#0" expanded="true" />
-            <element signature="e#2120#2121#0" expanded="true" />
-            <element signature="e#2152#2153#0" expanded="true" />
-            <element signature="e#2180#2181#0" expanded="true" />
-            <element signature="e#2222#2223#0" expanded="true" />
-            <element signature="e#2256#2257#0" expanded="true" />
-            <element signature="e#2293#2294#0" expanded="true" />
-            <element signature="e#2324#2325#0" expanded="true" />
-            <element signature="e#2374#2375#0" expanded="true" />
-            <element signature="e#2414#2415#0" expanded="true" />
-            <element signature="e#2471#2472#0" expanded="true" />
-            <element signature="e#2512#2513#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/actions/Company03MembershipAction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1659,18 +1583,6 @@
             <element signature="e#1352#1353#0" expanded="true" />
             <element signature="e#1393#1394#0" expanded="true" />
             <element signature="method#setGymMembershipTypes#0;class#Company03MembershipAction#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/actions/Company02ClientAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="699">
-          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1590#1591#0" expanded="true" />
-            <element signature="e#1638#1639#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1728,16 +1640,6 @@
         <state relative-caret-position="136">
           <caret line="12" column="41" lean-forward="false" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="41" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/CustomerGymMembershipTypesEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="80" column="49" lean-forward="true" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
-          <folding>
-            <marker date="1490608078667" expanded="true" signature="3000:3131" ph="INSERT INTO `customers_gym_membership_types`... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1845,10 +1747,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/RoutinesEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="61" column="30" lean-forward="true" selection-start-line="61" selection-start-column="30" selection-end-line="61" selection-end-column="30" />
+        <state relative-caret-position="36">
+          <caret line="54" column="27" lean-forward="true" selection-start-line="54" selection-start-column="27" selection-end-line="54" selection-end-column="27" />
           <folding>
             <marker date="1490608149072" expanded="true" signature="1670:1741" ph="INSERT INTO `routines`... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/services/Company02ClientsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/actions/Company02ClientAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/Employee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/CustomerRoutine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/CustomerGymMembershipType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1746#1747#0" expanded="true" />
+            <element signature="e#1771#1772#0" expanded="true" />
+            <element signature="e#1900#1901#0" expanded="true" />
+            <element signature="e#1950#1951#0" expanded="true" />
+            <element signature="e#1992#1993#0" expanded="true" />
+            <element signature="e#2026#2027#0" expanded="true" />
+            <element signature="e#2056#2057#0" expanded="true" />
+            <element signature="e#2102#2103#0" expanded="true" />
+            <element signature="e#2140#2141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DTO/CustomerGymMembershipTypesEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding>
+            <marker date="1490609120668" expanded="true" signature="3000:3131" ph="INSERT INTO `customers_gym_membership_types`... " />
           </folding>
         </state>
       </provider>

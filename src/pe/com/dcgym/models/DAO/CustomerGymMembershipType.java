@@ -10,8 +10,8 @@ import java.sql.SQLException;
 
 public class CustomerGymMembershipType {
     private int id;
-    private Date startDate;
-    private Date dueDate;
+    private String startDate;
+    private String dueDate;
     private String state;
     private Customer customer;
     private GymMembershipTypes gymMembershipTypes;
@@ -19,7 +19,7 @@ public class CustomerGymMembershipType {
     public CustomerGymMembershipType() {
     }
 
-    public CustomerGymMembershipType(int id, Date startDate, Date dueDate, String state, Customer customer, GymMembershipTypes gymMembershipTypes) {
+    public CustomerGymMembershipType(int id, String startDate, String dueDate, String state, Customer customer, GymMembershipTypes gymMembershipTypes) {
         this.id = id;
         this.startDate = startDate;
         this.dueDate = dueDate;
@@ -31,8 +31,8 @@ public class CustomerGymMembershipType {
     public static CustomerGymMembershipType build(ResultSet resultSet, CustomersEntity customersEntity, GymsMembershipTypesEntity gymsMembershipTypesEntity) {
         try {
             return new CustomerGymMembershipType(   resultSet.getInt("id"),
-                                                    resultSet.getDate("start_date"),
-                                                    resultSet.getDate("due_date"),
+                                                    resultSet.getString("start_date"),
+                                                    resultSet.getString("due_date"),
                                                     resultSet.getString("state"),
                                                     customersEntity.findById(resultSet.getInt("customer_id")),
                                                     gymsMembershipTypesEntity.findById(resultSet.getInt("gyms_membership_types_id")));
@@ -50,19 +50,19 @@ public class CustomerGymMembershipType {
         this.id = id;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date getDueDate() {
+    public String getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(Date dueDate) {
+    public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 

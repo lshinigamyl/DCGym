@@ -70,8 +70,8 @@ public class CustomerGymMembershipTypesEntity extends BaseEntity {
         String sql = "INSERT INTO `customers_gym_membership_types` (`start_date`, `due_date`, `customer_id`, `gyms_membership_types_id`) VALUES (?,?,?,?);";
         try {
             PreparedStatement obj =  this.getConnection().prepareStatement(sql);
-            obj.setDate  (1, customerGymMembershipType.getStartDate());
-            obj.setDate  (2, customerGymMembershipType.getDueDate());
+            obj.setString(1, customerGymMembershipType.getStartDate());
+            obj.setString(2, customerGymMembershipType.getDueDate());
             obj.setInt   (3, customerGymMembershipType.getCustomer().getId());
             obj.setInt   (4, customerGymMembershipType.getGymMembershipTypes().getId());
 
