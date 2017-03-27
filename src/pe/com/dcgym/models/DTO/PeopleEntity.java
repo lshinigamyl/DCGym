@@ -76,7 +76,7 @@ public class PeopleEntity extends BaseEntity{
                 obj.setString(9, people.getUserName());
                 obj.setString(10,people.getPassword());
 
-                int results = obj.executeUpdate(sql);
+                int results = obj.executeUpdate();
                 if (results > 0) {
                     people.setId(getMaxId(TABLE));
                     return people;

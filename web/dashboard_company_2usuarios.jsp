@@ -68,7 +68,7 @@
                 </div>
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-6"><input class="form-control" name="customer.people.dateBirth" type="date" placeholder="F.Nacimiento DD-MM-AAAA" /></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.dateBirth" type="date" placeholder="F.Nacimiento AAAA-MM-DD" /></div>
                         <div class="col-md-6"><input class="form-control" name="customer.people.address" type="text" placeholder="Direccion"/></div>
                     </div>
                 </div>

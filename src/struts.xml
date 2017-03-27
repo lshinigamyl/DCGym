@@ -53,7 +53,7 @@
             <result name="error">_error.jsp</result>
         </action>
                 <action name="companyclientcreate" class="pe.com.dcgym.actions.Company02ClientAction" method="create">
-                    <result name="success">dashboard_company_2usuarios.jsp</result>
+                    <result name="success" type="redirectAction">companymembresia</result>
                     <result name="error">_error.jsp</result>
                 </action>
                 <action name="companyclientedit" class="pe.com.dcgym.actions.Company02ClientAction" method="edit">

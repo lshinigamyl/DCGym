@@ -23,6 +23,7 @@ public class Company02ClientAction extends ActionSupport implements ModelDriven,
     public String create() throws Exception {
 
         Gym obj = (Gym)getSession().get("objsession");
+        getCustomerGymMembershipType().getGymMembershipTypes().setGym(obj);
 
         return (getService().create(getCustomerGymMembershipType())!=null) ?  SUCCESS : ERROR ;
     }
@@ -39,6 +40,10 @@ public class Company02ClientAction extends ActionSupport implements ModelDriven,
         return (getService().edit(getCustomerGymMembershipType())) ? SUCCESS :ERROR ;
     }
 
+    @Override
+    public Object getModel() {
+        return customerGymMembershipType;
+    }
 
     public void setCustomerGymMembershipType(CustomerGymMembershipType customerGymMembershipType) {
         this.customerGymMembershipType = customerGymMembershipType;
@@ -53,10 +58,7 @@ public class Company02ClientAction extends ActionSupport implements ModelDriven,
         this.session=map;
     }
 
-    @Override
-    public Object getModel() {
-        return customerGymMembershipType;
-    }
+
 
     public Map<String, Object> getSession() {
         return session;
