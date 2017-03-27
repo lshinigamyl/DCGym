@@ -52,7 +52,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title text-center" id="gridSystemModalLabel">Nuevo Tipo de Membresia</h4>
             </div>
-            <form id="companynewgymmembershiptype" name="companynewgymmembershiptype" action="companynewgymmembershiptype.action" method="post">
+            <form id="companymembershiptypescreate" name="companymembershiptypescreate" action="companymembershiptypescreate.action" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <div class="row">
@@ -90,7 +90,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title text-center"> Membresia : <s:property value="id" /></h4>
                 </div>
-                <form name="companynewgymmembershiptypeedit" action="companynewgymmembershiptypeedit.action" method="post">
+                <form name="companymembershiptypesedit" action="companymembershiptypesedit.action" method="post">
                     <div class="modal-body">
                         <div class="form-group">
                             <div class="row">

@@ -26,12 +26,13 @@ public class Company00Service extends BaseService {
     public List<GymMembershipTypes> findTrainingCenterMembership(String id){
         return getGymsMembershipTypesEntity().findByTrainingCenter(id);
     }
-    public List<EmployeeType>findAllEmployeeTypes(){
+    public List<EmployeeType> findAllEmployeeTypes(){
         return getEmployeeTypesEntity().findAll();
     }
     public List<ExerciseRoutine> findAllRoutines(){ return getExercisesRoutinesEntity().findAll();
 
     }
+
 
 
 

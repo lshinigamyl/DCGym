@@ -56,8 +56,8 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-6"><input class="form-control" name="name" type="text" placeholder="Nombre" /></div>
-                            <div class="col-md-6"><input class="form-control" name="surname" type="text" placeholder="Apellido" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.name" type="text" placeholder="Nombre" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.surname" type="text" placeholder="Apellido" /></div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -94,7 +94,7 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-12">
-                                <select class="form-control" name="training_id">
+                                <select class="form-control" name="employeeType.id">
                                     <s:iterator value="employeeTypes">
                                         <option value="<s:property value="id"/>" > <s:property value="name"/></option>
                                     </s:iterator>

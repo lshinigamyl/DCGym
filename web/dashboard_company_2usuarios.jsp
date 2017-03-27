@@ -52,36 +52,36 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title text-center" id="gridSystemModalLabel">Nuevo Usuario</h4>
             </div>
-            <form id="" name="" action="" method="post">
+            <form name="companyclientcreate" action="companyclientcreate.action" method="post">
             <div class="modal-body">
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-6"><input class="form-control" name="name" type="text" placeholder="Nombre" /></div>
-                        <div class="col-md-6"><input class="form-control" name="surname" type="text" placeholder="Apellido" /></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.firstName" type="text" placeholder="Nombre" /></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.lastName" type="text" placeholder="Apellido" /></div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-6"><input class="form-control" name="document_number" type="number" placeholder="DNI" /></div>
-                        <div class="col-md-6"><input class="form-control" name="email" type="email" placeholder="Correo" /></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.dni" type="number" placeholder="DNI" /></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.email" type="email" placeholder="Correo" /></div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-6"><input class="form-control" name="date_birth" type="date" /></div>
-                        <div class="col-md-6"><input class="form-control" name="address" type="text" placeholder="Direccion"/></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.dateBirth" type="date" /></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.address" type="text" placeholder="Direccion"/></div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-6"><input class="form-control" name="cellphone" type="tel" placeholder="Celular" /></div>
-                        <div class="col-md-6"><input class="form-control" name="telephone" type="tel" placeholder="Telefono"/></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.cellPhone" type="tel" placeholder="Celular" /></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.telePhone" type="tel" placeholder="Telefono"/></div>
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-6"><input class="form-control" name="user" type="text" placeholder="Usuario" /></div>
-                        <div class="col-md-6"><input class="form-control" name="password" type="password" placeholder="Contraseña"/></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.userName" type="text" placeholder="Usuario" /></div>
+                        <div class="col-md-6"><input class="form-control" name="customer.people.password" type="password" placeholder="Contraseña"/></div>
                     </div>
                 </div>
                 <div class="form-group">
@@ -94,9 +94,9 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-12">
-                            <select class="form-control" name="training_id">
+                            <select class="form-control" name="gymMembershipTypes.id">
                                 <s:iterator value="gymMembershipTypes">
-                                    <option value="<s:property value="id"/>" > <s:property value="membershipType.name"/></option>
+                                    <option value="<s:property value="gymMembershipTypes.id"/>" > <s:property value="gymMembershipTypes.name"/></option>
                                 </s:iterator>
                             </select>
                         </div>
@@ -112,6 +112,82 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<s:iterator value="customerGymMembershipTypes">
+    <div id="mymodal<s:property value="id"/>" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center"> Membresia : <s:property value="id" /></h4>
+                </div>
+                <form name="companymembershiptypesedit" action="companymembershiptypesedit.action" method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <div class="row">
+                                <input type="hidden" name="id" value="<s:property value="membershipType.id"/>">
+                                <div class="col-md-12"><input class="form-control" name="membershipType.name" type="text" placeholder="Nombre de Membresia" value="<s:property value="membershipType.name"/>" /></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6"><input class="form-control" name="customer.people.firstName" type="text" value="<s:property value="customer.people.firstName" />" /></div>
+                                <div class="col-md-6"><input class="form-control" name="customer.people.lastName" type="text" value="<s:property value="customer.people.firstName" />" /></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6"><input class="form-control" name="customer.people.dni" type="number" value="<s:property value="customer.people.firstName" />" /></div>
+                                <div class="col-md-6"><input class="form-control" name="customer.people.email" type="email" value="<s:property value="customer.people.firstName" />" /></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6"><input class="form-control" name="customer.people.dateBirth" type="date" /></div>
+                            <div class="col-md-6"><input class="form-control" name="customer.people.address" type="text" value="<s:property value="customer.people.firstName" />"/></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6"><input class="form-control" name="customer.people.cellPhone" type="tel" value="<s:property value="customer.people.firstName" />" /></div>
+                            <div class="col-md-6"><input class="form-control" name="customer.people.telePhone" type="tel" value="<s:property value="customer.people.firstName" />"/></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6"><input class="form-control" name="customer.people.userName" type="text" value="<s:property value="customer.people.firstName" />"" /></div>
+                            <div class="col-md-6"><input class="form-control" name="customer.people.password" type="password" value="<s:property value="customer.people.firstName" />"/></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <select class="form-control" name="gymMembershipTypes.id">
+                                    <s:iterator value="gymMembershipTypes">
+                                        <option value="<s:property value="gymMembershipTypes.id"/>" > <s:property value="gymMembershipTypes.name"/></option>
+                                    </s:iterator>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                            <%--<button type="button" class="btn btn-primary">Guardar</button>--%>
+                        <input type="submit" class="btn btn-primary" value="Guardar">
+                    </div>
+                </form>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</s:iterator>
+
 <jsp:include page="_default_footer.jsp"/>
 <%--<script type="text/javascript">--%>
     <%--$('#exampleModal').on('show.bs.modal', function (event) {--%>
