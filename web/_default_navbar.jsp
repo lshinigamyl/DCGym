@@ -1,7 +1,8 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
-<nav class="navbar navbar-default navbar-fixed-top" style="background: url(image/Baner.jpg);
-background-position: center center;">
+<nav class="navbar navbar-default navbar-fixed-top" style="background: linear-gradient( 100deg, #C6C2C0, white, whitesmoke,#C6C2C0)  ;  ">
+<!--     style="background: url(image/Baner.jpg); background-position: center center;-->
+
     <div class="container ">
         <div class="navbar-header example5" >
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">

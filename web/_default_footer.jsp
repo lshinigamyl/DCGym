@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <footer class="navbar navbar-inverse navbar-fixed-bottom" style="color: white">
 
@@ -19,7 +20,7 @@
         
         <div class="col-sm-6 text-center">
             <footer id="pagefooter">
-                <p id="copyright"></p>
+                <p id="copyright" style="text-align : center;"></p>
            
             </footer>
             Teléfonos: 991935770 - 2937353<br>
