@@ -55,3 +55,4 @@
     
          copyrightYear();
 </script>
+<script src="js/search.js" type="text/javascript"></script>

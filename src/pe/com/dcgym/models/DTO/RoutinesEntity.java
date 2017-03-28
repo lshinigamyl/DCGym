@@ -21,7 +21,7 @@ public class RoutinesEntity extends BaseEntity {
 
     public Routine findById(int id) {
         List<Routine> routines = this.findByCriteria(DEFAULT_SQL + " WHERE id = " + String.valueOf(id));
-        return routines != null ? routines.get(0) : null;
+        return routines.isEmpty()? null: routines.get(0);
     }
 
     public Routine findByName(String name) {

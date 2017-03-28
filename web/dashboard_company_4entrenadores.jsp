@@ -52,43 +52,37 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title text-center" id="gridSystemModalLabel">Nuevo Usuario</h4>
             </div>
-            <form id="" name="" action="" method="post">
+            <form name="companyemployeecreate" action="companyemployeecreate.action" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-6"><input class="form-control" name="people.name" type="text" placeholder="Nombre" /></div>
-                            <div class="col-md-6"><input class="form-control" name="people.surname" type="text" placeholder="Apellido" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.firstName" type="text" placeholder="Nombre" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.lastName" type="text" placeholder="Apellido" /></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-6"><input class="form-control" name="document_number" type="number" placeholder="DNI" /></div>
-                            <div class="col-md-6"><input class="form-control" name="email" type="email" placeholder="Correo" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.dni" type="text" placeholder="DNI" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.dateBirth" type="text" placeholder="F.Nacimiento AAAA-MM-DD" /></div>
+
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-6"><input class="form-control" name="date_birth" type="date" /></div>
-                            <div class="col-md-6"><input class="form-control" name="address" type="text" placeholder="Direccion"/></div>
+                            <div class="col-md-6"><input class="form-control" name="people.email" type="text" placeholder="Correo" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.address" type="text" placeholder="Direccion"/></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-6"><input class="form-control" name="cellphone" type="tel" placeholder="Celular" /></div>
-                            <div class="col-md-6"><input class="form-control" name="telephone" type="tel" placeholder="Telefono"/></div>
+                            <div class="col-md-6"><input class="form-control" name="people.cellPhone" type="tel" placeholder="Celular" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.telePhone" type="tel" placeholder="Telefono"/></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-6"><input class="form-control" name="user" type="text" placeholder="Usuario" /></div>
-                            <div class="col-md-6"><input class="form-control" name="password" type="password" placeholder="Contraseña"/></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
+                            <div class="col-md-6"><input class="form-control" name="people.userName" type="text" placeholder="Usuario" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.password" type="text" placeholder="Contraseña"/></div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -120,24 +114,47 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title text-center"> Membresia : <s:property value="id" /></h4>
                 </div>
-                <form name="companynewgymmembershiptypeedit" action="companynewgymmembershiptypeedit.action" method="post">
+                <form name="companyemployeeedit" action="companyemployeeedit.action" method="post">
                     <div class="modal-body">
                         <div class="form-group">
                             <div class="row">
-                                <input type="hidden" name="membershipType.id" value="<s:property value="membershipType.id"/>">
-                                <div class="col-md-12"><input class="form-control" name="membershipType.name" type="text" placeholder="Nombre de Membresia" value="<s:property value="membershipType.name"/>" /></div>
+                                <div class="col-md-6"><input class="form-control" name="people.firstName" type="text" placeholder="Nombre" value="<s:property value="people.firstName"/>"/></div>
+                                <div class="col-md-6"><input class="form-control" name="people.lastName" type="text" placeholder="Apellido"  value="<s:property value="people.lastName"/>"/></div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-md-6"><input class="form-control" name="membershipType.cost" type="number" value="<s:property value="membershipType.cost"/>"/></div>
-                                <div class="col-md-6"><input class="form-control" name="membershipType.daysDuration" type="number" value="<s:property value="membershipType.daysDuration"/>"/></div>
+                                <div class="col-md-6"><input class="form-control" name="people.dni" type="text" placeholder="DNI" value="<s:property value="people.dni"/>" /></div>
+                                <div class="col-md-6"><input class="form-control" name="people.dateBirth" type="text" placeholder="F.Nacimiento AAAA-MM-DD" value="<s:property value="people.dateBirth"/>" /></div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6"><input class="form-control" name="people.email" type="text" placeholder="Correo" value="<s:property value="people.email"/>" /></div>
+                                <div class="col-md-6"><input class="form-control" name="people.address" type="text" placeholder="Direccion" value="<s:property value="people.address"/>"/></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6"><input class="form-control" name="people.cellPhone" type="tel" placeholder="Celular" value="<s:property value="people.cellPhone"/>" /></div>
+                                <div class="col-md-6"><input class="form-control" name="people.telePhone" type="tel" placeholder="Telefono" value="<s:property value="people.telePhone"/>"/></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6"><input class="form-control" name="people.userName" type="text" placeholder="Usuario" value="<s:property value="people.userName"/>" /></div>
+                                <div class="col-md-6"><input class="form-control" name="people.password" type="text" placeholder="Contraseña" value="<s:property value="people.password"/>"/></div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <textarea name="membershipType.description" class="form-control" rows="3"><s:property value="membershipType.description"/></textarea>
+                                    <select class="form-control" name="employeeType.id">
+                                        <s:iterator value="employeeTypes">
+                                            <option value="<s:property value="id"/>" > <s:property value="name"/></option>
+                                        </s:iterator>
+                                    </select>
                                 </div>
                             </div>
                         </div>

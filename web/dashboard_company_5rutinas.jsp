@@ -34,7 +34,7 @@
                 </tr>
                 </thead>
                 <tbody class="buscar">
-                <s:iterator value="exerciseRoutines" var="exe">
+                <s:iterator var="exe" value="exerciseRoutines">
                     <s:if test="#id!=#exe.routine.id">
                         <tr >
                             <td colspan="4"><s:property value="#exe.routine.name"/></td>
@@ -44,11 +44,11 @@
 
                     <tr>
 
-                        <td><s:property value="range"/></td>
-                        <td><s:property value="repeat"/></td>
-                        <td><s:property value="value_percent"/></td>
-                        <td><s:property value="comment"/></td>
-                        <td><s:property value="sequence"/></td>
+                        <td><s:property value="#exe.range"/></td>
+                        <td><s:property value="#exe.repeat"/></td>
+                        <td><s:property value="#exe.value_percent"/></td>
+                        <td><s:property value="#exe.comment"/></td>
+                        <td><s:property value="#exe.sequence"/></td>
                         <td><a class="btn btn-info" href="">Modificar</a><br><a class="btn btn-danger" href="">Eliminar</a></td>
                     </tr>
 
@@ -66,7 +66,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title text-center" id="gridSystemModalLabel">Nuevo Usuario</h4>
             </div>
-            <form id="" name="" action="" method="post">
+            <form name="companyroutinecreate" action="companyroutinecreate.action" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <div class="row">

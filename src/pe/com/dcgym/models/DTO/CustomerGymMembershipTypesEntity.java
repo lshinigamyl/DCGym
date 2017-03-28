@@ -67,13 +67,35 @@ public class CustomerGymMembershipTypesEntity extends BaseEntity {
     public CustomerGymMembershipType create(CustomerGymMembershipType customerGymMembershipType) {
         //if (this.findByName(id) == null && this.getConnection() != null) {
         customerGymMembershipType.setCustomer(getCustomersEntity().create(customerGymMembershipType.getCustomer()));
-        String sql = "INSERT INTO `customers_gym_membership_types` (`start_date`, `due_date`, `customer_id`, `gyms_membership_types_id`) VALUES (?,?,?,?);";
+        String sql = "INSERT INTO `customers_gym_membership_types` (\n" +
+                "\t`start_date`,\n" +
+                "\t`due_date`,\n" +
+                "\t`customer_id`,\n" +
+                "\t`gyms_membership_types_id`\n" +
+                ")\n" +
+                "VALUES\n" +
+                "\t(\n" +
+                "\t\tCURDATE(),\n" +
+                "\t\tDATE_ADD(\n" +
+                "\t\t\tCURDATE(),\n" +
+                "\t\t\tINTERVAL (\n" +
+                "\t\t\t\tSELECT\n" +
+                "\t\t\t\t\tm.days_duration\n" +
+                "\t\t\t\tFROM\n" +
+                "\t\t\t\t\tmembership_types AS m\n" +
+                "\t\t\t\tINNER JOIN gyms_membership_types AS g ON g.membership_type_id = m.id\n" +
+                "\t\t\t\tWHERE\n" +
+                "\t\t\t\t\tg.id = ? \n" +
+                "\t\t\t) DAY\n" +
+                "\t\t),\n" +
+                "\t\t ? ,\n" +
+                "\t\t ? \n" +
+                "\t);";
         try {
             PreparedStatement obj =  this.getConnection().prepareStatement(sql);
-            obj.setString(1, customerGymMembershipType.getStartDate());
-            obj.setString(2, customerGymMembershipType.getDueDate());
-            obj.setInt   (3, customerGymMembershipType.getCustomer().getId());
-            obj.setInt   (4, customerGymMembershipType.getGymMembershipTypes().getId());
+            obj.setInt (1, customerGymMembershipType.getGymMembershipTypes().getId());
+            obj.setInt (2, customerGymMembershipType.getCustomer().getId());
+            obj.setInt (3, customerGymMembershipType.getGymMembershipTypes().getId());
 
             int results = obj.executeUpdate();
             if (results > 0) {

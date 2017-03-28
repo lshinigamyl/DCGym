@@ -97,7 +97,7 @@
                         <div class="col-md-12">
                             <select class="form-control" name="gymMembershipTypes.id">
                                 <s:iterator value="gymMembershipTypes">
-                                    <option value="<s:property value="membershipType.id"/>" > <s:property value="membershipType.name"/> ($/.<s:property value="membershipType.cost"/>)</option>
+                                    <option value="<s:property value="id"/>" > <s:property value="membershipType.name"/> ($/.<s:property value="membershipType.cost"/>)</option>
                                 </s:iterator>
                             </select>
                         </div>
@@ -121,63 +121,57 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title text-center"> Membresia : <s:property value="id" /></h4>
                 </div>
-                <form name="companymembershiptypesedit" action="companymembershiptypesedit.action" method="post">
+                <form name="companyclientedit" action="companyclientedit.action" method="post">
                     <div class="modal-body">
                         <div class="form-group">
                             <div class="row">
-                                <input type="hidden" name="id" value="<s:property value="membershipType.id"/>">
-                                <div class="col-md-12"><input class="form-control" name="membershipType.name" type="text" placeholder="Nombre de Membresia" value="<s:property value="membershipType.name"/>" /></div>
+                                <div class="col-md-6"><input class="form-control" name="customer.people.firstName" type="text" placeholder="Nombre" value="<s:property value="customer.people.firstName"/>" /></div>
+                                <div class="col-md-6"><input class="form-control" name="customer.people.lastName" type="text" placeholder="Apellido" value="<s:property value="customer.people.lastName"/>" /></div>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-md-6"><input class="form-control" name="customer.people.firstName" type="text" value="<s:property value="customer.people.firstName" />" /></div>
-                                <div class="col-md-6"><input class="form-control" name="customer.people.lastName" type="text" value="<s:property value="customer.people.firstName" />" /></div>
+                                <div class="col-md-6"><input class="form-control" name="customer.people.dni" type="text" placeholder="DNI" value="<s:property value="customer.people.dni"/>" /></div>
+                                <div class="col-md-6"><input class="form-control" name="customer.people.dateBirth" type="text" placeholder="F.Nacimiento AAAA-MM-DD" value="<s:property value="customer.people.dateBirth"/>"/></div>
+
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="row">
-                                <div class="col-md-6"><input class="form-control" name="customer.people.dni" type="number" value="<s:property value="customer.people.firstName" />" /></div>
-                                <div class="col-md-6"><input class="form-control" name="customer.people.email" type="email" value="<s:property value="customer.people.firstName" />" /></div>
+                                <div class="col-md-6"><input class="form-control" name="customer.people.email" type="text" placeholder="Correo" value="<s:property value="customer.people.email"/>"/></div>
+                                <div class="col-md-6"><input class="form-control" name="customer.people.address" type="text" placeholder="Direccion" value="<s:property value="customer.people.address"/>"/></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6"><input class="form-control" name="customer.people.dateBirth" type="date" /></div>
-                            <div class="col-md-6"><input class="form-control" name="customer.people.address" type="text" value="<s:property value="customer.people.firstName" />"/></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6"><input class="form-control" name="customer.people.cellPhone" type="tel" value="<s:property value="customer.people.firstName" />" /></div>
-                            <div class="col-md-6"><input class="form-control" name="customer.people.telePhone" type="tel" value="<s:property value="customer.people.firstName" />"/></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6"><input class="form-control" name="customer.people.userName" type="text" value="<s:property value="customer.people.firstName" />"/></div>
-                            <div class="col-md-6"><input class="form-control" name="customer.people.password" type="password" value="<s:property value="customer.people.firstName" />"/></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <textarea class="form-control" rows="3"></textarea>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6"><input class="form-control" name="customer.people.cellPhone" type="tel" placeholder="Celular" value="<s:property value="customer.people.cellPhone"/>"/></div>
+                                <div class="col-md-6"><input class="form-control" name="customer.people.telePhone" type="tel" placeholder="Telefono" value="<s:property value="customer.people.telePhone"/>"/></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <select class="form-control" name="gymMembershipTypes.id">
-                                    <s:iterator value="gymMembershipTypes">
-                                        <option value="<s:property value="gymMembershipTypes.id"/>" > <s:property value="gymMembershipTypes.name"/></option>
-                                    </s:iterator>
-                                </select>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6"><input class="form-control" name="customer.people.userName" type="text" placeholder="Usuario"  value="<s:property value="customer.people.userName"/>"/></div>
+                                <div class="col-md-6"><input class="form-control" name="customer.people.password" type="text" placeholder="Contraseña" value="<s:property value="customer.people.password"/>"/></div>
                             </div>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <textarea class="form-control" rows="3" name="customer.comment"><s:property value="customer.comment"/></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <select class="form-control" name="gymMembershipTypes.id">
+                                        <s:iterator value="gymMembershipTypes">
+                                            <option value="<s:property value="id"/>" > <s:property value="membershipType.name"/> ($/.<s:property value="membershipType.cost"/>)</option>
+                                        </s:iterator>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                             <%--<button type="button" class="btn btn-primary">Guardar</button>--%>

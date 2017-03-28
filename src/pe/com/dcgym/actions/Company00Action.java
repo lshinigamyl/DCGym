@@ -98,7 +98,7 @@ public class Company00Action extends ActionSupport implements SessionAware {
                 setMenuOption("rutina");
                 Gym obj = (Gym)getSession().get("objsession");
                 Company00Service service = new Company00Service();
-                setExerciseRoutines(service.findAllRoutines());
+                setExerciseRoutines(service.findAllRoutines(obj.getId()));
                 return SUCCESS;
             case "client":
                 return ERROR;

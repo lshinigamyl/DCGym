@@ -36,6 +36,5 @@
     </div>
 
     <jsp:include page="_default_footer.jsp"/>
-    <script type="text/javascript" src="js/search.js"></script>
 </body>
 </html>
