@@ -24,6 +24,7 @@ public class Company02ClientAction extends ActionSupport implements ModelDriven<
 
         Gym obj = (Gym)getSession().get("objsession");
         customerGymMembershipType.getGymMembershipTypes().setGym(obj);
+
         getService().create(customerGymMembershipType);
         return SUCCESS;
     }

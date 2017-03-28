@@ -97,7 +97,7 @@
                         <div class="col-md-12">
                             <select class="form-control" name="gymMembershipTypes.id">
                                 <s:iterator value="gymMembershipTypes">
-                                    <option value="<s:property value="membershipType.id"/>" > <s:property value="membershipType.name"/> ($/.<s:property value="membershipType.cost"/>)</option>
+                                    <option value="<s:property value="id"/>" > <s:property value="membershipType.name"/> ($/.<s:property value="membershipType.cost"/>)</option>
                                 </s:iterator>
                             </select>
                         </div>
