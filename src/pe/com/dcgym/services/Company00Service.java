@@ -29,7 +29,7 @@ public class Company00Service extends BaseService {
     public List<EmployeeType> findAllEmployeeTypes(){
         return getEmployeeTypesEntity().findAll();
     }
-    public List<ExerciseRoutine> findAllRoutines(){ return getExercisesRoutinesEntity().findAll();
+    public List<ExerciseRoutine> findAllRoutines(int id){ return getExercisesRoutinesEntity().findByGymId(id);
 
     }
 

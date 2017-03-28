@@ -17,7 +17,7 @@ public class ExercisesRoutinesEntity extends BaseEntity {
 
 
     public List<ExerciseRoutine> findAll() {
-        return this.findByCriteria(DEFAULT_SQL +" ORDER BY `routines_id`");
+        return this.findByCriteria(DEFAULT_SQL +" as e ORDER BY e.routines_id ASC");
     }
 /*
     public ExerciseRoutine findById(int id) {
@@ -30,6 +30,25 @@ public class ExercisesRoutinesEntity extends BaseEntity {
             return customerRoutines.isEmpty() ? null : customerRoutines.get(0);
         }
     */
+    public List<ExerciseRoutine> findByGymId(int id){
+        return findByCriteria("SELECT " +
+                "e.id, " +
+                "e.`comment`, " +
+                "e.state, " +
+                "e.`range`, " +
+                "e.`repeat`, " +
+                "e.value_percent, " +
+                "e.sequence, " +
+                "e.exercise_id, " +
+                "e.routine_id " +
+                "FROM " +
+                "exercises_routines AS e " +
+                "INNER JOIN routines AS r ON e.routine_id = r.id " +
+                "WHERE " +
+                "r.gym_id = '"+id+"' " +
+                "ORDER BY " +
+                "e.routine_id ASC");
+    }
     private List<ExerciseRoutine> findByCriteria(String sql) {
         if (this.getConnection() != null) {
             ArrayList<ExerciseRoutine> exerciseRoutines = new ArrayList<ExerciseRoutine>();

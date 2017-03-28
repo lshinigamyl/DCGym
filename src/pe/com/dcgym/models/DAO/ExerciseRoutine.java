@@ -45,8 +45,8 @@ public class ExerciseRoutine {
                                         resultSet.getInt("repeat"),
                                         resultSet.getInt("value_percent"),
                                         resultSet.getInt("sequence"),
-                                        exercisesEntity.findById(resultSet.getInt("exercises_id")),
-                                        routinesEntity.findById(resultSet.getInt("routines_id")));
+                                        exercisesEntity.findById(resultSet.getInt("exercise_id")),
+                                        routinesEntity.findById(resultSet.getInt("routine_id")));
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
