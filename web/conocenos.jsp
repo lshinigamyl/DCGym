@@ -11,16 +11,21 @@
 
 </head>
 < <style >
-   h4 {
-    font-size: 18px;
+    h4 {
+
+       font-size : 20px !important;
+       text-align: justify !important;
    }
+    h3{
+        text-align: justify !important;
+    }
      b  {
        font-size: 18px;
          line-height:20px;
    }
    .show-flat_teacher-component .name   {
-         font-size: 18px; !important;
-         line-height:20px;!important;
+         font-size: 18px !important;
+         line-height:20px!important;
      }
    .appointment {
            font-size: 18px;
@@ -29,7 +34,9 @@
        font-size: 18px;
    }
    p {
-       font-size: 18px;
+       font-size: 18px !important;
+       text-align: justify !important;
+
    }
 
 
@@ -76,7 +83,7 @@
 <center>
             <a href="#"><h2 class="subtittle">Start Up <i aria-hidden="true" class="fa fa-angle-right"></i></h2></a>
 
-            <div class="container" >
+            <div class="container" style="w">
                 <div class="col-md-2-4 personal-docente-selected" data-cargo="Vicerrector" data-descripcion="Arquitecto egresado de la UNI, técnico Urbanista por el Instituto de Estudios de Administración Local (Madrid), y Doctor en Arquitectura por la Universidad Politécnica de Madrid. Cuenta con amplia experiencia en la docencia e investigación como “Rúpac: Destino turístico excepcional” “Arquitectura Vernacular Amazónica”, entre otros." data-nombre="Dr. Arq. Ferruccio, MARUSSI CASTELLAN" data-imagen="http://orval.edu.pe/dinamic/personals/details/dr-arq-ferruccio_148229374138.png">
                     <img class="img-circle img-responsive" src="image/angelo.png">
                     <div class="appointment">Jefe de Proyecto</div>

@@ -20,7 +20,7 @@
         
         <div class="col-sm-6 text-center">
             <footer id="pagefooter">
-                <p id="copyright" style="text-align : center;"></p>
+                <p id="copyright" style="text-align : center !important;"></p>
            
             </footer>
             Teléfonos: 991935770 - 2937353<br>

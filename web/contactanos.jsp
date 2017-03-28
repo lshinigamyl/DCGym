@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>DCGym - Contáctanos</title>
+
     <jsp:include page="_default_head.jsp"/>
 
 </head>
@@ -18,8 +19,9 @@
     }
     label{
         font-weight: 900;
-        color: greenyellow;
-        -webkit-text-stroke:  0.5px black ;
+        color: black;
+        -webkit-text-stroke:  0.2px #dcaa88 ;
+        font-size: 20px;
     }
 
 </style>
@@ -83,6 +85,6 @@
 </body>
 
 
-javamail mail = new javamail();mail.send("destino@mail.com","Esto es una prueba","Este correo fue enviado usando JavaMail");
+<!--/.javamail mail = new javamail();mail.send("destino@mail.com","Esto es una prueba","Este correo fue enviado usando JavaMail");-->
 
 </html>
