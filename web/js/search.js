@@ -20,6 +20,16 @@ $(document).ready(function () {
 
 
         })
+        $('input#filtrar').keyup(function () {
+                var rex = new RegExp($(this).val(), 'i');
+                $('tbody.buscar tr').hide();
+                $('tbody.buscar tr').filter(function () {
+                    return rex.test($(this).text());
+                }).show();
+
+
+
+        })
 
     }(jQuery));
 

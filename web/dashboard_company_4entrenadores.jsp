@@ -52,43 +52,37 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title text-center" id="gridSystemModalLabel">Nuevo Usuario</h4>
             </div>
-            <form id="" name="" action="" method="post">
+            <form name="companyemployeecreate" action="companyemployeecreate.action" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-6"><input class="form-control" name="people.name" type="text" placeholder="Nombre" /></div>
-                            <div class="col-md-6"><input class="form-control" name="people.surname" type="text" placeholder="Apellido" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.firstName" type="text" placeholder="Nombre" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.lastName" type="text" placeholder="Apellido" /></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-6"><input class="form-control" name="document_number" type="number" placeholder="DNI" /></div>
-                            <div class="col-md-6"><input class="form-control" name="email" type="email" placeholder="Correo" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.dni" type="text" placeholder="DNI" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.dateBirth" type="text" placeholder="F.Nacimiento AAAA-MM-DD" /></div>
+
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-6"><input class="form-control" name="date_birth" type="date" /></div>
-                            <div class="col-md-6"><input class="form-control" name="address" type="text" placeholder="Direccion"/></div>
+                            <div class="col-md-6"><input class="form-control" name="people.email" type="text" placeholder="Correo" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.address" type="text" placeholder="Direccion"/></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-6"><input class="form-control" name="cellphone" type="tel" placeholder="Celular" /></div>
-                            <div class="col-md-6"><input class="form-control" name="telephone" type="tel" placeholder="Telefono"/></div>
+                            <div class="col-md-6"><input class="form-control" name="people.cellPhone" type="tel" placeholder="Celular" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.telePhone" type="tel" placeholder="Telefono"/></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
-                            <div class="col-md-6"><input class="form-control" name="user" type="text" placeholder="Usuario" /></div>
-                            <div class="col-md-6"><input class="form-control" name="password" type="password" placeholder="Contraseña"/></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <textarea class="form-control" rows="3"></textarea>
-                            </div>
+                            <div class="col-md-6"><input class="form-control" name="people.userName" type="text" placeholder="Usuario" /></div>
+                            <div class="col-md-6"><input class="form-control" name="people.password" type="text" placeholder="Contraseña"/></div>
                         </div>
                     </div>
                     <div class="form-group">
