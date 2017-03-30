@@ -50,7 +50,7 @@
                 <div class="row">
                     <div class="col-md-5 col-sm-5 col-md-offset-1 pull-right">
                         <article class="content">
-                            <div id="component-acerca-orval">
+                            <div id="component-acerca">
                                 <h1 class="titulo_seccion">
                                     Acerca de Team Dc
                                 </h1>
