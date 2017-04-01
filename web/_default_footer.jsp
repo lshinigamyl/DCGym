@@ -1,5 +1,4 @@
-
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <footer class="navbar navbar-inverse navbar-fixed-bottom" style="color: white">
 
     <div class="container-fluid">
@@ -44,8 +43,9 @@
 
     </div>
 </footer>
+
 <script src="js/jquery.js" type="text/javascript"></script>
-<script src="js/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/jquery.simpleWeather.js"type="text/javascript"></script>
 <script>
     function copyrightYear() {
         var d = new Date();
@@ -56,3 +56,4 @@
          copyrightYear();
 </script>
 <script src="js/search.js" type="text/javascript"></script>
+
