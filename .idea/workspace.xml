@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e3539ed5-1d8b-4dcd-83a6-c56ec04f112d" name="Default" comment="Pagina Contactenos &#10;:)&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/graficos.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/Chart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/Chart.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/graficos.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery-1.10.2.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery.simpleWeather.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery.simpleWeather.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/mail_1_4.xml" afterPath="$PROJECT_DIR$/.idea/libraries/mail_1_4.xml" />
+    <list default="true" id="e3539ed5-1d8b-4dcd-83a6-c56ec04f112d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/_default_footer.jsp" afterPath="$PROJECT_DIR$/web/_default_footer.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/_default_head.jsp" afterPath="$PROJECT_DIR$/web/_default_head.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/dashboard_company.jsp" afterPath="$PROJECT_DIR$/web/dashboard_company.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/graficos.js" afterPath="$PROJECT_DIR$/web/js/graficos.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,7 +38,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="conocenos.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="conocenos.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/conocenos.jsp">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="44">
@@ -57,17 +48,39 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dashboard_company.jsp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dashboard_company.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/dashboard_company.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="315">
+              <caret line="31" column="68" lean-forward="false" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#canvas#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/jquery.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="graficos.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/js/graficos.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="45" column="30" lean-forward="false" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -158,6 +171,7 @@
       <find>Serv</find>
       <find>compa</find>
       <find>orva</find>
+      <find>s:iterator</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Haydee\dcgym\DCGym</dir>
@@ -185,7 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pe/com/dcgym/actions/CompanyClientsAction.java" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/actions/CompanyMembershipAction.java" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/services/Company02MembershipTypesService.java" />
         <option value="$PROJECT_DIR$/src/pe/com/dcgym/actions/Company02MembershipAction.java" />
@@ -236,6 +249,7 @@
         <option value="$PROJECT_DIR$/web/_default_footer.jsp" />
         <option value="$PROJECT_DIR$/web/_default_head.jsp" />
         <option value="$PROJECT_DIR$/web/dashboard_company.jsp" />
+        <option value="$PROJECT_DIR$/web/js/graficos.js" />
       </list>
     </option>
   </component>
@@ -882,7 +896,7 @@
       <workItem from="1490627628390" duration="14267000" />
       <workItem from="1490736349545" duration="1802000" />
       <workItem from="1490906307878" duration="175000" />
-      <workItem from="1491088423277" duration="1039000" />
+      <workItem from="1491088423277" duration="1557000" />
     </task>
     <task id="LOCAL-00001" summary="Modifcando Header">
       <created>1490067394004</created>
@@ -1073,11 +1087,18 @@
       <option name="project" value="LOCAL" />
       <updated>1490738008343</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Graficos&#10;:)&#10;">
+      <created>1491089506850</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1491089506850</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123949000" />
+    <option name="totallyTimeSpent" value="124467000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1177,7 +1198,8 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="Dando funcionalidad a las vistas de Usuarios del Gym usando Struts2 y las clases Actions" />
     <MESSAGE value="Pagina Contactenos &#10;:)&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pagina Contactenos &#10;:)&#10;" />
+    <MESSAGE value="Graficos&#10;:)&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Graficos&#10;:)&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1197,21 +1219,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/services/BaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2193">
-          <caret line="144" column="43" lean-forward="false" selection-start-line="144" selection-start-column="31" selection-end-line="144" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/showTrainingCenters.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="18" lean-forward="true" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pe/com/dcgym/models/DAO/EmployeeType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1546,26 +1553,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/_default_navbar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/conocenos.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="52" column="53" lean-forward="false" selection-start-line="52" selection-start-column="53" selection-end-line="52" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/_default_head.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="64" lean-forward="false" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/graficos.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="45" column="30" lean-forward="false" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1578,16 +1587,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/_default_navbar.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/dashboard_company.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="315">
+          <caret line="31" column="68" lean-forward="false" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#canvas#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#0;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#li#2;n#ul#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/conocenos.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="52" column="53" lean-forward="false" selection-start-line="52" selection-start-column="53" selection-end-line="52" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>

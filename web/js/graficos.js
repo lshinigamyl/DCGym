@@ -28,22 +28,22 @@ $(document).ready(function() {
     //Docs at http://www.chartjs.org
     var pie_data = [
         {
-            value: 300,
+            value: 10,
             color:"#4DAF7C",
             highlight: "#55BC75",
             label: "Clientes"
         },
         {
-            value: 50,
+            value: 5,
             color: "#EAC85D",
             highlight: "#f9d463",
-            label: "Otros"
+            label: "Entrenadores"
         },
         {
-            value: 100,
+            value: 2,
             color: "#E25331",
             highlight: "#f45e3d",
-            label: "Entrenadores"
+            label: "Menbresias"
         },
 
     ]
@@ -84,7 +84,7 @@ $(document).ready(function() {
     var myDoughnutChart = new Chart(ctx).Doughnut(pie_data,
         {
             responsive:true,
-            tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %> Personas"
+            tooltipTemplate: "<%if (label){%><%=label%>: <%}%><%= value %> "
         });
 
 

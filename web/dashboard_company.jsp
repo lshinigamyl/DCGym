@@ -29,7 +29,7 @@
             <div class="col-sm-5 col-md-7">
                 <div id="pie-chart-widget" class="panel">
                     <div class="panel-heading text-center">
-                        <h5 class="text-uppercase"><strong>Visitas</strong></h5>
+                        <h5 class="text-uppercase"><strong>Registros</strong></h5>
                     </div>
                     <div class="panel-body">
                         <canvas id="myPieChart" width="360" height="180" style="width: 360px; height: 180px;"></canvas>
@@ -46,8 +46,8 @@
                                         Entrenadores
                                         <h2>31%</h2>
                                     </li>
-                                    <li class="Otros" style="margin-left: 1px;">
-                                        Otros
+                                    <li class="Menbresias" style="margin-left: 1px;">
+                                        Menbresias
                                         <h2>17%</h2>
                                     </li>
                                 </ul>
